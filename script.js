@@ -91,7 +91,7 @@ const letters = [
 ];
 const qBox = document.querySelector(".question__box");
 const qImg = document.querySelector(".question__box--img");
-const qBtn = document.querySelector(".question__box--btn");
+const qBtn = document.querySelector(".question__btn");
 const aList = document.querySelector(".answer");
 const scoreBoard = document.querySelector(".score__points--inc");
 
@@ -144,6 +144,8 @@ const generateAnswer = function () {
   });
 };
 generateAnswer();
+
+console.log(qBtn);
 
 //New letter generated
 //Generate new icon on "new" btn click"
