@@ -97,6 +97,7 @@ const scoreBoard = document.querySelector(".score__points--inc");
 
 let currentValue;
 let aBtn;
+let n;
 
 let currentScore = 0;
 scoreBoard.textContent = currentScore;
@@ -106,21 +107,20 @@ const randomSelect = function (arr) {
   return Math.round(Math.random() * arr.length);
 };
 
-
-
 //Generates question letter on click
 const generateQuestionLetter = function () {
-  let n = document.createElement("div");
+  let qImgNodes = qImg.childNodes[0];
+   n = document.createElement("div");
   //Selects a random letter from the letters array
   let randomLetters = randomSelect(letters);
   currentValue = letters[randomLetters].l;
-  qBox.append(n);
+  n.className = "question__box--letter"
+  qImg.replaceChild(n, qImgNodes);
   n.innerHTML = `<img src="imgs/${currentValue}.svg" height="100px"></img>`;
   console.log(`current value: ${currentValue}`);
 };
 
 generateQuestionLetter();
-
 
 //Generates answer buttons of all the letters
 const generateAnswer = function () {
@@ -134,8 +134,7 @@ const generateAnswer = function () {
       if (x.l == currentValue) {
         currentScore = currentScore + 1;
         scoreBoard.textContent = currentScore;
-        // qImg.remove();
-        generateQuestionLetter;
+        generateQuestionLetter();
       } else {
         currentScore = currentScore - 1;
         scoreBoard.textContent = currentScore;
@@ -144,8 +143,6 @@ const generateAnswer = function () {
   });
 };
 generateAnswer();
-
-console.log(qBtn);
 
 //New letter generated
 //Generate new icon on "new" btn click"
