@@ -1,5 +1,18 @@
 "use strict";
 
+//APP FLOW
+//Letter is matched with button options available
+
+//If selection is correct...
+//1)User is notified correct
+//2) New Letter is genereated
+//3) Score is +1
+
+//If Letter is  is not correct
+//1) certain options are removed
+//2)Core is -1
+
+//letter objects
 const ba = {
   l: "ba",
   // i: imgs/ba.svg
@@ -98,21 +111,37 @@ const scoreBoard = document.querySelector(".score__points--inc");
 let currentValue;
 let aBtn;
 let n;
+let qImgNodes;
 
 let currentScore = 0;
+
+//get sessionstorage of previous current score on refresh and turn it into a number
+let storage = ~~(sessionStorage.getItem('currentScore'));
+function getScore() {
+if(storage != 0) {
+  currentScore == storage
+} else {
+  currentScore == 0
+}
+};
+
+getScore()
+
 scoreBoard.textContent = currentScore;
 
-//Randomly selects a letter fron an array
+//Randomly selects from an array
 const randomSelect = function (arr) {
   return Math.round(Math.random() * arr.length);
 };
 
+//Selects random index from letters array
+let randomLetters = randomSelect(letters);
+
 //Generates question letter on click
 const generateQuestionLetter = function () {
-  let qImgNodes = qImg.childNodes[0];
+  qImgNodes = qImg.childNodes[0];
    n = document.createElement("div");
   //Selects a random letter from the letters array
-  let randomLetters = randomSelect(letters);
   currentValue = letters[randomLetters].l;
   n.className = "question__box--letter"
   qImg.replaceChild(n, qImgNodes);
@@ -132,12 +161,19 @@ const generateAnswer = function () {
     aBtn.addEventListener("click", function () {
       console.log(x.l);
       if (x.l == currentValue) {
+        //adds 1 point to current score if correct
         currentScore = currentScore + 1;
+        //currentscore is entered into scoreboard
         scoreBoard.textContent = currentScore;
         generateQuestionLetter();
+        console.log(`New score: ${currentScore}`);
+      
       } else {
+        //deducts 1 point to current score if correct
         currentScore = currentScore - 1;
+        //currentscore is entered into scoreboard
         scoreBoard.textContent = currentScore;
+        console.log(`New score: ${currentScore}`);
       }
     });
   });
@@ -148,13 +184,8 @@ generateAnswer();
 //Generate new icon on "new" btn click"
 qBtn.addEventListener("click", generateQuestionLetter);
 
-//Letter is matched with button options available
+//set currentScore to session storage and turn it into a string 
+sessionStorage.setItem('currentScore', currentScore.toString);
 
-//If selection is correct...
-//1)User is notified correct
-//2) New Letter is genereated
-//3) Score is +1
 
-//If Letter is  is not correct
-//1) certain options are removed
-//2)Core is -1
+

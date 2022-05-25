@@ -19,7 +19,7 @@ body {
     display: flex;
 }
 
-.question__box {
+.question {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -35,7 +35,7 @@ body {
 
 .answer {
     display: grid;
-    grid: auto / auto auto auto auto auto;
+    grid: auto / auto auto auto;
     /* display: flex;
     justify-content: center;
     flex-direction: row;
