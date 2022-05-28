@@ -113,19 +113,20 @@ let aBtn;
 let n;
 let qImgNodes;
 
-let currentScore = 0;
+let currentScore;
 
-//get sessionstorage of previous current score on refresh and turn it into a number
-let storage = ~~(sessionStorage.getItem('currentScore'));
+//get sessionStorage of previous current score on refresh and turn it into a number
+
+
 function getScore() {
-if(storage != 0) {
-  currentScore == storage
-} else {
-  currentScore == 0
+  if (sessionStorage.length > 0) {
+    currentScore = ~~sessionStorage.getItem('currentScore');
+  } else {
+    currentScore = 0;
+  }
 }
-};
 
-getScore()
+getScore();
 
 scoreBoard.textContent = currentScore;
 
@@ -140,10 +141,10 @@ let randomLetters = randomSelect(letters);
 //Generates question letter on click
 const generateQuestionLetter = function () {
   qImgNodes = qImg.childNodes[0];
-   n = document.createElement("div");
+  n = document.createElement("div");
   //Selects a random letter from the letters array
   currentValue = letters[randomLetters].l;
-  n.className = "question__box--letter"
+  n.className = "question__box--letter";
   qImg.replaceChild(n, qImgNodes);
   n.innerHTML = `<img src="imgs/${currentValue}.svg" height="100px"></img>`;
   console.log(`current value: ${currentValue}`);
@@ -167,7 +168,6 @@ const generateAnswer = function () {
         scoreBoard.textContent = currentScore;
         generateQuestionLetter();
         console.log(`New score: ${currentScore}`);
-      
       } else {
         //deducts 1 point to current score if correct
         currentScore = currentScore - 1;
@@ -175,6 +175,12 @@ const generateAnswer = function () {
         scoreBoard.textContent = currentScore;
         console.log(`New score: ${currentScore}`);
       }
+      let stringScore = new String(currentScore)
+console.log(stringScore);
+
+//set currentScore to session storage and turn it into a string
+sessionStorage.setItem('currentScore', `${stringScore}`);
+
     });
   });
 };
@@ -184,8 +190,8 @@ generateAnswer();
 //Generate new icon on "new" btn click"
 qBtn.addEventListener("click", generateQuestionLetter);
 
-//set currentScore to session storage and turn it into a string 
-sessionStorage.setItem('currentScore', currentScore.toString);
+let stringScore = new String(currentScore)
+console.log(stringScore);
 
-
-
+//set currentScore to session storage and turn it into a string
+sessionStorage.setItem('currentScore', `${stringScore}`);
