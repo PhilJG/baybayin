@@ -9,10 +9,15 @@ body {
     align-items: center;
 }
 
+.section-1 {
+    display: flex;
+}
+
 .score {
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-self: center;
 }
 
 .score__points {
@@ -35,7 +40,7 @@ body {
 
 .answer {
     display: grid;
-    grid: auto / auto auto auto;
+    grid: auto / auto auto auto auto auto;
     /* display: flex;
     justify-content: center;
     flex-direction: row;

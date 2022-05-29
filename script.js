@@ -177,6 +177,7 @@ const generateAnswer = function () {
         console.log(`New score: ${currentScore}`);
       }
       let stringScore = new String(currentScore)
+console.log(stringScore);
 
 //set currentScore to session storage and turn it into a string
 sessionStorage.setItem('currentScore', `${stringScore}`);
