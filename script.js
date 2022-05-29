@@ -143,6 +143,7 @@ const generateQuestionLetter = function () {
   qImgNodes = qImg.childNodes[0];
   n = document.createElement("div");
   //Selects a random letter from the letters array
+  let randomLetters = randomSelect(letters);
   currentValue = letters[randomLetters].l;
   n.className = "question__box--letter";
   qImg.replaceChild(n, qImgNodes);
@@ -176,7 +177,6 @@ const generateAnswer = function () {
         console.log(`New score: ${currentScore}`);
       }
       let stringScore = new String(currentScore)
-console.log(stringScore);
 
 //set currentScore to session storage and turn it into a string
 sessionStorage.setItem('currentScore', `${stringScore}`);
@@ -191,7 +191,6 @@ generateAnswer();
 qBtn.addEventListener("click", generateQuestionLetter);
 
 let stringScore = new String(currentScore)
-console.log(stringScore);
 
 //set currentScore to session storage and turn it into a string
 sessionStorage.setItem('currentScore', `${stringScore}`);
