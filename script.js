@@ -13,95 +13,80 @@
 //2)Core is -1
 
 //letter objects
-const ba = {
-  l: "ba",
-  // i: imgs/ba.svg
-};
-
-const ga = {
-  l: "ga",
-  // i: imgs/ga.svg
-};
-const nga = {
-  l: "nga",
-  // i: imgs/nga.svg
-};
-
-const ka = {
-  l: "ka",
-  // i: imgs/ka.svg
-};
-
-const sa = {
-  l: "sa",
-  // i: imgs/sa.svg
-};
-
-const da_ra = {
-  l: "da_ra",
-  // i: imgs/da_ra.svg
-};
-
-const ha = {
-  l: "ha",
-  // i: imgs/ha.svg
-};
-const i_e = {
-  l: "i_e",
-  // i: imgs/i_e.svg
-};
-
-const ma = {
-  l: "ma",
-  // i: imgs/ma.svg
-};
-
-const na = {
-  l: "na",
-  // i: imgs/na.svg
-};
-
-const pa = {
-  l: "pa",
-  // i: imgs/pa.svg
-};
-
-const ta = {
-  l: "ta",
-  // i: imgs/ta.svg
-};
-const u_o = {
-  l: "u_o",
-  // i: imgs/u_o.svg
-};
-
-const wa = {
-  l: "wa",
-  // i: imgs/wa.svg
-};
-
-const ya = {
-  l: "ya",
-  // i: imgs/ya.svg
-};
-
 const letters = [
-  ba,
-  ga,
-  nga,
-  ka,
-  sa,
-  da_ra,
-  ha,
-  i_e,
-  ma,
-  na,
-  pa,
-  ta,
-  u_o,
-  wa,
-  ya,
-];
+  "ba",
+  // i: imgs/ba.svg
+  
+  "ga",
+  // i: imgs/ga.svg
+
+  "nga",
+  // i: imgs/nga.svg
+
+"ka",
+// i: imgs/ka.svg
+
+
+"sa",
+// i: imgs/sa.svg
+
+
+  "da_ra",
+  // i: imgs/da_ra.svg
+
+
+"ha",
+// i: imgs/ha.svg
+
+  "i_e",
+  // i: imgs/i_e.svg
+
+
+"ma",
+// i: imgs/ma.svg
+
+
+"na",
+// i: imgs/na.svg
+
+
+"pa",
+// i: imgs/pa.svg
+
+
+"ta",
+// i: imgs/ta.svg
+
+"u_o",
+// i: imgs/u_o.svg
+
+"wa",
+// i: imgs/wa.svg
+
+
+"ya"
+// i: imgs/ya.svg
+
+]; 
+
+// const letters = [
+//   ba,
+//   ga,
+//   nga,
+//   ka,
+//   sa,
+//   da_ra,
+//   ha,
+//   i_e,
+//   ma,
+//   na,
+//   pa,
+//   ta,
+//   u_o,
+//   wa,
+//   ya,
+// ];
+
 const qBox = document.querySelector(".question__box");
 const qImg = document.querySelector(".question__box--img");
 const qBtn = document.querySelector(".question__btn");
@@ -135,6 +120,22 @@ const randomSelect = function (arr) {
   return Math.round(Math.random() * arr.length);
 };
 
+//Shuffles array
+function shuffle(arr) {
+  let currentIndex = arr.length, randomIndex;
+
+  //While there remains elements to shuffle
+  while(currentIndex != 0) {
+    //Pick a remaining element
+    randomIndex = randomSelect(arr);
+    currentIndex--;
+
+    //And swap it with the current element
+    [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]];
+  }  
+  return arr;
+}
+
 //Selects random index from letters array
 let randomLetters = randomSelect(letters);
 
@@ -143,8 +144,8 @@ const generateQuestionLetter = function () {
   qImgNodes = qImg.childNodes[0];
   n = document.createElement("div");
   //Selects a random letter from the letters array
-  let randomLetters = randomSelect(letters);
-  currentValue = letters[randomLetters].l;
+  randomLetters = randomSelect(letters);
+  currentValue = letters[randomLetters];
   n.className = "question__box--letter";
   qImg.replaceChild(n, qImgNodes);
   n.innerHTML = `<img src="imgs/${currentValue}.svg" height="100px"></img>`;
@@ -153,31 +154,33 @@ const generateQuestionLetter = function () {
 
 generateQuestionLetter();
 
+
+
 //Generates answer buttons of all the letters
 const generateAnswer = function () {
+  shuffle(letters);
   letters.forEach(function (x) {
     aBtn = document.createElement("button");
     aList.appendChild(aBtn);
-    aBtn.innerHTML = `${x.l}`;
+    aBtn.innerHTML = `${x}`;
     //Matches question with answer on click
     aBtn.addEventListener("click", function () {
-      console.log(x.l);
-      if (x.l == currentValue) {
+      console.log(x);
+      console.log(currentValue);
+      
+      if (x == currentValue) {
         //adds 1 point to current score if correct
         currentScore = currentScore + 1;
         //currentscore is entered into scoreboard
         scoreBoard.textContent = currentScore;
         generateQuestionLetter();
-        console.log(`New score: ${currentScore}`);
       } else {
         //deducts 1 point to current score if correct
         currentScore = currentScore - 1;
         //currentscore is entered into scoreboard
         scoreBoard.textContent = currentScore;
-        console.log(`New score: ${currentScore}`);
       }
       let stringScore = new String(currentScore)
-console.log(stringScore);
 
 //set currentScore to session storage and turn it into a string
 sessionStorage.setItem('currentScore', `${stringScore}`);
@@ -185,6 +188,27 @@ sessionStorage.setItem('currentScore', `${stringScore}`);
     });
   });
 };
+
+
+  //Matches question with answer on click
+  const matchAnswer = function(x){
+    if (x == currentValue) {
+      //adds 1 point to current score if correct
+      currentScore = currentScore + 1;
+      //currentscore is entered into scoreboard
+      scoreBoard.textContent = currentScore;
+      generateQuestionLetter();
+    } else {
+    //deducts 1 point to current score if correct
+    currentScore = currentScore - 1;
+    //currentscore is entered into scoreboard
+    scoreBoard.textContent = currentScore;
+  }
+  let stringScore = new String(currentScore)
+  //set currentScore to session storage and turn it into a string
+  sessionStorage.setItem('currentScore', `${stringScore}`); 
+}
+
 generateAnswer();
 
 //New letter generated
