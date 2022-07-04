@@ -85,7 +85,7 @@ const aList = document.querySelector(".answer");
 const scoreBoard = document.querySelector(".score__points--inc");
 
 let currentValue;
-let aBtn;
+
 let n;
 let qImgNodes;
 
@@ -133,82 +133,78 @@ function shuffle(arr) {
 //Selects random index from letters array
 let randomLetters = randomSelect(letters);
 
-//Generates question letter on click
-const generateQuestionLetter = function () {
-  qImgNodes = qImg.childNodes[0];
-  n = document.createElement("div");
-  //Selects a random letter from the letters array
-  randomLetters = randomSelect(letters);
-  currentValue = letters[randomLetters];
-  n.className = "question__box--letter";
-  qImg.replaceChild(n, qImgNodes);
-  n.innerHTML = `<img src="imgs/${currentValue}.svg" height="100px"></img>`;
-  console.log(`current value: ${currentValue}`);
-};
+// //Generates question letter on click
+// const generateQuestionLetter = function () {
+//   qImgNodes = qImg.childNodes[0];
+//   n = document.createElement("div");
+//   //Selects a random letter from the letters array
+//   randomLetters = randomSelect(letters);
+//   currentValue = letters[randomLetters];
+//   n.className = "question__box--letter";
+//   qImg.replaceChild(n, qImgNodes);
+//   n.innerHTML = `<img src="imgs/${currentValue}.svg" height="100px"></img>`;
+//   console.log(`current value: ${currentValue}`);
+// };
 
-generateQuestionLetter();
+// generateQuestionLetter();
 
-//Generates answer buttons of all the letters
-const generateAnswer = function () {
-  shuffle(letters);
-  for (
-    let i = 0;
-    i < letters.length;
-    i++ // letters.forEach(function (x)
-  ) {
-    let x = letters[i];
-    // if (x == currentValue ) continue
-    aBtn = document.createElement("button");
-    aList.appendChild(aBtn);
-    aBtn.innerHTML = `${x}`;
-    //Matches question with answer on click
-    aBtn.addEventListener("click", function () {
-      if (x == currentValue) {
-        //adds 1 point to current score if correct
-        currentScore = currentScore + 1;
-        //currentscore is entered into scoreboard
-        scoreBoard.textContent = currentScore;
-        generateQuestionLetter();
-      } else {
-        //deducts 1 point to current score if correct
-        currentScore = currentScore - 1;
-        //currentscore is entered into scoreboard
-        scoreBoard.textContent = currentScore;
-      }
-      let stringScore = new String(currentScore);
+// //Generates answer buttons of all the letters
+// const generateAnswer = function () {
+//   shuffle(letters);
+//   for (let i = 0; i < letters.length; i++) {
+//     let x = letters[i];
+//     // if (x == currentValue ) continue
+//     aBtn = document.createElement("button");
+//     aList.appendChild(aBtn);
+//     aBtn.innerHTML = `${x}`;
+//     //Matches question with answer on click
+//     aBtn.addEventListener("click", function () {
+//       if (x == currentValue) {
+//         //adds 1 point to current score if correct
+//         currentScore = currentScore + 1;
+//         //currentscore is entered into scoreboard
+//         scoreBoard.textContent = currentScore;
+//         generateQuestionLetter();
+//       } else {
+//         //deducts 1 point to current score if correct
+//         currentScore = currentScore - 1;
+//         //currentscore is entered into scoreboard
+//         scoreBoard.textContent = currentScore;
+//       }
+//       let stringScore = new String(currentScore);
 
-      //set currentScore to session storage and turn it into a string
-      sessionStorage.setItem("currentScore", `${stringScore}`);
-    });
-  }
-};
+//       //set currentScore to session storage and turn it into a string
+//       sessionStorage.setItem("currentScore", `${stringScore}`);
+//     });
+//   }
+// };
 
-//Matches question with answer on click
-const matchAnswer = function (x) {
-  if (x == currentValue) {
-    //adds 1 point to current score if correct
-    currentScore = currentScore + 1;
-    //currentscore is entered into scoreboard
-    scoreBoard.textContent = currentScore;
-    generateQuestionLetter();
-  } else {
-    //deducts 1 point to current score if correct
-    currentScore = currentScore - 1;
-    //currentscore is entered into scoreboard
-    scoreBoard.textContent = currentScore;
-  }
-  let stringScore = new String(currentScore);
-  //set currentScore to session storage and turn it into a string
-  sessionStorage.setItem("currentScore", `${stringScore}`);
-};
+// //Matches question with answer on click
+// const matchAnswer = function (x) {
+//   if (x == currentValue) {
+//     //adds 1 point to current score if correct
+//     currentScore = currentScore + 1;
+//     //currentscore is entered into scoreboard
+//     scoreBoard.textContent = currentScore;
+//     generateQuestionLetter();
+//   } else {
+//     //deducts 1 point to current score if correct
+//     currentScore = currentScore - 1;
+//     //currentscore is entered into scoreboard
+//     scoreBoard.textContent = currentScore;
+//   }
+//   let stringScore = new String(currentScore);
+//   //set currentScore to session storage and turn it into a string
+//   sessionStorage.setItem("currentScore", `${stringScore}`);
+// };
 
-generateAnswer();
+// generateAnswer();
 
-//New letter generated
-//Generate new icon on "new" btn click"
-qBtn.addEventListener("click", generateQuestionLetter);
+// //New letter generated
+// //Generate new icon on "new" btn click"
+// qBtn.addEventListener("click", generateQuestionLetter);
 
-let stringScore = new String(currentScore);
+// let stringScore = new String(currentScore);
 
-//set currentScore to session storage and turn it into a string
-sessionStorage.setItem("currentScore", `${stringScore}`);
+// //set currentScore to session storage and turn it into a string
+// sessionStorage.setItem("currentScore", `${stringScore}`);
