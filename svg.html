@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG canvas</title>
+    <link rel="stylesheet" href="css/style.css">
+<script>
+
+    let svg;
+    //Toggle dark mode
+    const toggleDark = function() {
+        var element = document.body;
+        svg = document.body.querySelector("#svg")        
+
+        // qBtn.classList.toggle("dark-mode")
+        // aBtn.forEach(i => {
+            //   console.log(`for each`);
+            
+            //   // i.classList.toggle("dark-mode")
+            // });
+            element.classList.toggle("dark-mode");
+            console.log('checked');
+            
+        }
+        
+        </script>
+</head>
+<body>
+    <header>
+        <!-- Rounded switch -->
+    <label class="switch">
+        <input type="checkbox" oninput="toggleDark()">
+        <span class="slider round"></span>
+    </label>
+    </header>
+    <div class="question__box--img">
+        <img src="/imgs/ba.svg" alt="">
+    </div>
+    
+</body>
+</html>

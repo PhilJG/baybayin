@@ -6,10 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Babayin | Main Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <header>
+        <!-- Rounded switch -->
+    <label class="switch">
+        <input type="checkbox" oninput="toggleDark()">
+        <span class="slider round"></span>
+    </label>
+    </header>
     <section class="section-1">
 
         <div class="score">
@@ -22,7 +29,6 @@
         <div class="question">
             <div class="question__box">
                 <div class="question__box--img">
-                    <div></div>
                 </div>
             </div>
             <button class="question__btn">New</button>
@@ -31,14 +37,10 @@
     <section class="section-2">
         
         <div class="answer">
-            <button class="answer__btn"></button>
-            <button class="answer__btn"></button>
-            <button class="answer__btn"></button>
-            <button class="answer__btn"></button>
         </div>
     </section>
-    <script src="script.js"></script>
-    <script src="test.js"></script>
+    <script src="index.js"></script>
+    <!-- <script src="test.js"></script> -->
 </body>
 
 </html>
