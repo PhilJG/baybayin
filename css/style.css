@@ -122,7 +122,7 @@ header {
 
 .answer {
     display: grid;
-    grid: auto / auto auto auto auto auto;
+    grid: auto / auto auto auto auto ;
     /* display: flex;
     justify-content: center;
     flex-direction: row;
@@ -154,4 +154,13 @@ button:hover {
 .answer__btn:hover {
     background-color: #04AA6D;
     color: white;
+  }
+
+
+  @media only screen and (max-width: 500px) {
+    .answer{
+      grid: auto / auto auto;
+
+    }
+
   }

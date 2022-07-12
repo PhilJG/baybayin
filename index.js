@@ -147,11 +147,14 @@ function shuffle(arr) {
       arr[currentIndex],
     ];
   }
+  console.log(arr);
+  
   return arr;
 }
 
 //Selects random index from letters array
 let randomLetters = randomSelect(letters);
+
 
 //Matches question with answer on click
 const matchAnswer = function (v) {
@@ -212,6 +215,8 @@ const generateQuestionLetter = function () {
     for (let i = 0; i < 3; i++) {
       let x = letters[i];
       if (x == currentValue ) {continue;}
+      console.log(x);
+      
       aArray.push(`${x}`)
       
     }
