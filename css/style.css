@@ -10,6 +10,7 @@ body {
     background-color: white;
     padding: 25px;
     font-size: 25px;
+    font-style: 
 }
 
 /* Header */
@@ -22,8 +23,10 @@ header {
 /* Dark toggle */
 .dark-mode {
     background-color: black;
-    color: white;
+    color: #0099ff;
     border: 2px solid white;
+    stroke: white;
+    fill: white;
   }
 
   /* The switch - the box around the slider */
@@ -114,6 +117,7 @@ header {
 }
 .question__box--img {
     padding: 1rem;
+    font-size: 4rem;
 }
 
 .question__box--btn {
