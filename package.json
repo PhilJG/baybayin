@@ -1,0 +1,19 @@
+{
+  "name": "babayin",
+  "version": "1.0.0",
+  "description": "//APP FLOW Question Letter randomly generated from an array of letter objects",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhilJG/babayin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhilJG/babayin/issues"
+  },
+  "homepage": "https://github.com/PhilJG/babayin#readme"
+}
