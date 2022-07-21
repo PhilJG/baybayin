@@ -1,7 +1,6 @@
 body {
   font-family: Helvetica, sans-serif;
   font-size: 18px;
-  color: red;
 }
 
 #container {
@@ -169,6 +168,10 @@ button:hover {
 .answer__btn:hover {
   background-color: #04AA6D;
   color: white;
+}
+
+.incorrect {
+  color: red;
 }
 
 @media only screen and (max-width: 500px) {

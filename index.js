@@ -73,11 +73,10 @@ const qImg = document.querySelector(".question__box--img");
 const qBtn = document.querySelector(".question__btn");
 const svgImg = document.getElementsByTagName("img")
 
-
-
 const aList = document.querySelector(".answer");
 let aBtn = document.getElementsByClassName("answer__btn");
-const scoreBoard = document.querySelector(".score__points--inc");
+const scoreBoard = document.querySelector(".score__points")
+const scorePoints = document.querySelector(".score__points--inc");
 const toggleBtn = document.querySelector(".switch")
 
 let aArray = [];
@@ -107,8 +106,8 @@ const toggleDark = function() {
 
 //get sessionStorage of previous current score on refresh and turn it into a number
 function getScore() {
-  if (sessionStorage.length > 0) {
-    currentScore = ~~sessionStorage.getItem("currentScore");
+  if (localStorage.length > 0) {
+    currentScore = ~~localStorage.getItem("currentScore");
   } else {
     currentScore = 0;
   }
@@ -116,7 +115,7 @@ function getScore() {
 
 getScore();
 
-scoreBoard.textContent = currentScore;
+scorePoints.textContent = currentScore;
 
 //Randomly selects from an array
 const randomSelect = function (arr) {
@@ -127,8 +126,6 @@ const qType = ["txt", "img"];
 
 let qChoice = randomSelect(qType)
 let qCurrent = qType[qChoice];
-
-console.log(qCurrent);
 
 //Shuffles array
 function shuffle(arr) {
@@ -159,21 +156,22 @@ const matchAnswer = function (v) {
   if (currentValue == v) {
     //adds 1 point to current score if correct
     currentScore = currentScore + 1;
-    //currentscore is entered into scoreboard
-    scoreBoard.textContent = currentScore;
+    //currentscore is entered into scorePoints
+    scorePoints.textContent = currentScore;
     // replaceAnswerBtn()  
     replaceAnswerBtn()      
     } else {
       //deducts 1 point to current score if correct
       currentScore = currentScore - 1;
-      //currentscore is entered into scoreboard
-      scoreBoard.textContent = currentScore;
+      //currentscore is entered into scorePoints
+      scorePoints.textContent = currentScore;
       console.log(v);
+      scoreBoard.classList.add("incorrect")
     }
 
 let stringScore = new String(currentScore);
 //set currentScore to session storage and turn it into a string
-sessionStorage.setItem("currentScore", `${stringScore}`);
+localStorage.setItem("currentScore", `${stringScore}`);
 };
 
 // Adds text content & eventlistner to all 4 answer buttons
@@ -202,11 +200,8 @@ const generateQuestionLetter = function () {
   currentValue = letters[randomLetters];
   if(qCurrent === "img" ){
     qImg.innerHTML = `<img src="imgs/${currentValue}.svg" class="svg" height="100px"></img>`;
-    console.log(`is img`);
-    
   } else if (qCurrent === "txt") {
     qImg.innerHTML = `${currentValue}`
-    console.log(`is txt`);
   }
     console.log(`current value: ${currentValue}`);
     aArray.push(`${currentValue}`);
@@ -219,7 +214,6 @@ const generateQuestionLetter = function () {
       let x = letters[i];
       if (x == currentValue ) {continue;}      
       aArray.push(`${x}`)
-      
     }
   };
 
@@ -234,11 +228,10 @@ const generateQuestionLetter = function () {
     currentValue = letters[randomLetters];
      qChoice = randomSelect(qType)
      qCurrent = qType[qChoice];
-    console.log(`replace with ${qCurrent}`);
-    // aList.(aBtn);
     while(aList.hasChildNodes()){
       aList.removeChild(aList.firstChild);
     }
+    scoreBoard.classList.remove("incorrect")
     generateAnswer()
     generateQuestionLetter()
     shuffle(aArray);
