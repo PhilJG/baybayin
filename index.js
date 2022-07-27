@@ -71,7 +71,7 @@ const letters = [
 const qBox = document.querySelector(".question__box");
 const qImg = document.querySelector(".question__box--img");
 const qBtn = document.querySelector(".question__btn");
-const svgImg = document.getElementsByTagName("img")
+const svgImg = document.getElementsByTagName("svg")
 
 const aList = document.querySelector(".answer");
 let aBtn = document.getElementsByClassName("answer__btn");
@@ -88,15 +88,15 @@ let aBtnKey, aBtnHTML ,imgNode, currentValue, qImgNodes, currentScore;
 const toggleDark = function() {
   var element = document.body;
   qBtn.classList.toggle("dark-mode");
-  // svgImg.classList.toggle("dark-mode");
-  // console.log(aBtnArr);
+  svgImg.classList.toggle("dark-mode");
+  console.log(aBtnArr);
   
-  // aList.children.forEach(i => {
-  //   console.log(aBtn[i]);
-  //   console.log(`for each`);
+  aList.children.forEach(i => {
+    console.log(aBtn[i]);
+    console.log(`for each`);
     
-  //   i.classList.toggle("dark-mode")
-  // });
+    i.classList.toggle("dark-mode")
+  });
   element.classList.toggle("dark-mode");
   console.log('checked');
 }
@@ -158,8 +158,10 @@ const matchAnswer = function (v) {
     currentScore = currentScore + 1;
     //currentscore is entered into scorePoints
     scorePoints.textContent = currentScore;
-    // replaceAnswerBtn()  
+    scoreBoard.classList.add("correct")
+    setTimeout(function(){ 
     replaceAnswerBtn()      
+    }, 1000);
     } else {
       //deducts 1 point to current score if correct
       currentScore = currentScore - 1;
@@ -167,6 +169,9 @@ const matchAnswer = function (v) {
       scorePoints.textContent = currentScore;
       console.log(v);
       scoreBoard.classList.add("incorrect")
+      setTimeout(function(){ 
+        scoreBoard.classList.remove()     
+        }, 1000);
     }
 
 let stringScore = new String(currentScore);
@@ -231,7 +236,7 @@ const generateQuestionLetter = function () {
     while(aList.hasChildNodes()){
       aList.removeChild(aList.firstChild);
     }
-    scoreBoard.classList.remove("incorrect")
+    scoreBoard.classList.remove("incorrect", "correct")
     generateAnswer()
     generateQuestionLetter()
     shuffle(aArray);
