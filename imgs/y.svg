@@ -1,35 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="35"
-   height="46"
-   viewBox="0 0 9.2604165 12.170834"
-   version="1.1"
-   id="svg2583"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs2580" />
-  <g
-     id="layer1">
-    <path
-       id="1234567891011121314"
-       class="fil0"
-       d="M 0.13336097,4.6739767 C 0.17836131,4.1574121 0.56867465,3.9149135 1.3058646,3.9477245 1.5433652,3.9805371 1.6799273,4.165225 1.7168023,4.5033495 L 1.5080513,7.950553 C 1.4696153,8.5936783 1.766491,8.9346178 2.3993029,8.9752419 2.977743,8.9377417 3.4433673,8.6452403 3.7949324,8.0989895 L 6.3390018,4.1402406 C 6.6793142,3.6099257 7.1915025,3.3455514 7.8755669,3.3486761 8.624007,3.4471138 9.0368205,3.8789911 9.1155711,4.6455551 8.9596336,5.4655571 8.4536947,5.8521213 7.5993181,5.8052451 8.2240073,5.2793063 8.5371337,4.853679 8.5371337,4.5283659 c 0,-0.057812 -0.00812,-0.1096878 -0.025638,-0.1550003 C 8.3830589,4.0199272 8.1343082,3.847739 7.7614944,3.8586769 7.3152429,3.8727395 6.9974306,4.1199275 6.8077429,4.6018042 L 4.3602359,8.4089997 C 4.0358594,9.1161886 3.3852331,9.5121268 2.4089814,9.5965018 1.4167912,9.4668139 0.90585174,9.0065003 0.87522884,8.2164994 L 1.0761666,4.6739931 C 1.0905335,4.4314924 1.0152304,4.3108683 0.84960394,4.3108683 c -0.16375062,0 -0.40312711,0.1206254 -0.71625091,0.3631248 z"
-       style="clip-rule:evenodd;fill:#1f1a17;fill-rule:nonzero;stroke-width:0.264583;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" />
-    <g
-       id="g20709"
-       transform="matrix(0.78546811,0,0,0.78546811,1.0192773,4.5339038)"
-       style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision">
-      <path
-         style="fill:none;stroke:#1f1a17;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 3.7459906,7.3158702 5.5024381,9.0723177"
-         id="path17647" />
-      <path
-         style="fill:none;stroke:#1f1a17;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 5.5024381,7.412498 3.7459906,9.1689455"
-         id="path17647-3" />
+<svg width="35" height="46" viewBox="0 0 9.26 12.171" xmlns="http://www.w3.org/2000/svg">
+    <path class="fil0" d="M.133 4.674c.045-.517.436-.76 1.173-.726.237.033.374.217.41.555l-.208 3.448c-.038.643.258.984.891 1.024.579-.037 1.044-.33 1.396-.876L6.339 4.14c.34-.53.853-.794 1.537-.791.748.098 1.16.53 1.24 1.297-.156.82-.662 1.206-1.517 1.16.625-.527.938-.952.938-1.278a.429.429 0 0 0-.026-.155c-.128-.353-.377-.525-.75-.514-.446.014-.764.26-.953.743L4.36 8.409c-.324.707-.975 1.103-1.951 1.188-.992-.13-1.503-.59-1.534-1.38l.201-3.543c.015-.243-.06-.363-.226-.363-.164 0-.404.12-.717.363z" style="clip-rule:evenodd;fill:#1f1a17;fill-rule:nonzero;stroke-width:.264583;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"/>
+    <g style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision">
+        <path style="fill:none;stroke:#1f1a17;stroke-width:.529167;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m3.746 7.316 1.756 1.756M5.502 7.412 3.746 9.17" transform="matrix(.78547 0 0 .78547 1.02 4.534)"/>
     </g>
-  </g>
 </svg>

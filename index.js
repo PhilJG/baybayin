@@ -79,6 +79,10 @@ const scoreBoard = document.querySelector(".score__points")
 const scorePoints = document.querySelector(".score__points--inc");
 const toggleBtn = document.querySelector(".switch")
 
+const mBtn = document.querySelector("#myBtn");
+
+const allBtns = [mBtn, aBtn, qBtn];
+
 let aArray = [];
 
 
@@ -88,15 +92,17 @@ let aBtnKey, aBtnHTML ,imgNode, currentValue, qImgNodes, currentScore;
 const toggleDark = function() {
   var element = document.body;
   qBtn.classList.toggle("dark-mode");
-  svgImg.classList.toggle("dark-mode");
-  console.log(aBtnArr);
+  mBtn.classList.toggle("dark-mode");
   
-  aList.children.forEach(i => {
-    console.log(aBtn[i]);
-    console.log(`for each`);
+
+  // svgImg.classList.toggle("dark-mode");
+  
+  // aList.children.forEach(i => {
+  //   console.log(aBtn[i]);
+  //   console.log(`for each`);
     
-    i.classList.toggle("dark-mode")
-  });
+  //   i.classList.toggle("dark-mode")
+  // });
   element.classList.toggle("dark-mode");
   console.log('checked');
 }

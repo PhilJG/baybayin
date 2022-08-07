@@ -1,75 +1,27 @@
 "use strict"
 
-const qType = ["txt", "img"];
+// Get the modal
+var modal = document.getElementById("myModal");
 
-const qChoice = randomSelect(qType)
-const qCurrent = qType[qChoice];
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
 
-console.log(qCurrent);
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 
-
-
-const buildAnswerBtn = function(){
-  aArray.forEach(i => {
-    var button = document.createElement("button");
-    if(qCurrent === "txt" ){
-      button.innerHTML = `<img src="imgs/${i}.svg" class="svg" ></img>`;
-    } else if (qCurrent === "img"){ 
-      button.innerText = i;
-    }
-    button.className = "answer__btn"
-    button.addEventListener("click", function(){
-      matchAnswer(i);
-    })
-    aList.appendChild(button)
-  })
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
 }
-// //Generates question letter on click
-    const generateQuestionLetter = function () {
-      //Selects a random letter from the letters array
-      randomLetters = randomSelect(letters);
-      currentValue = letters[randomLetters];
-      if(qCurrent === "img" ){
-        qImg.innerHTML = `<img src="imgs/${currentValue}.svg" class="svg" height="100px"></img>`;
-        console.log(`is img`);
-        
-      } else if (qCurrent === "txt") {
-        qImg.innerHTML = `${currentValue}`
-        console.log(`is txt`);
-      }
-        console.log(`current value: ${currentValue}`);
-        aArray.push(`${currentValue}`);
-        };
-    //   //Generates answer buttons of all the letters
-    //   const generateAnswer = function () {
-//     shuffle(letters);
-//     for (let i = 0; i < 3; i++) {
-//       let x = letters[i];
-//       if (x == currentValue ) {continue;}      
-//       aArray.push(`${x}`)
-      
-//     }
-//   };
 
-  generateQuestionLetter();
-  
-  generateAnswer();
-  
-  buildAnswerBtn();
- 
-  const replaceAnswerBtn = function() {
-    aArray = [];
-    currentValue = letters[randomLetters];
-    // aList.(aBtn);
-    while(aList.hasChildNodes()){
-      aList.removeChild(aList.firstChild);
-    }
-    generateAnswer()
-    generateQuestionLetter()
-    shuffle(aArray);
-    buildAnswerBtn();
-    
-  
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
   }
-qBtn.addEventListener("click", replaceAnswerBtn);
-
+} 

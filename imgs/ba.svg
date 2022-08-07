@@ -1,56 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Creator: CorelDRAW -->
+<?xml-stylesheet type="text/css" href="css/style.css" ?>    
+<svg xml:space="preserve" width="34.011" height="23.602" style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" xmlns="http://www.w3.org/2000/svg">
+    <path class="fil0" d="M28.073 4.459c3.855 3.2 5.833 7.203 5.936 12.017.085 4.217-2.622 6.595-8.122 7.126-3.283-.094-6.276-1.336-8.976-3.731-2.713 2.49-5.876 3.69-9.487 3.595-4.705-.61-7.18-2.88-7.424-6.818.243-4.454 2.222-8.392 5.936-11.817C9.432 1.609 12.996 0 16.626 0c2.27 0 4.327.372 6.172 1.123 1.657.68 3.418 1.792 5.275 3.336zM17.256 2.158c-3.405.267-6.689 1.863-9.845 4.785-3.307 3.052-4.898 6.222-4.783 9.503.389 3.022 2.502 4.714 6.33 5.075 3.381-.237 6.017-1.817 7.905-4.737 1.953 2.987 4.72 4.53 8.297 4.63 4.156-.532 6.215-2.14 6.16-4.813-.073-3.342-1.573-6.553-4.497-9.629-2.987-3.134-6.174-4.743-9.567-4.814Z" />
 
-<svg
-   xml:space="preserve"
-   width="34.010693"
-   height="23.60207"
-   style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-   viewBox="0 0 34.010692 23.60207"
-   version="1.1"
-   id="svgi"
-   sodipodi:docname="ba.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-   <sodipodi:namedview
-   id="namedview28"
-   pagecolor="#ffffff"
-   bordercolor="#666666"
-   borderopacity="1.0"
-   inkscape:pageshadow="2"
-   inkscape:pageopacity="0.0"
-   inkscape:pagecheckerboard="0"
-   showgrid="false"
-   width="35px"
-   fit-margin-top="0"
-   fit-margin-left="0"
-   fit-margin-right="0"
-   fit-margin-bottom="0"
-   inkscape:zoom="3.1235294"
-   inkscape:cx="-16.647834"
-   inkscape:cy="40.018832"
-   inkscape:window-width="1397"
-   inkscape:window-height="655"
-   inkscape:window-x="0"
-   inkscape:window-y="0"
-   inkscape:window-maximized="0"
-   inkscape:current-layer="Layer_x0020_1" />
- <g
-   id="Layer_x0020_1"
-   inkscape:label="Layer 1"
-   inkscape:groupmode="layer"
-   transform="translate(-55.73398,-19.54134)">
-  <metadata
-   id="CorelCorpID_0Corel-Layer" />
-  <path
-   id="svg"
-   class="fil0"
-   d="m 83.8065,24.0001 c 3.85513,3.19961 5.83348,7.20356 5.93623,12.0177 0.08504,4.21655 -2.62205,6.59411 -8.12128,7.12561 -3.28347,-0.09449 -6.27639,-1.33583 -8.9764,-3.73111 -2.713,2.48977 -5.876,3.68977 -9.48664,3.59528 -4.70552,-0.60945 -7.18112,-2.87953 -7.42443,-6.81852 0.243308,-4.45395 2.22166,-8.39175 5.93623,-11.817 3.49607,-3.22205 7.05947,-4.83072 10.689,-4.83072 2.27008,0 4.32757,0.372048 6.17246,1.12323 1.65709,0.680317 3.41812,1.79174 5.27482,3.33544 z M 72.9899,21.69931 c -3.40513,0.26693 -6.6886,1.8626 -9.84451,4.78466 -3.30709,3.05198 -4.89804,6.22206 -4.78348,9.50317 0.388584,3.02245 2.50158,4.71379 6.33072,5.07521 3.38032,-0.237402 6.01655,-1.81654 7.90396,-4.73741 1.95355,2.98701 4.72088,4.52954 8.29726,4.63111 4.15631,-0.532678 6.21498,-2.14134 6.16064,-4.81418 C 86.98126,32.80052 85.48126,29.5891 82.55684,26.5135 79.56983,23.37885 76.3832,21.77018 72.98989,21.69932 Z" />
- </g>
-<!-- <script type="text/javascript" xlink:href="svgEditarVisualizacao.js" xlink:actuate="onLoad" xlink:show="other" xlink:type="simple" />
- -->
 
 </svg>

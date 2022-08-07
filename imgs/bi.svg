@@ -1,53 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="35"
-   height="46"
-   viewBox="0 0 9.2604167 12.170832"
-   version="1.1"
-   id="svg6752"
-   sodipodi:docname="bi.svg"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview1998"
-     pagecolor="#505050"
-     bordercolor="#eeeeee"
-     borderopacity="1"
-     inkscape:pageshadow="0"
-     inkscape:pageopacity="0"
-     inkscape:pagecheckerboard="0"
-     showgrid="false"
-     inkscape:zoom="5.12"
-     inkscape:cx="18.164063"
-     inkscape:cy="18.359375"
-     inkscape:window-width="1296"
-     inkscape:window-height="655"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="layer1" />
-  <defs
-     id="defs6749" />
-  <g
-     id="layer1"
-     transform="matrix(1,0,0,-1,0.06755722,12.191546)">
-    <path
-       id="1"
-       class="fil0"
-       d="m 7.5543328,7.7867544 c 1.020004,-0.846563 1.543442,-1.905942 1.570628,-3.179683 0.0225,-1.1156291 -0.693751,-1.7446911 -2.148755,-1.8853171 -0.868752,0.025 -1.660629,0.353438 -2.375006,0.9871891 -0.717815,-0.6587521 -1.554692,-0.9762521 -2.510007,-0.9512511 -1.24500206,0.16125 -1.90000506,0.761876 -1.96438006,1.8040671 0.06438,1.178441 0.587814,2.220317 1.57062706,3.126581 0.925002,0.8525009 1.867818,1.2781278 2.828131,1.2781278 0.600626,0 1.145003,-0.098438 1.63313,-0.2971879 0.438439,-0.180001 0.904378,-0.474065 1.39563,-0.8825019 z M 4.6924408,8.3955053 C 3.7915008,8.3248853 2.9227488,7.9026924 2.0877478,7.1295644 1.2127468,6.3220614 0.79180774,5.4833104 0.82211874,4.6151834 0.92493174,3.8154934 1.4839948,3.3679933 2.4971218,3.2723673 c 0.894376,0.06281 1.591879,0.4806271 2.091256,1.2534401 0.516877,-0.790313 1.249066,-1.1984411 2.195317,-1.2253141 1.09969,0.140937 1.64438,0.5665621 1.630002,1.2737511 -0.01938,0.884066 -0.41625,1.733754 -1.190003,2.547507 -0.790313,0.829376 -1.633442,1.2550029 -2.531255,1.2737509 z"
-       style="clip-rule:evenodd;fill:#1f1a17;fill-rule:nonzero;stroke-width:0.264583;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" />
-    <ellipse
-       style="clip-rule:evenodd;fill:#1f1a17;fill-opacity:1;fill-rule:evenodd;stroke:#1f1a17;stroke-width:0.529167;stroke-linecap:round;stroke-opacity:1;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-       id="path1182"
-       cx="4.626143"
-       cy="-10.921637"
-       rx="0.94191664"
-       ry="0.94201261"
-       transform="scale(1,-1)" />
-  </g>
+<svg width="35" height="46" viewBox="0 0 9.26 12.171" xmlns="http://www.w3.org/2000/svg">
+    <g transform="matrix(1 0 0 -1 .068 12.192)">
+        <path class="fil0" d="M7.554 7.787c1.02-.847 1.544-1.906 1.571-3.18.022-1.116-.694-1.745-2.149-1.885-.869.025-1.66.353-2.375.987-.718-.659-1.554-.976-2.51-.951-1.245.16-1.9.762-1.964 1.804.064 1.178.588 2.22 1.57 3.126.925.853 1.868 1.278 2.829 1.278.6 0 1.145-.098 1.633-.297.438-.18.904-.474 1.395-.882zm-2.862.609c-.9-.071-1.77-.493-2.604-1.266C1.213 6.322.792 5.483.822 4.615c.103-.8.662-1.247 1.675-1.343.894.063 1.592.481 2.091 1.254.517-.79 1.25-1.199 2.196-1.226 1.1.141 1.644.567 1.63 1.274-.02.884-.417 1.734-1.19 2.548-.79.83-1.634 1.255-2.532 1.274z" style="clip-rule:evenodd;fill:#1f1a17;fill-rule:nonzero;stroke-width:.264583;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"/>
+        <circle style="clip-rule:evenodd;fill:#1f1a17;fill-opacity:1;fill-rule:evenodd;stroke:#1f1a17;stroke-width:.529167;stroke-linecap:round;stroke-opacity:1;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" cx="4.626" cy="-10.922" transform="scale(1 -1)" r=".942"/>
+    </g>
 </svg>
