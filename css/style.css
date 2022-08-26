@@ -1,12 +1,3 @@
-body {
-  font-family: Helvetica, sans-serif;
-  font-size: 18px;
-}
-
-#container {
-  width: 680px;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -17,39 +8,42 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: rgb(184, 19, 19);
   padding: 25px;
   font-size: 25px;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
 }
 
-/* Header */
-header {
+.container {
+  background-color: rgb(252, 228, 197);
+  padding: 25px;
+  border-radius: 10px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Dark toggle */
 .dark-mode {
-  background-color: black;
+  background-color: rgb(19, 19, 19);
   color: #0099ff;
-  border: 2px solid white;
-  stroke: white;
-  fill: white;
+  border: 2px solid rgb(252, 228, 197);
+  stroke: rgb(252, 228, 197);
+  fill: rgb(252, 228, 197);
 }
 
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 30px;
-  height: 17px;
+.correct {
+  color: green;
 }
 
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+.incorrect {
+  color: red;
+}
+
+.svg {
+  fill: red;
+  stroke: red;
 }
 
 /* The slider */
@@ -63,8 +57,8 @@ header {
   background-color: #ccc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  /* Rounded sliders */
 }
-
 .slider:before {
   position: absolute;
   content: "";
@@ -72,37 +66,46 @@ header {
   width: 13px;
   left: 2px;
   bottom: 2px;
-  background-color: white;
+  background-color: rgb(252, 228, 197);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #0099ff;
 }
-
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #0099ff;
 }
-
 input:checked + .slider:before {
   -webkit-transform: translateX(13px);
   -ms-transform: translateX(13px);
   transform: translateX(13px);
 }
 
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+  /* Hide default HTML checkbox */
 }
-
-.slider.round:before {
-  border-radius: 50%;
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 /* Popup Modal */
 .modal {
-  display: none; /* Hidden by default */
+  display: block; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -116,11 +119,18 @@ input:checked + .slider:before {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: rgb(252, 228, 197);
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 60%; /* Could be more or less, depending on screen size */
+}
+
+.modal-question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 /* The Close Button */
@@ -130,24 +140,37 @@ input:checked + .slider:before {
   font-size: 28px;
   font-weight: bold;
 }
-
-.close:hover,
-.close:focus {
-  color: black;
+.close:hover, .close:focus {
+  color: rgb(19, 19, 19);
   text-decoration: none;
   cursor: pointer;
+}
+
+#container {
+  width: 680px;
+}
+
+.modal-content {
+  border-radius: 10px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Section 1 */
 .section-1 {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .score {
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-self: center;
 }
 
 .score__points {
@@ -156,7 +179,6 @@ input:checked + .slider:before {
 
 .question {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
 }
@@ -180,7 +202,6 @@ input:checked + .slider:before {
   padding: 1rem; */
 }
 
-/* Button styling */
 button {
   margin: 1rem;
   padding: 0 0.5rem;
@@ -192,33 +213,18 @@ button {
   cursor: pointer;
   border-radius: 5px;
 }
-
 button:hover {
   background-color: black;
   color: white;
 }
 
 .answer__btn {
-  border-color: #04AA6D;
-  color: black;
+  border-color: rgb(19, 19, 19);
+  color: rgb(19, 19, 19);
 }
-
 .answer__btn:hover {
-  background-color: #04AA6D;
-  color: white;
-}
-
-.correct {
-  color: green;
-}
-
-.incorrect {
-  color: red;
-}
-
-.svg {
-  fill: red;
-  stroke: red;
+  background-color: #0099ff;
+  color: rgb(252, 228, 197);
 }
 
 @media only screen and (max-width: 560px) {

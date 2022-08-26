@@ -1,0 +1,60 @@
+//Boilerplate code for the project
+// Stabdard style(resets, typographic rules etc
+
+$myFont: Helvetica, sans-serif;
+$red: red;
+$green: green;
+$blue: #0099ff;
+$maroon: rgb(184, 19, 19);
+$black: rgb(19, 19, 19);
+$white: rgb(252, 228, 197);
+$myFontSize: 18px;
+$myWidth: 680px;
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;    
+    background-color: $maroon;
+    padding: 25px;
+    font-size: 25px;
+    font-family: $myFont;
+    font-size: $myFontSize;
+  }
+
+  .container {
+    background-color: $white;
+    padding: 25px;
+    border-radius: 10px;
+    @include flex-column;
+  }
+
+  /* Dark toggle */
+.dark-mode {
+    background-color: $black;
+    color: $blue;
+    border: 2px solid $white;
+    stroke: $white;
+    fill: $white;
+  }
+
+  .correct {
+    color: $green;
+  }
+  
+  .incorrect {
+    color: $red;
+  }
+  
+  .svg {
+    fill: $red;
+    stroke: $red;
+    
+  }
+  

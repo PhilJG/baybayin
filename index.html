@@ -11,31 +11,36 @@
 
 <body>
     <!-- Rounded switch -->
-    <header>
+    <!-- <header>
     <label class="switch">
         <input type="checkbox" oninput="toggleDark()">
         <span class="slider round"></span>
     </label>
-    </header>
-
-    <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
-
-<div id="myModal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p>Some text in the Modal..</p>
+    </header> -->
+    
+    
+    <div id="myModal" class="modal">
+        
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-question">
+                <div class="mLetter"></div>
+                <button class="nextBtn">Next</button>
+                
+            </div>
+        </div>
+        
     </div>
-  
-  </div>
+    <div class="container">
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">New Letters</button>
 
-    <section class="section-1">
-
-        <div class="score">
-            <h1>Score</h1>
-            <div class="score__points">
+      <section class="section-1">
+          
+          <div class="score">
+              <h1>Score</h1>
+              <div class="score__points">
                 <div class="score__points--inc"></div>
                 <div class="score__points--tot">/20</div>
             </div>
@@ -54,8 +59,10 @@
         <div class="answer">
         </div>
     </section>
+    </div>
+    <script src="letters.js"></script>
+    <script src="modal.js"></script>
     <script src="index.js"></script>
-    <script src="test.js"></script>
 </body>
 
 </html>

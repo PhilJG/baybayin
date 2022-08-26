@@ -1,72 +1,4 @@
-"use strict";
-
-//letter objects
-const letters = [
-  "ba",
-  "bi",
-  "bu",
-  "ba",
-  "be",
-  "b",
-  "ga",
-  "g",
-  "gi",
-  "gu",
-  "go",
-  "ge",
-  "nga",
-  "k",
-  "ku",
-  "ki",
-  "ke",
-  "ka",
-  "sa",
-  "h",
-  "ha",
-  "he",
-  "hi",
-  "hu",
-  "ho",
-  "m",
-  "ma",
-  "me",
-  "mi",
-  "mu",
-  "mo",
-  "n",
-  "na",
-  "ne",
-  "ni",
-  "nu",
-  "no",
-  "p",
-  "pa",
-  "pe",
-  "pi",
-  "pu",
-  "po",
-  "t",
-  "te",
-  "ti",
-  "to",
-  "tu",
-  "ta",
-  "w",
-  "wa",
-  "we",
-  "wi",
-  "wu",
-  "wo",
-  "y",
-  "ya",
-  "ye",
-  "yi",
-  "yu",
-  "yo",
-  "da_ra",
-  "i_e",
-  "u_o"
-];
+"use strict"
 
 const qBox = document.querySelector(".question__box");
 const qImg = document.querySelector(".question__box--img");
@@ -84,7 +16,6 @@ const mBtn = document.querySelector("#myBtn");
 const allBtns = [mBtn, aBtn, qBtn];
 
 let aArray = [];
-
 
 let aBtnKey, aBtnHTML ,imgNode, currentValue, qImgNodes, currentScore;
 
@@ -207,22 +138,24 @@ currentValue = letters[randomLetters];
 // //Generates question letter on click
 const generateQuestionLetter = function () {
   //Selects a random letter from the letters array
-  randomLetters = randomSelect(letters);
-  currentValue = letters[randomLetters];
+  randomLetters = randomSelect(reviewedLetters);
+  currentValue = reviewedLetters[randomLetters];
   if(qCurrent === "img" ){
-    qImg.innerHTML = `<img src="imgs/${currentValue}.svg" class="svg" height="100px"></img>`;
+    qImg.innerHTML = `<img src="imgs/${currentValue}.svg" class="svg" height="100px">`;
   } else if (qCurrent === "txt") {
     qImg.innerHTML = `${currentValue}`
   }
     console.log(`current value: ${currentValue}`);
     aArray.push(`${currentValue}`);
     };
-  
+
+  // let shuffledLetters = shuffle(letters.map((shuffle(letters))));
+
   //Generates answer buttons of all the letters
   const generateAnswer = function () {
-    shuffle(letters);
+    shuffle(reviewedLetters);
     for (let i = 0; i < 3; i++) {
-      let x = letters[i];
+      let x = reviewedLetters[i];
       if (x == currentValue ) {continue;}      
       aArray.push(`${x}`)
     }
@@ -236,7 +169,7 @@ const generateQuestionLetter = function () {
  
   const replaceAnswerBtn = function() {
     aArray = [];
-    currentValue = letters[randomLetters];
+    currentValue = reviewedLetters[randomLetters];
      qChoice = randomSelect(qType)
      qCurrent = qType[qChoice];
     while(aList.hasChildNodes()){
@@ -255,5 +188,3 @@ qBtn.addEventListener("click", replaceAnswerBtn);
 
 let stringScore = new String(currentScore);
 
-//set currentScore to session storage and turn it into a string
-sessionStorage.setItem("currentScore", `${stringScore}`);
