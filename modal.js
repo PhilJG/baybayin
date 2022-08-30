@@ -18,10 +18,10 @@ const nBtn = document.querySelector(".nextBtn")
 let generatedLetter
 //Empty array for reviewed letters
 let reviewedLetters;
-let reviewedIndex
+let reviewedIndex;
 
 let oldReviewedLetters = JSON.parse(localStorage.getItem("reviewedLetters"));
-// //get sessionStorage of previous current score on refresh and turn it into a number
+// //get localStorage of previous current score on refresh and turn it into a number
 function getScore() {
   if (oldReviewedLetters.length > 1) {
     reviewedLetters = oldReviewedLetters;
@@ -44,15 +44,15 @@ modalBtn.addEventListener("click", function() {
 
 //Produces letters to be reviewed
 const generateModalLetter = function() {
-   generatedLetter = letters[reviewedIndex]
+   generatedLetter = letters[reviewedIndex].text
   //if generated letter has been reviewed and is within the reviewed array..
   if (reviewedLetters.includes(generatedLetter)) {    
-    generatedLetter = letters[reviewedIndex]
+    generatedLetter = letters[reviewedIndex].text
     console.log(`new generated letter ${generatedLetter}`);
     //if the letter has NOT been reviewed post on html and add to the array
   } else {
     // produce letter in modal html
-    mLetter.innerHTML = `<img src="imgs/${generatedLetter}.svg" class="svg" height="100px"></img><h2>${generatedLetter}</h2>`;
+    mLetter.innerHTML = `<img src="imgs/${generatedLetter.text}.svg" class="svg" height="100px"></img><h2>${generatedLetter.text}</h2>`;
     //then push this letter to reviewedletter array
     reviewedLetters.push(generatedLetter);
   }

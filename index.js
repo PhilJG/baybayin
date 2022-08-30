@@ -138,8 +138,8 @@ currentValue = letters[randomLetters];
 // //Generates question letter on click
 const generateQuestionLetter = function () {
   //Selects a random letter from the letters array
-  randomLetters = randomSelect(reviewedLetters);
-  currentValue = reviewedLetters[randomLetters];
+  randomLetters = randomSelect(letters);
+  currentValue = letters[randomLetters].text;
   if(qCurrent === "img" ){
     qImg.innerHTML = `<img src="imgs/${currentValue}.svg" class="svg" height="100px">`;
   } else if (qCurrent === "txt") {
@@ -153,9 +153,9 @@ const generateQuestionLetter = function () {
 
   //Generates answer buttons of all the letters
   const generateAnswer = function () {
-    shuffle(reviewedLetters);
+    shuffle(letters);
     for (let i = 0; i < 3; i++) {
-      let x = reviewedLetters[i];
+      let x = letters[i].text;
       if (x == currentValue ) {continue;}      
       aArray.push(`${x}`)
     }
@@ -169,7 +169,7 @@ const generateQuestionLetter = function () {
  
   const replaceAnswerBtn = function() {
     aArray = [];
-    currentValue = reviewedLetters[randomLetters];
+    currentValue = letters[randomLetters];
      qChoice = randomSelect(qType)
      qCurrent = qType[qChoice];
     while(aList.hasChildNodes()){

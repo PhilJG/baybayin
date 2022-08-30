@@ -3,21 +3,24 @@
 class Letter{
   constructor(text, sequence) {
     this.text = text;
-    this.sequence = sequence;
+    this.sequence = 4;
   }
 }
 
 let letters = [];
 
-let ba = new Letter("ba", 4);
-let ka = new Letter("ka", 4);
-let ga = new Letter("ga", 4);
-let sa = new Letter("sa", 4);
+let ba = new Letter("ba");
+let ka = new Letter("ka");
+let ga = new Letter("ga");
+let sa = new Letter("sa");
+let ma = new Letter("ma");
+let ra = new Letter("ra");
 
-letters.push(ba, ka, ga, sa);
+
+letters.push(ba, ka, ga, sa, ma, ra);
 
 // change sequence
-ba.sequence = 1;
+// ba.sequence = 1;
 
 
 //letter objects
