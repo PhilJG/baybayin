@@ -90,18 +90,23 @@ let randomLetters = randomSelect(letters);
 
 //Matches question with answer on click
 const matchAnswer = function (v) {
-  if (currentValue == v) {
+  if (currentValue.text == v) {
     //adds 1 point to current score if correct
     currentScore = currentScore + 1;
+    // sequence is increased by 1 on correct answer
+    currentValue.sequence = currentValue.sequence + 1 
     //currentscore is entered into scorePoints
     scorePoints.textContent = currentScore;
     scoreBoard.classList.add("correct")
     setTimeout(function(){ 
     replaceAnswerBtn()      
     }, 1000);
+    console.log(`correct 1 will be added to ${v}`);
     } else {
       //deducts 1 point to current score if correct
       currentScore = currentScore - 1;
+      // sequence is decreased by 1 on wrong answer
+      currentValue.sequence = currentValue.sequence - 1
       //currentscore is entered into scorePoints
       scorePoints.textContent = currentScore;
       console.log(v);
@@ -109,6 +114,7 @@ const matchAnswer = function (v) {
       setTimeout(function(){ 
         scoreBoard.classList.remove()     
         }, 1000);
+        console.log(`wrong 1 will be removed from ${v}`);
     }
 
 let stringScore = new String(currentScore);
@@ -139,14 +145,16 @@ currentValue = letters[randomLetters];
 const generateQuestionLetter = function () {
   //Selects a random letter from the letters array
   randomLetters = randomSelect(letters);
-  currentValue = letters[randomLetters].text;
+  currentValue = letters[randomLetters];
   if(qCurrent === "img" ){
-    qImg.innerHTML = `<img src="imgs/${currentValue}.svg" class="svg" height="100px">`;
+    qImg.innerHTML = `<img src="imgs/${currentValue.text}.svg" class="svg" height="100px">`;
   } else if (qCurrent === "txt") {
-    qImg.innerHTML = `${currentValue}`
+    qImg.innerHTML = `${currentValue.text}`
   }
-    console.log(`current value: ${currentValue}`);
-    aArray.push(`${currentValue}`);
+    console.log(`current value: ${currentValue.text}`);
+    aArray.push(currentValue.text);
+    console.log(`array ${aArray}`);
+    
     };
 
   // let shuffledLetters = shuffle(letters.map((shuffle(letters))));

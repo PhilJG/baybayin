@@ -3,7 +3,7 @@
 class Letter{
   constructor(text, sequence) {
     this.text = text;
-    this.sequence = 4;
+    this.sequence = 0;
   }
 }
 
