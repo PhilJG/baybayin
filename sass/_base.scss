@@ -5,7 +5,7 @@ $myFont: Helvetica, sans-serif;
 $red: red;
 $green: green;
 $blue: #0099ff;
-$maroon: rgb(184, 19, 19);
+$maroon: rgb(184, 19, 19, .8);
 $black: rgb(19, 19, 19);
 $white: rgb(252, 228, 197);
 $myFontSize: 18px;
@@ -21,7 +21,7 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;    
-    background-color: $maroon;
+    background-image: url(/imgs/background.jpg);
     padding: 25px;
     font-size: 25px;
     font-family: $myFont;
