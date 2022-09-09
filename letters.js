@@ -15,9 +15,12 @@ let ga = new Letter("ga");
 let sa = new Letter("sa");
 let ma = new Letter("ma");
 let ra = new Letter("ra");
+let nga = new Letter("nga");
+let ha = new Letter("ha");
 
 
-letters.push(ba, ka, ga, sa, ma, ra);
+
+letters.push(ba, ka, ga, sa, ma, ra, nga, ha);
 
 // change sequence
 // ba.sequence = 1;

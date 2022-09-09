@@ -2,6 +2,7 @@
 
 const qBox = document.querySelector(".question__box");
 const qImg = document.querySelector(".question__box--img");
+const qSeq = document.querySelector(".question__box--sequence");
 const qBtn = document.querySelector(".question__btn");
 const svgImg = document.getElementsByTagName("svg")
 
@@ -97,6 +98,7 @@ const matchAnswer = function (v) {
     currentValue.sequence = currentValue.sequence + 1 
     //currentscore is entered into scorePoints
     scorePoints.textContent = currentScore;
+    qSeq.textContent = currentValue.sequence;
     scoreBoard.classList.add("correct")
     setTimeout(function(){ 
     replaceAnswerBtn()      
@@ -151,10 +153,12 @@ const generateQuestionLetter = function () {
   } else if (qCurrent === "txt") {
     qImg.innerHTML = `${currentValue.text}`
   }
+  // post letter sequence
+  qSeq.innerHTML = currentValue.sequence;
     console.log(`current value: ${currentValue.text}`);
+    
     aArray.push(currentValue.text);
     console.log(`array ${aArray}`);
-    
     };
 
   // let shuffledLetters = shuffle(letters.map((shuffle(letters))));
