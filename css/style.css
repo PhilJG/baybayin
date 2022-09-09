@@ -8,7 +8,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-image: url(/imgs/background.jpg);
+  background-image: url(./imgs/background.jpg);
   padding: 25px;
   font-size: 25px;
   font-family: Helvetica, sans-serif;
