@@ -33,6 +33,10 @@ header {
   @include flex-column;
   }
 
+  .question__box {
+    @include flex-column
+  }
+
   .question__box--img {
     padding: 1rem;
     font-size: 4rem;
@@ -72,7 +76,7 @@ header {
     border-color: $black;
     color: $black;      
     &:hover {
-      background-color: $blue;
+      background-color: $black;
       color: $white;
     }
   }
