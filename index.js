@@ -107,8 +107,8 @@ const matchAnswer = function (v) {
     } else {
       //deducts 1 point to current score if correct
       currentScore = currentScore - 1;
-      // sequence is decreased by 1 on wrong answer
-      currentValue.sequence = currentValue.sequence - 1
+      // sequence is 0 wrong answer
+      currentValue.sequence = 0
       //currentscore is entered into scorePoints
       scorePoints.textContent = currentScore;
       console.log(v);
