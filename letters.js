@@ -19,10 +19,7 @@ let ha = new Letter("ha");
 
 
 
-letters.push(ba, ka, ga, sa, ma, nga, ha);
-
-// change sequence
-// ba.sequence = 1;
+letters.push(ba, ka, ga, sa, ma);
 
 
 //letter objects
