@@ -17,13 +17,14 @@ let ma = new Letter("ma");
 let nga = new Letter("nga");
 let ha = new Letter("ha");
 
-
+// const buildAddLetter = function(letter) {
+//   return new Letter(letter);
+// }
 
 letters.push(ba, ka, ga, sa, ma);
 
 
-//letter objects
-// const letters = [
+// const letterStringArray = [
 //   "ba",
 //   "ga",
 //   "nga",
