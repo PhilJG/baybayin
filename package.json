@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/PhilJG/babayin/issues"
   },
-  "homepage": "https://github.com/PhilJG/babayin#readme"
+  "homepage": "https://github.com/PhilJG/babayin#readme",
+  "dependencies": {
+    "mermaid": "^9.1.7",
+    "yarn": "^1.22.19"
+  }
 }

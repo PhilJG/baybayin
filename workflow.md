@@ -1,5 +1,6 @@
 # Reviewed letters process 
 will be generated, presented, saved reviewed with SR on a day to basis and then archived
+>*write out process for how the reviewed letters will be generated, presented, saved reviewed with SR on a day to basis and then archived 
 
 ## Generation
 
@@ -14,3 +15,6 @@ will be generated, presented, saved reviewed with SR on a day to basis and then 
 
 3. Sequence of correct answer will work on a 24 hour timer. Once reviewed it cannot be reviewed fo another 24hrs. 
 - If user is correct 4 times in a row that letter is archived
+
+
+# Diagram
