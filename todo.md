@@ -1,0 +1,8 @@
+- figure out how to create global variables programmatically within a function
+- turn workflow.md into flowchart
+- have sequece stop at 4+
+- have sequence run through entire list before running through sequence again.
+-reinstate modal presenting letters
+- add a.svg & ra.svg
+- If incorrect change sequence on click and show wrong answer before moving to next question.
+- Show letters on a 24hr cycle as per the sequence
