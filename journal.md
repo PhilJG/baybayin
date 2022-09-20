@@ -1,3 +1,9 @@
+Sept 20
+Still trying to figure out how to make a dynamic variable in callLetter(). should I used eval? call all the variables globally before? should it be in an array? Is there a better way to do this?
+
+Sept 19
+a.svg added
+
 Sept 17
 build to new md files "journal" & "todo" to better keep track of my progress. 
 Tried to automate the constructor function of buildAddLetter() but am running into challenges with delcaring a variable programatically. eval() has been suggested but is controversial for some security reason. This needs more research.

@@ -1,7 +1,6 @@
 "use strict";
 
-const letterStringArray = [
-  ba,
+ba,
   ga,
   nga,
   ka,
@@ -70,6 +69,77 @@ const letterStringArray = [
   i_e,
   u_o,
   a
+
+const letterStringArray = [
+  "ba",
+  "ga",
+  "nga",
+  "ka",
+  "sa",
+  "ha",
+  "ma",
+  "na",
+  "wa",
+  "ta",
+  "pa",
+  "ya",
+  "bi",
+  "gi",
+  "bu",
+  "be",
+  "b",
+  "g",
+  "gu",
+  "go",
+  "ge",
+  "k",
+  "ku",
+  "ki",
+  "ke",
+  "h",
+  "he",
+  "hi",
+  "hu",
+  "ho",
+  "m",
+  "me",
+  "mi",
+  "mu",
+  "mo",
+  "n",
+  "ne",
+  "ni",
+  "nu",
+  "no",
+  "nge",
+  "ngi",
+  "ngo",
+  "ngu",
+  "ng",
+  "p",
+  "pe",
+  "pi",
+  "pu",
+  "po",
+  "t",
+  "te",
+  "ti",
+  "to",
+  "tu",
+  "w",
+  "we",
+  "wi",
+  "wu",
+  "wo",
+  "y",
+  "ye",
+  "yi",
+  "yu",
+  "yo",
+  "da_ra",
+  "i_e",
+  "u_o",
+  "a"
 ];
 
 class Letter{
@@ -98,16 +168,89 @@ const buildAddLetter = function(letter) {
 const callLetter = function(){
   for(let i = 0; i < 5; i++){
     let k = letterStringArray[i] 
-    eval('let ' + k + '= ' + k + ';'  )
+    eval('let ' + letterStringArray[i]  + '= ' + letterStringArray[i]  + ';'  )
+    console.log(i);
+    console.log(k);
+    
+    
     buildAddLetter(i.value)
-    // letters.push(i.value)
+    letters.push(i.value)
   }
 }
 
 
 callLetter();
-console.log(letters);
 
-
+// const letterStringArray = [
+  // ba,
+  // ga,
+  // nga,
+  // ka,
+  // sa,
+  // ha,
+  // ma,
+  // na,
+  // wa,
+  // ta,
+  // pa,
+  // ya,
+  // bi,
+  // bu,
+  // be,
+  // b,
+  // g,
+  // gi,
+  // gu,
+  // go,
+  // ge,
+  // k,
+  // ku,
+  // ki,
+  // ke,
+  // h,
+  // he,
+  // hi,
+  // hu,
+  // ho,
+  // m,
+  // me,
+  // mi,
+  // mu,
+  // mo,
+  // n,
+  // ne,
+  // ni,
+  // nu,
+  // no,
+  // nge,
+  // ngi,
+  // ngo,
+  // ngu,
+  // ng,
+  // p,
+  // pe,
+  // pi,
+  // pu,
+  // po,
+  // t,
+  // te,
+  // ti,
+  // to,
+  // tu,
+  // w,
+  // we,
+  // wi,
+  // wu,
+  // wo,
+  // y,
+  // ye,
+  // yi,
+  // yu,
+  // yo,
+  // da_ra,
+  // i_e,
+  // u_o,
+  // a
+// ];
 
 
