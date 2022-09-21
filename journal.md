@@ -1,3 +1,8 @@
+Sept 21 
+I was able to prgarmmatically create letters objects but not as their own exclusive variables but rather as array elements. hopefully this will allow me to do everything I need to do later on.
+
+Now letters.text is moving onto modal.js however since it is in string format I need to figure out how to change it into a different type of data. A quick google search said JSON.parse might be a good method however there is something wrong with my format. More info at this link https://www.telerik.com/blogs/what-is-json-how-to-handle-unexpected-token-error
+
 Sept 20
 Still trying to figure out how to make a dynamic variable in callLetter(). should I used eval? call all the variables globally before? should it be in an array? Is there a better way to do this?
 

@@ -1,6 +1,6 @@
 "use strict";
 
-ba,
+let ba,
   ga,
   nga,
   ka,
@@ -168,13 +168,8 @@ const buildAddLetter = function(letter) {
 const callLetter = function(){
   for(let i = 0; i < 5; i++){
     let k = letterStringArray[i] 
-    eval('let ' + letterStringArray[i]  + '= ' + letterStringArray[i]  + ';'  )
-    console.log(i);
-    console.log(k);
-    
-    
-    buildAddLetter(i.value)
-    letters.push(i.value)
+    k = buildAddLetter(k)
+    letters.push(k)
   }
 }
 
