@@ -1,6 +1,7 @@
 - figure out how to create global variables programmatically within a function
 - turn workflow.md into flowchart
 - have sequece stop at 4+
+- sequence -1 on first incorrect answer
 - have sequence run through entire list before running through sequence again.
 -reinstate modal presenting letters
 - If incorrect change sequence on click and show wrong answer before moving to next question.

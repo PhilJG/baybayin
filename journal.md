@@ -1,3 +1,9 @@
+Sept 22
+Turns out I didn't need to use JSON. just change generatedLetter.text to generatedLetter since it was already declared in the variable.
+
+I need to figure out how to make callLetter() continue and pass over reviewedLetters. Not sure how to best handle this because letter.js is above modal.js. 
+Also the sequence does not go down on the incorrect answer. 
+
 Sept 21 
 I was able to prgarmmatically create letters objects but not as their own exclusive variables but rather as array elements. hopefully this will allow me to do everything I need to do later on.
 

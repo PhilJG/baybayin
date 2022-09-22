@@ -168,7 +168,7 @@ const buildAddLetter = function(letter) {
 const callLetter = function(){
   for(let i = 0; i < 5; i++){
     let k = letterStringArray[i] 
-    k = buildAddLetter(k)
+    k = buildAddLetter(k);
     letters.push(k)
   }
 }

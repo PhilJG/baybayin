@@ -20,7 +20,7 @@ let generatedLetter
 let reviewedLetters = [];
 let reviewedIndex = 0;
 
-let oldReviewedLetters = JSON.parse(localStorage.getItem("reviewedLetters"));
+// let oldReviewedLetters = JSON.parse(localStorage.getItem("reviewedLetters"));
 // //get localStorage of previous current score on refresh and turn it into a number
 // function getOldLetters() {
 //   if (oldReviewedLetters.length > 0) {
@@ -37,6 +37,7 @@ let oldReviewedLetters = JSON.parse(localStorage.getItem("reviewedLetters"));
 // When the user clicks on the button, open the modal
 modalBtn.addEventListener("click", function() {
   modal.style.display = "block";
+  callLetter();
 })
 
 // mLetter.innerHTML = `<img src="imgs/${letters[0]}.svg" class="svg" height="100px"></img>`;
@@ -45,14 +46,16 @@ modalBtn.addEventListener("click", function() {
 const generateModalLetter = function() {
    generatedLetter = letters[reviewedIndex].text
   //if generated letter has been reviewed and is within the reviewed array..
-  let parsedLetter = JSON.parse(generatedLetter);
+  console.log(generatedLetter);
+  
+  // let parsedLetter = JSON.parse(generatedLetter);
   if (reviewedLetters.includes(generatedLetter)) {    
     generatedLetter = letters[reviewedIndex].text
     console.log(`new generated letter ${generatedLetter}`);
     //if the letter has NOT been reviewed post on html and add to the array
   } else {
     // produce letter in modal html
-    mLetter.innerHTML = `<img src="imgs/${generatedLetter.text}.svg" class="svg" height="100px"></img><h2>${generatedLetter.text}</h2>`;
+    mLetter.innerHTML = `<img src="imgs/${generatedLetter}.svg" class="svg" height="100px"></img><h2>${generatedLetter}</h2>`;
     //then push this letter to reviewedletter array
     reviewedLetters.push(generatedLetter);
   }
@@ -70,10 +73,7 @@ span.style.display = "none";
 
 nBtn.addEventListener("click", function() {
   generateModalLetter()
-  if (reviewedIndex < 5){ 
-    // hide close btn if 5 letters have not been reviewed
-    span.style.display = "none";
-  } else if (reviewedIndex > 5){
+  if (reviewedIndex > 4){
     span.style.display = "block";
     // When the user clicks on <span> (x), close the modal
     span.addEventListener("click", function() {
