@@ -1,3 +1,6 @@
+Sept 23
+Took today off to focus on another project
+
 Sept 22
 Turns out I didn't need to use JSON. just change generatedLetter.text to generatedLetter since it was already declared in the variable.
 
