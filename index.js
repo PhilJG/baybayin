@@ -21,25 +21,35 @@ let aArray = [];
 let aBtnKey, aBtnHTML ,imgNode, currentValue, qImgNodes, currentScore;
 
 //Toggle dark mode
-const toggleDark = function() {
-  var element = document.body;
-  qBtn.classList.toggle("dark-mode");
-  mBtn.classList.toggle("dark-mode");
+// const toggleDark = function() {
+//   var element = document.body;
+//   qBtn.classList.toggle("dark-mode");
+//   mBtn.classList.toggle("dark-mode");
   
 
-  // svgImg.classList.toggle("dark-mode");
+//   // svgImg.classList.toggle("dark-mode");
   
-  // aList.children.forEach(i => {
-  //   console.log(aBtn[i]);
-  //   console.log(`for each`);
+//   // aList.children.forEach(i => {
+//   //   console.log(aBtn[i]);
+//   //   console.log(`for each`);
     
-  //   i.classList.toggle("dark-mode")
-  // });
-  element.classList.toggle("dark-mode");
-  console.log('checked');
-}
+//   //   i.classList.toggle("dark-mode")
+//   // });
+//   element.classList.toggle("dark-mode");
+//   console.log('checked');
+// }
 
 // toggleBtn.addEventListener('checked', toggleDark())
+
+//Time formatter for space repition
+// const formatter = new Intl.RelativeTimeFormat('en');
+
+// const diff = new Date() - new Date('4/18/1990');
+
+// const x = formatter.format(-diff / (1000*60*60*24), "days")
+
+// console.log(x);
+
 
 
 //get sessionStorage of previous current score on refresh and turn it into a number
@@ -100,10 +110,11 @@ const matchAnswer = function (v) {
     scorePoints.textContent = currentScore;
     qSeq.textContent = currentValue.sequence;
     scoreBoard.classList.add("correct")
+    qSeq.classList.add("correct")
     setTimeout(function(){ 
-    replaceAnswerBtn()      
+      replaceAnswerBtn()      
+      qSeq.classList.remove("correct")
     }, 1000);
-    console.log(`correct 1 will be added to ${v}`);
     } else {
       //deducts 1 point to current score if correct
       currentScore = currentScore - 1;
@@ -113,10 +124,12 @@ const matchAnswer = function (v) {
       scorePoints.textContent = currentScore;
       console.log(v);
       scoreBoard.classList.add("incorrect")
+      qSeq.classList.add("incorrect")
       setTimeout(function(){ 
-        scoreBoard.classList.remove()     
+        scoreBoard.classList.remove()   
+        qSeq.classList.remove("incorrect")       
+        replaceAnswerBtn()      
         }, 1000);
-        console.log(`wrong 1 will be removed from ${v}`);
     }
 
 let stringScore = new String(currentScore);
@@ -158,7 +171,6 @@ const generateQuestionLetter = function () {
     console.log(`current value: ${currentValue.text}`);
     
     aArray.push(currentValue.text);
-    console.log(`array ${aArray}`);
     };
 
   // let shuffledLetters = shuffle(letters.map((shuffle(letters))));

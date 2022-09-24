@@ -17,22 +17,22 @@ const nBtn = document.querySelector(".nextBtn")
 
 let generatedLetter
 //Empty array for reviewed letters
-let reviewedLetters = [];
-let reviewedIndex = 0;
+reviewedLetters = [];
+reviewedIndex = 0;
 
-// let oldReviewedLetters = JSON.parse(localStorage.getItem("reviewedLetters"));
-// //get localStorage of previous current score on refresh and turn it into a number
-// function getOldLetters() {
-//   if (oldReviewedLetters.length > 0) {
-//     reviewedLetters = oldReviewedLetters;
-//     reviewedIndex = oldReviewedLetters.length;
-//   } else {
-//     reviewedLetters = [];
-//     reviewedIndex = 0;
-//   }
-// }
+let oldReviewedLetters = JSON.parse(localStorage.getItem("reviewedLetters"));
+//get localStorage of previous current score on refresh and turn it into a number
+function getOldLetters() {
+  if (oldReviewedLetters != null) {
+    reviewedLetters = oldReviewedLetters;
+    reviewedIndex = oldReviewedLetters.length;
+  } else {
+    reviewedLetters = [];
+    reviewedIndex = 0;
+  }
+}
 
-// getOldLetters();
+getOldLetters();
 
 // When the user clicks on the button, open the modal
 modalBtn.addEventListener("click", function() {
@@ -69,17 +69,17 @@ generateModalLetter();
 
 // newReview();
 
-span.style.display = "none";
+span.addEventListener("click", function() {
+  modal.style.display = "none";
+  
+})
 
 nBtn.addEventListener("click", function() {
   generateModalLetter()
-  if (reviewedIndex > 4){
-    span.style.display = "block";
-    // When the user clicks on <span> (x), close the modal
-    span.addEventListener("click", function() {
-      modal.style.display = "none";
-    })
-    
+  // if (reviewedIndex > 4){
+  //   span.style.display = "block";
+  //   // When the user clicks on <span> (x), close the modal
+
     // When the user clicks anywhere outside of the modal, close it
     window.addEventListener("click", function(event) {
         if (event.target == modal) {
@@ -88,4 +88,4 @@ nBtn.addEventListener("click", function() {
       } 
       ) 
   }
-})
+)

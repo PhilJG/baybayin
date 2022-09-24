@@ -1,3 +1,11 @@
+Sept 24
+I removed the loop that requires the viewer review the first 4 letters of the modal. To much trouble to make it work.
+
+Got oldReviewedLetters working with reviewedLetters being updated by saying if oldReviewedLetters does not equal null add old reviewed letters to reviewed array
+
+Sequence now changes color on right or wrong answer
+
+
 Sept 23
 Took today off to focus on another project
 

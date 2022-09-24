@@ -142,10 +142,14 @@ const letterStringArray = [
   "a"
 ];
 
+let reviewedLetters;
+let reviewedIndex;
+
 class Letter{
   constructor(text, sequence) {
     this.text = text;
     this.sequence = 0;
+    this.reviewed = false;
   }
 }
 
@@ -165,9 +169,11 @@ const buildAddLetter = function(letter) {
 
   return new Letter(letter);
 }
+
+
 const callLetter = function(){
-  for(let i = 0; i < 5; i++){
-    let k = letterStringArray[i] 
+  for(let i = 0; i < letterStringArray.length; i++){
+    let k = letterStringArray[i]
     k = buildAddLetter(k);
     letters.push(k)
   }
