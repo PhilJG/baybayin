@@ -96,7 +96,7 @@ function shuffle(arr) {
 }
 
 //Selects random index from letters array
-let randomLetters = randomSelect(letters);
+let randomLetters = randomSelect(reviewedLetters);
 
 
 //Matches question with answer on click
@@ -122,7 +122,6 @@ const matchAnswer = function (v) {
       currentValue.sequence = 0
       //currentscore is entered into scorePoints
       scorePoints.textContent = currentScore;
-      console.log(v);
       scoreBoard.classList.add("incorrect")
       qSeq.classList.add("incorrect")
       setTimeout(function(){ 
@@ -154,22 +153,20 @@ const buildAnswerBtn = function(){
   })
 }
 
-currentValue = letters[randomLetters];
+currentValue = reviewedLetters[randomLetters];
 
 // //Generates question letter on click
 const generateQuestionLetter = function () {
   //Selects a random letter from the letters array
-  randomLetters = randomSelect(letters);
-  currentValue = letters[randomLetters];
+  randomLetters = randomSelect(reviewedLetters);
+  currentValue = reviewedLetters[randomLetters];
   if(qCurrent === "img" ){
     qImg.innerHTML = `<img src="imgs/${currentValue.text}.svg" class="svg" height="100px">`;
   } else if (qCurrent === "txt") {
-    qImg.innerHTML = `${currentValue.text}`
+    qImg.innerHTML = `${currentValue}`
   }
   // post letter sequence
   qSeq.innerHTML = currentValue.sequence;
-    console.log(`current value: ${currentValue.text}`);
-    
     aArray.push(currentValue.text);
     };
 
@@ -177,9 +174,9 @@ const generateQuestionLetter = function () {
 
   //Generates answer buttons of all the letters
   const generateAnswer = function () {
-    shuffle(letters);
+    shuffle(reviewedLetters);
     for (let i = 0; i < 3; i++) {
-      let x = letters[i].text;
+      let x = reviewedLetters[i];
       if (x == currentValue ) {continue;}      
       aArray.push(`${x}`)
     }
@@ -193,7 +190,7 @@ const generateQuestionLetter = function () {
  
   const replaceAnswerBtn = function() {
     aArray = [];
-    currentValue = letters[randomLetters];
+    currentValue = reviewedLetters[randomLetters];
      qChoice = randomSelect(qType)
      qCurrent = qType[qChoice];
     while(aList.hasChildNodes()){

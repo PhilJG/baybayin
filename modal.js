@@ -19,12 +19,13 @@ let generatedLetter
 //Empty array for reviewed letters
 reviewedLetters = [];
 reviewedIndex = 0;
+let r;
 
 let oldReviewedLetters = JSON.parse(localStorage.getItem("reviewedLetters"));
 //get localStorage of previous current score on refresh and turn it into a number
 function getOldLetters() {
   if (oldReviewedLetters != null) {
-    reviewedLetters = oldReviewedLetters;
+    r = callLetter(oldReviewedLetters, reviewedLetters);
     reviewedIndex = oldReviewedLetters.length;
   } else {
     reviewedLetters = [];
@@ -37,7 +38,6 @@ getOldLetters();
 // When the user clicks on the button, open the modal
 modalBtn.addEventListener("click", function() {
   modal.style.display = "block";
-  callLetter();
 })
 
 // mLetter.innerHTML = `<img src="imgs/${letters[0]}.svg" class="svg" height="100px"></img>`;
@@ -61,7 +61,6 @@ const generateModalLetter = function() {
   }
   // increment i by 1
   reviewedIndex = reviewedIndex + 1;
-  console.log(` reviewed: ${reviewedLetters}`);
   localStorage.setItem("reviewedLetters", JSON.stringify(reviewedLetters));
 }
 

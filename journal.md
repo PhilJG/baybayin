@@ -1,3 +1,9 @@
+Sept 25
+Switched letters to reviewedLetters. Since reviewedLetters are turned to string when pushed to localStorage I have to change them back to objects when launched a second time. This poses 2 challenges. 
+- 1st is that the callLetter() constructor begins creating objects within objects 
+- 2nd is that the saved properties from previous sessions (sequence & reviewed) will be reset.
+    Next step is to figure out how to adjust this.
+
 Sept 24
 I removed the loop that requires the viewer review the first 4 letters of the modal. To much trouble to make it work.
 

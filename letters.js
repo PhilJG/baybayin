@@ -171,16 +171,16 @@ const buildAddLetter = function(letter) {
 }
 
 
-const callLetter = function(){
-  for(let i = 0; i < letterStringArray.length; i++){
-    let k = letterStringArray[i]
+const callLetter = function(arr, toArr){
+  for(let i = 0; i < arr.length; i++){
+    let k = arr[i]
     k = buildAddLetter(k);
-    letters.push(k)
+    toArr.push(k)
   }
 }
 
 
-callLetter();
+callLetter(letterStringArray, letters);
 
 // const letterStringArray = [
   // ba,
