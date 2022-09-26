@@ -163,7 +163,7 @@ const generateQuestionLetter = function () {
   if(qCurrent === "img" ){
     qImg.innerHTML = `<img src="imgs/${currentValue.text}.svg" class="svg" height="100px">`;
   } else if (qCurrent === "txt") {
-    qImg.innerHTML = `${currentValue}`
+    qImg.innerHTML = `${currentValue.text}`
   }
   // post letter sequence
   qSeq.innerHTML = currentValue.sequence;

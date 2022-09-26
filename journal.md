@@ -1,3 +1,8 @@
+Sept 26
+I think I was able to have oldReviewedLetters and reviewedLetters have the same objects and not have the object nested within other objects. 
+
+Now I`m having trouble with building the answer buttons so they show the value... currently they are undefined. I think this has something to do with the values now bieng objects
+
 Sept 25
 Switched letters to reviewedLetters. Since reviewedLetters are turned to string when pushed to localStorage I have to change them back to objects when launched a second time. This poses 2 challenges. 
 - 1st is that the callLetter() constructor begins creating objects within objects 
