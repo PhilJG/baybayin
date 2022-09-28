@@ -72,10 +72,10 @@ generateModalLetter();
 
 // newReview();
 
-span.addEventListener("click", function() {
-  modal.style.display = "none";
+// span.addEventListener("click", function() {
+//   modal.style.display = "none";
   
-})
+// })
 
 nBtn.addEventListener("click", function() {
   generateModalLetter()

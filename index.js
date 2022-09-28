@@ -176,17 +176,19 @@ const generateQuestionLetter = function () {
   const generateAnswer = function () {
     shuffle(reviewedLetters);
     for (let i = 0; i < 3; i++) {
-      let x = reviewedLetters[i];
+      let x = reviewedLetters[i].text;
+      console.log(x);
+      
       if (x == currentValue ) {continue;}      
       aArray.push(`${x}`)
     }
   };
 
-  generateQuestionLetter();
+  // generateQuestionLetter();
   
-  generateAnswer();
+  // generateAnswer();
   
-  buildAnswerBtn();
+  // buildAnswerBtn();
  
   const replaceAnswerBtn = function() {
     aArray = [];
@@ -202,6 +204,12 @@ const generateQuestionLetter = function () {
     shuffle(aArray);
     buildAnswerBtn();
   }
+
+
+  span.addEventListener("click", function() {
+    replaceAnswerBtn();
+    modal.style.display = "none";
+  })
 
 //     //New letter generated
 // //Generate new icon on "new" btn click"
