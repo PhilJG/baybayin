@@ -1,3 +1,9 @@
+Sept 28
+I have removed the answer & question button call functions of index and put on the clos modal event listener. This has the added benefit that now it will only close after 3 reviews (I want 4). There will need to be a loop readded so the 4 letters need to be reviewed be before closing
+
+Sept 27
+added .text to reviewedLetters[i] on generatedAnswer() 
+
 Sept 26
 I think I was able to have oldReviewedLetters and reviewedLetters have the same objects and not have the object nested within other objects. 
 
