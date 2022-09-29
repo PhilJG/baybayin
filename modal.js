@@ -33,6 +33,8 @@ function getOldLetters() {
   } else {
     reviewedLetters = [];
     reviewedIndex = 0;
+
+    span.style.display ="none"
   }
 }
 

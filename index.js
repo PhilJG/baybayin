@@ -179,7 +179,7 @@ const generateQuestionLetter = function () {
       let x = reviewedLetters[i].text;
       console.log(x);
       
-      if (x == currentValue ) {continue;}      
+      if (x === currentValue.text ) {continue;}      
       aArray.push(`${x}`)
     }
   };
@@ -199,16 +199,30 @@ const generateQuestionLetter = function () {
       aList.removeChild(aList.firstChild);
     }
     scoreBoard.classList.remove("incorrect", "correct")
-    generateAnswer()
     generateQuestionLetter()
+    generateAnswer()
     shuffle(aArray);
     buildAnswerBtn();
   }
 
-
   span.addEventListener("click", function() {
     replaceAnswerBtn();
     modal.style.display = "none";
+  })
+
+  nBtn.addEventListener("click", function() {
+    generateModalLetter()
+    if (reviewedIndex > 4){
+      span.style.display = "block";
+      // When the user clicks on <span> (x), close the modal
+      // When the user clicks anywhere outside of the modal, close it
+      window.addEventListener("click", function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        } 
+        ) 
+    }
   })
 
 //     //New letter generated

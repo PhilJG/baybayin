@@ -1,3 +1,8 @@
+Sept 29
+Moved modal close eventListener to index.js. Also added span.display (close modal) to "none" when reviewed letters array is empty. I also moved generateQuestionLetter() above generateAnswer() so their would not be duplicate answers. Next step might be setting reviewed property on UTC time. Here are some resources
+https://www.tabnine.com/code/javascript/functions/builtins/Date/getUTCHours
+https://www.andyibanez.com/posts/formatting-relative-dates-relativedatetimeformatter/ 
+
 Sept 28
 I have removed the answer & question button call functions of index and put on the clos modal event listener. This has the added benefit that now it will only close after 3 reviews (I want 4). There will need to be a loop readded so the 4 letters need to be reviewed be before closing
 
