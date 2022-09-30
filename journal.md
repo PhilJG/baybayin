@@ -1,5 +1,6 @@
 Sept 30
-added "if reviewed letters is more than 4 modal will not show up on refresh.
+Added "if reviewed letters is more than 4 modal will not show up on refresh.
+Added currentValue.reviewed = true on matchAnswer() but it doesn`t work. If I switch to true in console it works but not within the function. Not really sure why this happens. 
 
 Sept 29
 Moved modal close eventListener to index.js. Also added span.display (close modal) to "none" when reviewed letters array is empty. I also moved generateQuestionLetter() above generateAnswer() so their would not be duplicate answers. Next step might be setting reviewed property on UTC time. Here are some resources
