@@ -40,6 +40,12 @@ function getOldLetters() {
 
 getOldLetters();
 
+if(reviewedLetters.length > 4) {
+  modal.style.display = "none";
+} else {
+  modal.style.display = "block";
+}
+
 // When the user clicks on the button, open the modal
 modalBtn.addEventListener("click", function() {
   modal.style.display = "block";
