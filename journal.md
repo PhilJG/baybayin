@@ -1,3 +1,8 @@
+Oct 2
+Turns out the letter Object sequence property is not being updated like the revoewed property. I've searched for ways to change the propery programmatically am still coming up empty.
+
+Furthermore the modal pushes new letters into array without presenting them in the modal (ie it skips letters in the array)
+
 Sept 30
 Added "if reviewed letters is more than 4 modal will not show up on refresh.
 Added currentValue.reviewed = true on matchAnswer() but it doesn`t work. If I switch to true in console it works but not within the function. Not really sure why this happens. 

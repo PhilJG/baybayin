@@ -101,7 +101,7 @@ let randomLetters = randomSelect(reviewedLetters);
 
 //Matches question with answer on click
 const matchAnswer = function (v) {
-  currentValue.reviewed == true
+  
   if (currentValue.text == v) {
     //adds 1 point to current score if correct
     currentScore = currentScore + 1;
@@ -110,7 +110,6 @@ const matchAnswer = function (v) {
     //currentscore is entered into scorePoints
     scorePoints.textContent = currentScore;
     qSeq.textContent = currentValue.sequence;
-    currentValue.reviewed = true;
     scoreBoard.classList.add("correct")
     qSeq.classList.add("correct")
     setTimeout(function(){ 

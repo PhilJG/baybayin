@@ -26,9 +26,7 @@ let oldReviewedLetters = JSON.parse(localStorage.getItem("reviewedLetters"));
 function getOldLetters() {
   if (oldReviewedLetters != null) {
       reviewedLetters = oldReviewedLetters
-      console.log(`reviewedLetters = ${reviewedLetters.length}`);
-      console.log(`oldReviewedLetters = ${oldReviewedLetters.length}`);
-      
+   
     reviewedIndex = oldReviewedLetters.length;
   } else {
     reviewedLetters = [];

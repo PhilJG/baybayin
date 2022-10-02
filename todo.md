@@ -2,7 +2,7 @@
 - turn workflow.md into flowchart
 - have sequece stop at 4+
 - have sequence run through entire list before running through sequence again.
--reinstate modal presenting letters
+- reinstate modal presenting letters
 - If incorrect change sequence on click and show wrong answer before moving to next question.
 - Show letters on a 24hr cycle as per the sequence
     - each Letter has a "reviewed" property starting with "false"
