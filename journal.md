@@ -1,3 +1,6 @@
+Oct 3 
+couldn't get github working on another project so I was working on that today
+
 Oct 2
 Turns out the letter Object sequence property is not being updated like the revoewed property. I've searched for ways to change the propery programmatically am still coming up empty.
 
