@@ -1,8 +1,22 @@
+Oct 9
+Sequence and reviewed properties are both saving in localStorage as true Woohoo! I think it is becuase I moved localStorage.setItem to index.js(the last js folder) because the properties where changed in that folder.
+Now localstorage will be set only after the first letter is reviewed as a multiple choice question.
+
+Review 138 index.js if reivewed is true (contine or break?) since this is not a loop I cant use those. How do I run the function again if the reviewed value is true?
+
+Oct 8 
+Worked around the issue from Oct 2nd, generatedLetter() was called in nBtn.EventListener(index.js) as well as in modal.js. I have set the modal to display noneto simplify things for now.
+
+Still having this issue with changing currentValue.reviewed(true) & currentValue.sequence(+/- 1) on matchAnswer(). If I switch to in console it works but not within the function. Not really sure why this happens. It seems that the value changes within the function but not longer does globally... I think this can be solved by pushing the properties to local storage as well...
+
+Oct 4 
+"No service workers found" - Not sure if this was an update or something but it seems that localStorage is showing up on the application on firefox. Works on brave though
+
 Oct 3 
 couldn't get github working on another project so I was working on that today
 
 Oct 2
-Turns out the letter Object sequence property is not being updated like the revoewed property. I've searched for ways to change the propery programmatically am still coming up empty.
+*Turns out the letter Object sequence property is not being updated like the reviewed property. I've searched for ways to change the propery programmatically am still coming up empty.
 
 Furthermore the modal pushes new letters into array without presenting them in the modal (ie it skips letters in the array)
 

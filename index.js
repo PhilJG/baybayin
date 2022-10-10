@@ -20,38 +20,6 @@ let aArray = [];
 
 let aBtnKey, aBtnHTML ,imgNode, currentValue, qImgNodes, currentScore;
 
-//Toggle dark mode
-// const toggleDark = function() {
-//   var element = document.body;
-//   qBtn.classList.toggle("dark-mode");
-//   mBtn.classList.toggle("dark-mode");
-  
-
-//   // svgImg.classList.toggle("dark-mode");
-  
-//   // aList.children.forEach(i => {
-//   //   console.log(aBtn[i]);
-//   //   console.log(`for each`);
-    
-//   //   i.classList.toggle("dark-mode")
-//   // });
-//   element.classList.toggle("dark-mode");
-//   console.log('checked');
-// }
-
-// toggleBtn.addEventListener('checked', toggleDark())
-
-//Time formatter for space repition
-// const formatter = new Intl.RelativeTimeFormat('en');
-
-// const diff = new Date() - new Date('4/18/1990');
-
-// const x = formatter.format(-diff / (1000*60*60*24), "days")
-
-// console.log(x);
-
-
-
 //get sessionStorage of previous current score on refresh and turn it into a number
 function getScore() {
   if (localStorage.length > 0) {
@@ -101,12 +69,14 @@ let randomLetters = randomSelect(reviewedLetters);
 
 //Matches question with answer on click
 const matchAnswer = function (v) {
+  currentValue.reviewed = true;
   
   if (currentValue.text == v) {
     //adds 1 point to current score if correct
     currentScore = currentScore + 1;
     // sequence is increased by 1 on correct answer
     currentValue.sequence = currentValue.sequence + 1 
+    
     //currentscore is entered into scorePoints
     scorePoints.textContent = currentScore;
     qSeq.textContent = currentValue.sequence;
@@ -133,8 +103,10 @@ const matchAnswer = function (v) {
     }
 
 let stringScore = new String(currentScore);
+
 //set currentScore to session storage and turn it into a string
 localStorage.setItem("currentScore", `${stringScore}`);
+localStorage.setItem("reviewedLetters", JSON.stringify(reviewedLetters));
 };
 
 // Adds text content & eventlistner to all 4 answer buttons
@@ -159,17 +131,27 @@ currentValue = reviewedLetters[randomLetters];
 // //Generates question letter on click
 const generateQuestionLetter = function () {
   //Selects a random letter from the letters array
-  randomLetters = randomSelect(reviewedLetters);
+  randomLetters = randomSelect(reviewedLetters);  
+  // let r = reviewedLetters.filter(findFalse);
+  
+  // function findFalse(i) {
+  // console.log(i);
+  //   return i.reviewed = false;
+  // }
+
   currentValue = reviewedLetters[randomLetters];
-  if(qCurrent === "img" ){
-    qImg.innerHTML = `<img src="imgs/${currentValue.text}.svg" class="svg" height="100px">`;
-  } else if (qCurrent === "txt") {
-    qImg.innerHTML = `${currentValue.text}`
-  }
-  // post letter sequence
-  qSeq.innerHTML = currentValue.sequence;
+  console.log(currentValue);
+    
+    if(qCurrent === "img" ){
+      qImg.innerHTML = `<img src="imgs/${currentValue.text}.svg" class="svg" height="100px">`;
+    } else if (qCurrent === "txt") {
+      qImg.innerHTML = `${currentValue.text}`
+    }
+    // post letter sequence
+    qSeq.innerHTML = currentValue.sequence;
     aArray.push(currentValue.text);
-    };
+  }
+;
 
   // let shuffledLetters = shuffle(letters.map((shuffle(letters))));
 
@@ -177,9 +159,7 @@ const generateQuestionLetter = function () {
   const generateAnswer = function () {
     shuffle(reviewedLetters);
     for (let i = 0; i < 3; i++) {
-      let x = reviewedLetters[i].text;
-      console.log(x);
-      
+      let x = reviewedLetters[i].text;      
       if (x === currentValue.text ) {continue;}      
       aArray.push(`${x}`)
     }
@@ -212,7 +192,7 @@ const generateQuestionLetter = function () {
   })
 
   nBtn.addEventListener("click", function() {
-    generateModalLetter()
+    // generateModalLetter()
     if (reviewedIndex > 4){
       span.style.display = "block";
       // When the user clicks on <span> (x), close the modal
@@ -226,8 +206,8 @@ const generateQuestionLetter = function () {
     }
   })
 
-//     //New letter generated
-// //Generate new icon on "new" btn click"
+    //New letter generated
+//Generate new icon on "new" btn click"
 qBtn.addEventListener("click", replaceAnswerBtn);
 
 let stringScore = new String(currentScore);

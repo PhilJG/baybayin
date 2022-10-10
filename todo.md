@@ -1,3 +1,9 @@
+    - When an answer is selected...
+        -  *When reviewed property is set to "true" and will be presented after a sepecfic date and time after the review
+            - Once the time has elapsed the reviewed property will be set to "false"
+        - if incorrect it will be set to false after 24hrs(date) from its selection  
+        - if correct it will depend on the sequence number(1 = 48hrs, 2 = 72hrs, 3 = 96hrs, 4 = archived/longterm memory) 
+- Find out which browsers support web storage
 - How to store/reopen store objects and properties on relaunch.
 - turn workflow.md into flowchart
 - have sequece stop at 4+
@@ -6,8 +12,5 @@
 - If incorrect change sequence on click and show wrong answer before moving to next question.
 - Show letters on a 24hr cycle as per the sequence
     - each Letter has a "reviewed" property starting with "false"
-    - When an answer is selected...
-        -  When reviewed property is set to "true" and will be presented after a sepecfic date and time after the review
-            - Once the time has elapsed the reviewed property will be set to "false"
-        - if incorrect it will be set to false after 24hrs(date) from its selection  
-        - if correct it will depend on the sequence number(1 = 48hrs, 2 = 72hrs, 3 = 96hrs, 4 = archived/longterm memory) 
+
+- review Paul Morrows website again http://paulmorrow.ca/bayeng2.htm?fbclid=IwAR1LcY80uAtcl6-H-5JHJd2Gw_ObjDKOS2VT5P5Zurqqd9IZCeKuiuLkhJ4

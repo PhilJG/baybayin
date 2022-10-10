@@ -149,7 +149,23 @@ class Letter{
   constructor(text, sequence) {
     this.text = text;
     this.sequence = 0;
-    this.reviewed = false;
+    this.reviewed = false; 
+    this.reviewDate = new Date().toDateString();
+
+    //review time 
+    //if review == true && sequence == 0;
+    // if(this.reviewed == true){
+    //   switch(sequence){
+    //     case 0:
+          
+    //   }
+    // }
+    //save d&t (date & time)
+    //switch statement
+    //while current date & time < d&t + 24hrs then reviewed = true
+    // if current date & time > d&t + 24hrs then reviewed = false
+      //if reviewed = true then don't generate as question letter
+      //if reviewed = false then generate as question letter
   }
 }
 
