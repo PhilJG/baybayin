@@ -1,3 +1,8 @@
+Oct 10 
+Only false values now presented, true value still create an error. Now recieving a type error I believe this is because it is still filtering and presenting reviewed = true values.
+
+Have added a switch statement changing dates in matchAnswer. Not working yet.
+
 Oct 9
 Sequence and reviewed properties are both saving in localStorage as true Woohoo! I think it is becuase I moved localStorage.setItem to index.js(the last js folder) because the properties where changed in that folder.
 Now localstorage will be set only after the first letter is reviewed as a multiple choice question.

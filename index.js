@@ -66,6 +66,7 @@ function shuffle(arr) {
 //Selects random index from letters array
 let randomLetters = randomSelect(reviewedLetters);
 
+let currentDate = new Date()
 
 //Matches question with answer on click
 const matchAnswer = function (v) {
@@ -106,6 +107,22 @@ const matchAnswer = function (v) {
 
 let stringScore = new String(currentScore);
 
+let reviewDate = currentValue.reviewDate;
+
+switch (currentDate) {
+  case currentValue.sequence = 0:
+    reviewDate.setDate(currentDate.getDate() + 24);
+    console.log(reviewDate);
+    
+    break;
+  case currentValue.sequence = 1:
+    reviewDate.setDate(currentDate.getDate() + 2);
+    console.log(reviewDate);
+    break;
+}
+console.log(reviewDate);
+
+
 //set currentScore to session storage and turn it into a string
 localStorage.setItem("currentScore", `${stringScore}`);
 localStorage.setItem("reviewedLetters", JSON.stringify(reviewedLetters));
@@ -136,7 +153,6 @@ const generateQuestionLetter = function () {
   let r = reviewedLetters.filter(x => x.reviewed == false);
   
   currentValue = r[randomLetters];
-  console.log(currentValue);
   
   // currentValue = reviewedLetters[randomLetters];
   
