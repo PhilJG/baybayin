@@ -84,6 +84,8 @@ const matchAnswer = function (v) {
     qSeq.classList.add("correct")
     setTimeout(function(){ 
       replaceAnswerBtn()      
+      console.log("replaced");
+      
       qSeq.classList.remove("correct")
     }, 1000);
     } else {
@@ -126,22 +128,18 @@ const buildAnswerBtn = function(){
   })
 }
 
-currentValue = reviewedLetters[randomLetters];
-
 // //Generates question letter on click
 const generateQuestionLetter = function () {
   //Selects a random letter from the letters array
   randomLetters = randomSelect(reviewedLetters);  
-  // let r = reviewedLetters.filter(findFalse);
   
-  // function findFalse(i) {
-  // console.log(i);
-  //   return i.reviewed = false;
-  // }
-
-  currentValue = reviewedLetters[randomLetters];
+  let r = reviewedLetters.filter(x => x.reviewed == false);
+  
+  currentValue = r[randomLetters];
   console.log(currentValue);
-    
+  
+  // currentValue = reviewedLetters[randomLetters];
+  
     if(qCurrent === "img" ){
       qImg.innerHTML = `<img src="imgs/${currentValue.text}.svg" class="svg" height="100px">`;
     } else if (qCurrent === "txt") {
