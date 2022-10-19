@@ -150,7 +150,7 @@ class Letter{
     this.text = text;
     this.sequence = 0;
     this.reviewed = false; 
-    this.reviewDate = new Date().toDateString();
+    this.reviewDate = new Date();
 
     //review time 
     //if review == true && sequence == 0;

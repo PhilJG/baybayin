@@ -68,6 +68,43 @@ let randomLetters = randomSelect(reviewedLetters);
 
 let currentDate = new Date()
 
+const setReviewDate = function(currentValue){
+  let timeStamp = Date.parse(currentValue.reviewDate)
+  let reviewDate = new Date(timeStamp);
+  console.log(typeof reviewDate);
+  
+  let hour = currentDate.getHours();
+  console.log(hour);
+
+  switch (currentDate) {
+    case currentValue.sequence = 0:        
+    reviewDate.setHours(hour + 24);
+        console.log(reviewDate);
+    break;
+    
+    case currentValue.sequence = 1:        
+    reviewDate.setHours(hour + (24 * 2));
+        console.log(reviewDate);
+    break;
+    
+    case currentValue.sequence = 2:          
+    reviewDate.setHours(hour + (24 * 3));
+          console.log(reviewDate);
+    break;
+    
+    case currentValue.sequence = 3:            
+    reviewDate.setHours(hour + (24 * 4));
+            console.log(reviewDate);
+    break;
+  
+    case currentValue.sequence = 4:              
+    reviewDate.setHours(hour + (24 * 5));
+              console.log(reviewDate);
+    break;
+
+  }       
+}
+
 //Matches question with answer on click
 const matchAnswer = function (v) {
   currentValue.reviewed = true;
@@ -104,42 +141,8 @@ const matchAnswer = function (v) {
     }
     let stringScore = new String(currentScore);
     
-const setReviewDate = function(currentValue){
-  let reviewDate = currentValue.reviewDate;
-  
-  switch (currentDate) {
-    case currentValue.sequence = 0:
-      reviewDate.setDate(currentDate.getDate() + 24);
-      console.log(reviewDate);
-    break;
-      
-    case currentValue.sequence = 1:
-        reviewDate.setDate(currentDate.getDate() + 48);
-        console.log(reviewDate);
-    break;
-    
-    case currentValue.sequence = 2:
-          reviewDate.setDate(currentDate.getDate() + 72);
-          console.log(reviewDate);
-    break;
-    
-    case currentValue.sequence = 3:
-            reviewDate.setDate(currentDate.getDate() + 96);
-            console.log(reviewDate);
-    break;
-  
-    case currentValue.sequence = 4:
-              reviewDate.setDate(currentDate.getDate() + 120);
-              console.log(reviewDate);
-    break;
-    
-    case currentValue.sequence = 2:
-                reviewDate.setDate(currentDate.getDate() + 72);
-                console.log(reviewDate);
-    break;       
-  }       
-}
-setReviewDate(currentValue)       
+    console.log(`currentValue.sequence: ${currentValue.sequence}`);
+setReviewDate(currentValue);       
 
 //set currentScore to session storage and turn it into a string
 localStorage.setItem("currentScore", `${stringScore}`);
