@@ -84,9 +84,7 @@ const matchAnswer = function (v) {
     scoreBoard.classList.add("correct")
     qSeq.classList.add("correct")
     setTimeout(function(){ 
-      replaceAnswerBtn()      
-      console.log("replaced");
-      
+      replaceAnswerBtn()            
       qSeq.classList.remove("correct")
     }, 1000);
     } else {
@@ -104,24 +102,44 @@ const matchAnswer = function (v) {
         replaceAnswerBtn()      
         }, 1000);
     }
-
-let stringScore = new String(currentScore);
-
-let reviewDate = currentValue.reviewDate;
-
-switch (currentDate) {
-  case currentValue.sequence = 0:
-    reviewDate.setDate(currentDate.getDate() + 24);
-    console.log(reviewDate);
+    let stringScore = new String(currentScore);
     
+const setReviewDate = function(currentValue){
+  let reviewDate = currentValue.reviewDate;
+  
+  switch (currentDate) {
+    case currentValue.sequence = 0:
+      reviewDate.setDate(currentDate.getDate() + 24);
+      console.log(reviewDate);
     break;
-  case currentValue.sequence = 1:
-    reviewDate.setDate(currentDate.getDate() + 2);
-    console.log(reviewDate);
+      
+    case currentValue.sequence = 1:
+        reviewDate.setDate(currentDate.getDate() + 48);
+        console.log(reviewDate);
     break;
+    
+    case currentValue.sequence = 2:
+          reviewDate.setDate(currentDate.getDate() + 72);
+          console.log(reviewDate);
+    break;
+    
+    case currentValue.sequence = 3:
+            reviewDate.setDate(currentDate.getDate() + 96);
+            console.log(reviewDate);
+    break;
+  
+    case currentValue.sequence = 4:
+              reviewDate.setDate(currentDate.getDate() + 120);
+              console.log(reviewDate);
+    break;
+    
+    case currentValue.sequence = 2:
+                reviewDate.setDate(currentDate.getDate() + 72);
+                console.log(reviewDate);
+    break;       
+  }       
 }
-console.log(reviewDate);
-
+setReviewDate(currentValue)       
 
 //set currentScore to session storage and turn it into a string
 localStorage.setItem("currentScore", `${stringScore}`);
@@ -145,17 +163,18 @@ const buildAnswerBtn = function(){
   })
 }
 
-// //Generates question letter on click
+//Generates question letter on click
 const generateQuestionLetter = function () {
-  //Selects a random letter from the letters array
-  randomLetters = randomSelect(reviewedLetters);  
-  
-  let r = reviewedLetters.filter(x => x.reviewed == false);
-  
-  currentValue = r[randomLetters];
-  
-  // currentValue = reviewedLetters[randomLetters];
-  
+
+  let r = reviewedLetters.filter(x => x.reviewed === false); 
+  console.log(r);
+
+    //Selects a random letter from the r array
+  randomLetters = randomSelect(r);  
+
+  currentValue = r[randomLetters]; 
+  console.log(currentValue);
+   
     if(qCurrent === "img" ){
       qImg.innerHTML = `<img src="imgs/${currentValue.text}.svg" class="svg" height="100px">`;
     } else if (qCurrent === "txt") {
@@ -164,8 +183,7 @@ const generateQuestionLetter = function () {
     // post letter sequence
     qSeq.innerHTML = currentValue.sequence;
     aArray.push(currentValue.text);
-  }
-;
+  };
 
   // let shuffledLetters = shuffle(letters.map((shuffle(letters))));
 

@@ -1,3 +1,14 @@
+Oct 19 
+Have fixed the typerror I this was the switch...
+  let r = reviewedLetters.filter(x => x.reviewed === false);  
+    to 
+  let r = reviewedLetters.filter(x => x.reviewed == false);  
+  Apparently strict equality worked whereas loose equality didn't.
+  Also move the randomeLetter selector down and attched to r instead of reviewedLetters
+
+  Added switch statement to matchAnswer() but not yet working. 
+
+
 Oct 10 
 Only false values now presented, true value still create an error. Now recieving a type error I believe this is because it is still filtering and presenting reviewed = true values.
 
@@ -7,7 +18,7 @@ Oct 9
 Sequence and reviewed properties are both saving in localStorage as true Woohoo! I think it is becuase I moved localStorage.setItem to index.js(the last js folder) because the properties where changed in that folder.
 Now localstorage will be set only after the first letter is reviewed as a multiple choice question.
 
-Review 138 index.js if reivewed is true (contine or break?) since this is not a loop I cant use those. How do I run the function again if the reviewed value is true?
+Review 138 index.js if reivewed is true (continue or break?) since this is not a loop I cant use those. How do I run the function again if the reviewed value is true?
 
 Oct 8 
 Worked around the issue from Oct 2nd, generatedLetter() was called in nBtn.EventListener(index.js) as well as in modal.js. I have set the modal to display noneto simplify things for now.

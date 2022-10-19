@@ -55,10 +55,8 @@ modalBtn.addEventListener("click", function() {
 //Produces letters to be reviewed
 const generateModalLetter = function() {
    generatedLetter = letters[reviewedIndex].text
-   console.log(generatedLetter);
    generatedLetter = buildAddLetter(generatedLetter);
   //if generated letter has been reviewed and is within the reviewed array..
-  console.log(generatedLetter);
     if (reviewedLetters.includes(generatedLetter)) {    
     // generatedLetter = letters[reviewedIndex].text
     // console.log(`new generated letter ${generatedLetter.text}`);
