@@ -195,7 +195,6 @@ header {
 
 .question__box--img {
   padding: 1rem;
-  font-size: 4rem;
 }
 
 .question__box--btn {
@@ -206,10 +205,10 @@ header {
   display: grid;
   grid: auto/auto auto auto auto;
   /* display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  padding: 1rem; */
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem; */
 }
 
 button {

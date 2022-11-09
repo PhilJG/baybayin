@@ -67,6 +67,7 @@ function shuffle(arr) {
 let randomLetters = randomSelect(reviewedLetters);
 
 let currentDate = new Date();
+// let currentDate = cd.getUTCDate();
 
 const setReviewDate = function (currentValue) {
   let timeStamp = Date.parse(currentValue.reviewDate);
@@ -176,11 +177,15 @@ const generateQuestionLetter = function () {
   console.log(currentValue);
   console.log(qCurrent);
 
-  if (qCurrent === 'img') {
-    qImg.innerHTML = `<img src="imgs/${currentValue.text}.svg" class="svg" height="100px">`;
-  } else if (qCurrent === 'txt') {
-    qImg.innerHTML = `${currentValue.text}`;
-  } else if (qCurrent != 'img' || 'text') {
+  if (currentValue != undefined) {
+    if (qCurrent === 'img') {
+      qImg.innerHTML = `<img src="imgs/${currentValue.text}.svg" class="svg" height="100px">`;
+    } else if (qCurrent === 'txt') {
+      qImg.innerHTML = `${currentValue.text}`;
+    }
+    qSeq.innerHTML = currentValue.sequence;
+    aArray.push(currentValue.text);
+  } else {
     qImg.innerHTML =
       'All the letters have been reviewed for today. Try learning some new ones! ';
   }
@@ -198,8 +203,6 @@ const generateQuestionLetter = function () {
   //   console.log('Error has occured: ' + err);
   // }
   // post letter sequence
-  qSeq.innerHTML = currentValue.sequence;
-  aArray.push(currentValue.text);
 };
 
 // let shuffledLetters = shuffle(letters.map((shuffle(letters))));
