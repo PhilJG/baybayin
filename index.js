@@ -31,7 +31,7 @@ function getScore() {
 
 getScore();
 
-scorePoints.textContent = currentScore;
+// scorePoints.textContent = currentScore;
 
 //Randomly selects from an array
 const randomSelect = function (arr) {
@@ -116,9 +116,9 @@ const matchAnswer = function (v) {
     currentValue.sequence = currentValue.sequence + 1;
 
     //currentscore is entered into scorePoints
-    scorePoints.textContent = currentScore;
+    // scorePoints.textContent = currentScore;
     qSeq.textContent = currentValue.sequence;
-    scoreBoard.classList.add('correct');
+    // scoreBoard.classList.add('correct');
     qSeq.classList.add('correct');
     setTimeout(function () {
       replaceAnswerBtn();
@@ -130,8 +130,8 @@ const matchAnswer = function (v) {
     // sequence is 0 wrong answer
     currentValue.sequence = 0;
     //currentscore is entered into scorePoints
-    scorePoints.textContent = currentScore;
-    scoreBoard.classList.add('incorrect');
+    // scorePoints.textContent = currentScore;
+    // scoreBoard.classList.add('incorrect');
     qSeq.classList.add('incorrect');
     setTimeout(function () {
       scoreBoard.classList.remove();
@@ -233,7 +233,7 @@ const replaceAnswerBtn = function () {
   while (aList.hasChildNodes()) {
     aList.removeChild(aList.firstChild);
   }
-  scoreBoard.classList.remove('incorrect', 'correct');
+  // scoreBoard.classList.remove('incorrect', 'correct');
   generateQuestionLetter();
   generateAnswer();
   shuffle(aArray);
