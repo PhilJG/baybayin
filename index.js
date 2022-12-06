@@ -1,18 +1,18 @@
-'use strict';
+"use strict";
 
-const qBox = document.querySelector('.question__box');
-const qImg = document.querySelector('.question__box--img');
-const qSeq = document.querySelector('.question__box--sequence');
-const qBtn = document.querySelector('.question__btn');
-const svgImg = document.getElementsByTagName('svg');
+const qBox = document.querySelector(".question__box");
+const qImg = document.querySelector(".question__box--img");
+const qSeq = document.querySelector(".question__box--sequence");
+const qBtn = document.querySelector(".question__btn");
+const svgImg = document.getElementsByTagName("svg");
 
-const aList = document.querySelector('.answer');
-let aBtn = document.getElementsByClassName('answer__btn');
-const scoreBoard = document.querySelector('.score__points');
-const scorePoints = document.querySelector('.score__points--inc');
-const toggleBtn = document.querySelector('.switch');
+const aList = document.querySelector(".answer");
+let aBtn = document.getElementsByClassName("answer__btn");
+const scoreBoard = document.querySelector(".score__points");
+const scorePoints = document.querySelector(".score__points--inc");
+const toggleBtn = document.querySelector(".switch");
 
-const mBtn = document.querySelector('#myBtn');
+const mBtn = document.querySelector("#myBtn");
 
 const allBtns = [mBtn, aBtn, qBtn];
 
@@ -23,7 +23,7 @@ let aBtnKey, aBtnHTML, imgNode, currentValue, qImgNodes, currentScore;
 //get sessionStorage of previous current score on refresh and turn it into a number
 function getScore() {
   if (localStorage.length > 0) {
-    currentScore = ~~localStorage.getItem('currentScore');
+    currentScore = ~~localStorage.getItem("currentScore");
   } else {
     currentScore = 0;
   }
@@ -38,7 +38,7 @@ const randomSelect = function (arr) {
   return Math.round(Math.random() * (arr.length - 1));
 };
 
-const qType = ['txt', 'img'];
+const qType = ["txt", "img"];
 
 let qChoice = randomSelect(qType);
 let qCurrent = qType[qChoice];
@@ -71,38 +71,39 @@ let currentDate = new Date();
 
 const setReviewDate = function (currentValue) {
   let timeStamp = Date.parse(currentValue.reviewDate);
-  let reviewDate = new Date(timeStamp);
-  console.log(typeof reviewDate);
-
+  let rd = new Date(timeStamp);
   let hour = currentDate.getHours();
-  console.log(hour);
+  if (currentValue.review)
+    //check against
+    switch (currentDate) {
+      case (currentValue.sequence = 0):
+        rd.setHours(hour + 24);
+        console.log(rd);
 
-  switch (currentDate) {
-    case (currentValue.sequence = 0):
-      reviewDate.setHours(hour + 24);
-      console.log(reviewDate);
-      break;
+        currentValue.reviewDate = rd;
+        console.log(currentValue.text, currentValue.reviewDate);
+        break;
 
-    case (currentValue.sequence = 1):
-      reviewDate.setHours(hour + 24 * 2);
-      console.log(reviewDate);
-      break;
+      case (currentValue.sequence = 1):
+        rd.setHours(hour + 24 * 2);
+        console.log(rd);
+        break;
 
-    case (currentValue.sequence = 2):
-      reviewDate.setHours(hour + 24 * 3);
-      console.log(reviewDate);
-      break;
+      case (currentValue.sequence = 2):
+        rd.setHours(hour + 24 * 3);
+        console.log(rd);
+        break;
 
-    case (currentValue.sequence = 3):
-      reviewDate.setHours(hour + 24 * 4);
-      console.log(reviewDate);
-      break;
+      case (currentValue.sequence = 3):
+        rd.setHours(hour + 24 * 4);
+        console.log(rd);
+        break;
 
-    case (currentValue.sequence = 4):
-      reviewDate.setHours(hour + 24 * 5);
-      console.log(reviewDate);
-      break;
-  }
+      case (currentValue.sequence = 4):
+        rd.setHours(hour + 24 * 5);
+        console.log(rd);
+        break;
+    }
 };
 
 //Matches question with answer on click
@@ -119,10 +120,10 @@ const matchAnswer = function (v) {
     // scorePoints.textContent = currentScore;
     qSeq.textContent = currentValue.sequence;
     // scoreBoard.classList.add('correct');
-    qSeq.classList.add('correct');
+    qSeq.classList.add("correct");
     setTimeout(function () {
       replaceAnswerBtn();
-      qSeq.classList.remove('correct');
+      qSeq.classList.remove("correct");
     }, 1000);
   } else {
     //deducts 1 point to current score if correct
@@ -132,34 +133,33 @@ const matchAnswer = function (v) {
     //currentscore is entered into scorePoints
     // scorePoints.textContent = currentScore;
     // scoreBoard.classList.add('incorrect');
-    qSeq.classList.add('incorrect');
+    qSeq.classList.add("incorrect");
     setTimeout(function () {
-      scoreBoard.classList.remove();
-      qSeq.classList.remove('incorrect');
+      // scoreBoard.classList.remove();
+      qSeq.classList.remove("incorrect");
       replaceAnswerBtn();
     }, 1000);
   }
   let stringScore = new String(currentScore);
 
-  console.log(`currentValue.sequence: ${currentValue.sequence}`);
   setReviewDate(currentValue);
 
   //set currentScore to session storage and turn it into a string
-  localStorage.setItem('currentScore', `${stringScore}`);
-  localStorage.setItem('reviewedLetters', JSON.stringify(reviewedLetters));
+  localStorage.setItem("currentScore", `${stringScore}`);
+  localStorage.setItem("reviewedLetters", JSON.stringify(reviewedLetters));
 };
 
 // Adds text content & eventlistner to all 4 answer buttons
 const buildAnswerBtn = function () {
   aArray.forEach((i) => {
-    var button = document.createElement('button');
-    if (qCurrent === 'txt') {
+    var button = document.createElement("button");
+    if (qCurrent === "txt") {
       button.innerHTML = `<img src="imgs/${i}.svg" class="svg" ></img>`;
-    } else if (qCurrent === 'img') {
+    } else if (qCurrent === "img") {
       button.innerText = i;
     }
-    button.className = 'answer__btn';
-    button.addEventListener('click', function () {
+    button.className = "answer__btn";
+    button.addEventListener("click", function () {
       matchAnswer(i);
     });
     aList.appendChild(button);
@@ -168,26 +168,42 @@ const buildAnswerBtn = function () {
 
 //Generates question letter on click
 const generateQuestionLetter = function () {
+  const today = new Date();
+  console.log(`today is ${today}`);
+
+  const isInThePast = function (rl) {
+    if (rl.reviewDate < today) {
+      rl.reviewed === false;
+    }
+    console.log(`${rl.text} is now ${rl.reviewed}`);
+    console.log(`${rl.text} review time is ${rl.reviewDate}`);
+  };
+  console.log(`today is ${today}`);
+
+  reviewedLetters.forEach(isInThePast);
+
   let r = reviewedLetters.filter((x) => x.reviewed === false);
 
-  //Selects a random letter from the r array
+  //Selects a random letter number from the r array
   randomLetters = randomSelect(r);
 
   currentValue = r[randomLetters];
+
+  isInThePast(currentValue);
+
   console.log(currentValue);
-  console.log(qCurrent);
 
   if (currentValue != undefined) {
-    if (qCurrent === 'img') {
+    if (qCurrent === "img") {
       qImg.innerHTML = `<img src="imgs/${currentValue.text}.svg" class="svg" height="100px">`;
-    } else if (qCurrent === 'txt') {
+    } else if (qCurrent === "txt") {
       qImg.innerHTML = `${currentValue.text}`;
     }
     qSeq.innerHTML = currentValue.sequence;
     aArray.push(currentValue.text);
   } else {
     qImg.innerHTML =
-      'All the letters have been reviewed for today. Try learning some new ones! ';
+      "All the letters have been reviewed for today. Try learning some new ones! ";
   }
 
   // try {
@@ -240,20 +256,20 @@ const replaceAnswerBtn = function () {
   buildAnswerBtn();
 };
 
-span.addEventListener('click', function () {
+span.addEventListener("click", function () {
   replaceAnswerBtn();
-  modal.style.display = 'none';
+  modal.style.display = "none";
 });
 
-nBtn.addEventListener('click', function () {
+nBtn.addEventListener("click", function () {
   // generateModalLetter()
   if (reviewedIndex > 4) {
-    span.style.display = 'block';
+    span.style.display = "block";
     // When the user clicks on <span> (x), close the modal
     // When the user clicks anywhere outside of the modal, close it
-    window.addEventListener('click', function (event) {
+    window.addEventListener("click", function (event) {
       if (event.target == modal) {
-        modal.style.display = 'none';
+        modal.style.display = "none";
       }
     });
   }
@@ -261,6 +277,6 @@ nBtn.addEventListener('click', function () {
 
 //New letter generated
 //Generate new icon on "new" btn click"
-qBtn.addEventListener('click', replaceAnswerBtn);
+qBtn.addEventListener("click", replaceAnswerBtn);
 
 let stringScore = new String(currentScore);
