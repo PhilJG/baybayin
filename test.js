@@ -1,4 +1,13 @@
-// "use strict"
+"use strict";
+
+// //adds hours to review date
+// const addHours = function (numOfHours, date) {
+//   date.setTime(date.getTime() + numOfHours * 60 * 60 * 1000);
+//   return date;
+// };
+
+// // adds 24 hours to review date
+// addHours(24, currentValue.reviewDate);
 
 // // Get the modal
 // const modal = document.getElementById("myModal");
@@ -39,7 +48,7 @@
 //     mLetter.innerHTML = `<img src="imgs/${generatedLetter}.svg" class="svg" height="100px"></img><h2>${generatedLetter}</h2>`;
 //     //then push this letter to reviewedletter array
 //     reviewedLetters.push(generatedLetter);
-    
+
 //     }
 //   // increment i by 1
 //   reviewedIndex = reviewedIndex + 1;
@@ -62,4 +71,4 @@
 //     if (event.target == modal) {
 //       modal.style.display = "none";
 //     }
-//   }); 
+//   });

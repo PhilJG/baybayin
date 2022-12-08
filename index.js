@@ -69,41 +69,53 @@ let randomLetters = randomSelect(reviewedLetters);
 let currentDate = new Date();
 // let currentDate = cd.getUTCDate();
 
-const setReviewDate = function (currentValue) {
-  let timeStamp = Date.parse(currentValue.reviewDate);
-  let rd = new Date(timeStamp);
-  let hour = currentDate.getHours();
-  if (currentValue.review)
-    //check against
-    switch (currentDate) {
-      case (currentValue.sequence = 0):
-        rd.setHours(hour + 24);
-        console.log(rd);
+const setReviewDate = function (cv) {
+  let rd = new Date();
+  console.log(`rd:`, typeof rd, rd);
 
-        currentValue.reviewDate = rd;
-        console.log(currentValue.text, currentValue.reviewDate);
-        break;
+  function addDays(numOfHours, date = new Date()) {
+    date.setUTCDate(date.getDate() + numOfHours);
+    console.log(date);
 
-      case (currentValue.sequence = 1):
-        rd.setHours(hour + 24 * 2);
-        console.log(rd);
-        break;
+    return date;
+  }
 
-      case (currentValue.sequence = 2):
-        rd.setHours(hour + 24 * 3);
-        console.log(rd);
-        break;
+  let result = addDays(1, rd);
 
-      case (currentValue.sequence = 3):
-        rd.setHours(hour + 24 * 4);
-        console.log(rd);
-        break;
+  cv.reviewDate = result;
+  console.log(`${cv.text}.reviewDate: ${cv.reviewDate}`);
 
-      case (currentValue.sequence = 4):
-        rd.setHours(hour + 24 * 5);
-        console.log(rd);
-        break;
-    }
+  // if (currentValue.review)
+  //   //check against
+  //   switch (currentDate) {
+  //     case (currentValue.sequence = 0):
+  //       rd.setHours(hour + 24);
+  //       console.log(rd);
+
+  //       currentValue.reviewDate = rd;
+  //       console.log(currentValue.text, currentValue.reviewDate);
+  //       break;
+
+  //     case (currentValue.sequence = 1):
+  //       rd.setHours(hour + 24 * 2);
+  //       console.log(rd);
+  //       break;
+
+  //     case (currentValue.sequence = 2):
+  //       rd.setHours(hour + 24 * 3);
+  //       console.log(rd);
+  //       break;
+
+  //     case (currentValue.sequence = 3):
+  //       rd.setHours(hour + 24 * 4);
+  //       console.log(rd);
+  //       break;
+
+  //     case (currentValue.sequence = 4):
+  //       rd.setHours(hour + 24 * 5);
+  //       console.log(rd);
+  //       break;
+  //   }
 };
 
 //Matches question with answer on click
@@ -168,17 +180,14 @@ const buildAnswerBtn = function () {
 
 //Generates question letter on click
 const generateQuestionLetter = function () {
-  const today = new Date();
-  console.log(`today is ${today}`);
-
   const isInThePast = function (rl) {
-    if (rl.reviewDate < today) {
-      rl.reviewed === false;
+    currentDate = Date();
+    if (rl.reviewDate < currentDate) {
+      rl.reviewed = false;
+    } else if (rl.reviewDate > currentDate) {
+      rl.reviewed = true;
     }
-    console.log(`${rl.text} is now ${rl.reviewed}`);
-    console.log(`${rl.text} review time is ${rl.reviewDate}`);
   };
-  console.log(`today is ${today}`);
 
   reviewedLetters.forEach(isInThePast);
 

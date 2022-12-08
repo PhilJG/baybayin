@@ -1,5 +1,7 @@
 "use strict";
 
+//http://www.personal.psu.edu/ejp10/symbolcodes/bylanguage/tagalogchart.html
+
 let ba,
   ga,
   nga,
@@ -68,7 +70,7 @@ let ba,
   da_ra,
   i_e,
   u_o,
-  a
+  a;
 
 const letterStringArray = [
   "ba",
@@ -139,33 +141,33 @@ const letterStringArray = [
   "da_ra",
   "i_e",
   "u_o",
-  "a"
+  "a",
 ];
 
 let reviewedLetters;
 let reviewedIndex;
 
-class Letter{
+class Letter {
   constructor(text, sequence) {
     this.text = text;
     this.sequence = 0;
-    this.reviewed = false; 
+    this.reviewed = false;
     this.reviewDate = new Date();
 
-    //review time 
+    //review time
     //if review == true && sequence == 0;
     // if(this.reviewed == true){
     //   switch(sequence){
     //     case 0:
-          
+
     //   }
     // }
     //save d&t (date & time)
     //switch statement
     //while current date & time < d&t + 24hrs then reviewed = true
     // if current date & time > d&t + 24hrs then reviewed = false
-      //if reviewed = true then don't generate as question letter
-      //if reviewed = false then generate as question letter
+    //if reviewed = true then don't generate as question letter
+    //if reviewed = false then generate as question letter
   }
 }
 
@@ -181,93 +183,88 @@ let letters = [];
 
 // letters.push(ba, ka, ga, sa, ma);
 
-const buildAddLetter = function(letter) {
-
+const buildAddLetter = function (letter) {
   return new Letter(letter);
-}
+};
 
-
-const callLetter = function(arr, toArr){
-  for(let i = 0; i < arr.length; i++){
-    let k = arr[i]
+const callLetter = function (arr, toArr) {
+  for (let i = 0; i < arr.length; i++) {
+    let k = arr[i];
     k = buildAddLetter(k);
-    toArr.push(k)
+    toArr.push(k);
   }
-}
-
+};
 
 callLetter(letterStringArray, letters);
 
 // const letterStringArray = [
-  // ba,
-  // ga,
-  // nga,
-  // ka,
-  // sa,
-  // ha,
-  // ma,
-  // na,
-  // wa,
-  // ta,
-  // pa,
-  // ya,
-  // bi,
-  // bu,
-  // be,
-  // b,
-  // g,
-  // gi,
-  // gu,
-  // go,
-  // ge,
-  // k,
-  // ku,
-  // ki,
-  // ke,
-  // h,
-  // he,
-  // hi,
-  // hu,
-  // ho,
-  // m,
-  // me,
-  // mi,
-  // mu,
-  // mo,
-  // n,
-  // ne,
-  // ni,
-  // nu,
-  // no,
-  // nge,
-  // ngi,
-  // ngo,
-  // ngu,
-  // ng,
-  // p,
-  // pe,
-  // pi,
-  // pu,
-  // po,
-  // t,
-  // te,
-  // ti,
-  // to,
-  // tu,
-  // w,
-  // we,
-  // wi,
-  // wu,
-  // wo,
-  // y,
-  // ye,
-  // yi,
-  // yu,
-  // yo,
-  // da_ra,
-  // i_e,
-  // u_o,
-  // a
+// ba,
+// ga,
+// nga,
+// ka,
+// sa,
+// ha,
+// ma,
+// na,
+// wa,
+// ta,
+// pa,
+// ya,
+// bi,
+// bu,
+// be,
+// b,
+// g,
+// gi,
+// gu,
+// go,
+// ge,
+// k,
+// ku,
+// ki,
+// ke,
+// h,
+// he,
+// hi,
+// hu,
+// ho,
+// m,
+// me,
+// mi,
+// mu,
+// mo,
+// n,
+// ne,
+// ni,
+// nu,
+// no,
+// nge,
+// ngi,
+// ngo,
+// ngu,
+// ng,
+// p,
+// pe,
+// pi,
+// pu,
+// po,
+// t,
+// te,
+// ti,
+// to,
+// tu,
+// w,
+// we,
+// wi,
+// wu,
+// wo,
+// y,
+// ye,
+// yi,
+// yu,
+// yo,
+// da_ra,
+// i_e,
+// u_o,
+// a
 // ];
-
-
