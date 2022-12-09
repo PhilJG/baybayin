@@ -20,4 +20,4 @@ Some improves I want to added in the future.
 ### How to use
 
 Click this [link](https://philjg.github.io/babayin/) to go to the site
-Allow and keep cookies and history active for this site. Progess is saved in the local storage on your browser.
+allow and keep cookies and history active for this site. Progess is saved in the local storage on your browser.

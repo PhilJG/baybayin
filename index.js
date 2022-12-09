@@ -71,7 +71,7 @@ let currentDate = new Date();
 
 const setReviewDate = function (cv) {
   let rd = new Date();
-  console.log(`rd:`, typeof rd, rd);
+  console.log(`rd before hours added:`, typeof rd, rd);
 
   function addDays(numOfHours, date = new Date()) {
     date.setUTCDate(date.getDate() + numOfHours);
@@ -80,42 +80,32 @@ const setReviewDate = function (cv) {
     return date;
   }
 
-  let result = addDays(1, rd);
+  let result;
 
-  cv.reviewDate = result;
-  console.log(`${cv.text}.reviewDate: ${cv.reviewDate}`);
+  const sequenceCheck = function (seq) {
+    result = addDays(seq, rd);
 
-  // if (currentValue.review)
-  //   //check against
-  //   switch (currentDate) {
-  //     case (currentValue.sequence = 0):
-  //       rd.setHours(hour + 24);
-  //       console.log(rd);
+    cv.reviewDate = result;
 
-  //       currentValue.reviewDate = rd;
-  //       console.log(currentValue.text, currentValue.reviewDate);
-  //       break;
+    console.log(
+      `${currentValue.text} sequence is ${currentValue.sequence} and review date is ${currentValue.reviewDate}`
+    );
+    return (currentValue.reviewDate = rd);
+  };
 
-  //     case (currentValue.sequence = 1):
-  //       rd.setHours(hour + 24 * 2);
-  //       console.log(rd);
-  //       break;
-
-  //     case (currentValue.sequence = 2):
-  //       rd.setHours(hour + 24 * 3);
-  //       console.log(rd);
-  //       break;
-
-  //     case (currentValue.sequence = 3):
-  //       rd.setHours(hour + 24 * 4);
-  //       console.log(rd);
-  //       break;
-
-  //     case (currentValue.sequence = 4):
-  //       rd.setHours(hour + 24 * 5);
-  //       console.log(rd);
-  //       break;
-  //   }
+  if ((cv.sequence = 0)) {
+    sequenceCheck(1);
+  } else if ((cv.sequence = 1)) {
+    sequenceCheck(2);
+  } else if ((cv.sequence = 2)) {
+    sequenceCheck(3);
+  } else if ((cv.sequence = 3)) {
+    sequenceCheck(4);
+  } else if ((cv.sequence = 4)) {
+    sequenceCheck(5);
+  } else {
+    console.error("if statement error");
+  }
 };
 
 //Matches question with answer on click
