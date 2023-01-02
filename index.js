@@ -71,12 +71,9 @@ let currentDate = new Date();
 
 const setReviewDate = function (cv) {
   let rd = new Date();
-  console.log(`rd before hours added:`, typeof rd, rd);
 
   function addDays(numOfHours, date = new Date()) {
     date.setUTCDate(date.getDate() + numOfHours);
-    console.log(date);
-
     return date;
   }
 
@@ -94,15 +91,15 @@ const setReviewDate = function (cv) {
   };
 
   if ((cv.sequence = 0)) {
-    sequenceCheck(1);
+    sequenceCheck(0);
   } else if ((cv.sequence = 1)) {
-    sequenceCheck(2);
+    sequenceCheck(1);
   } else if ((cv.sequence = 2)) {
-    sequenceCheck(3);
+    sequenceCheck(2);
   } else if ((cv.sequence = 3)) {
-    sequenceCheck(4);
+    sequenceCheck(3);
   } else if ((cv.sequence = 4)) {
-    sequenceCheck(5);
+    sequenceCheck(4);
   } else {
     console.error("if statement error");
   }
@@ -112,17 +109,19 @@ const setReviewDate = function (cv) {
 const matchAnswer = function (v) {
   currentValue.reviewed = true;
 
-  if (currentValue.text == v) {
+  if (currentValue.text === v) {
     //adds 1 point to current score if correct
     currentScore = currentScore + 1;
+
     // sequence is increased by 1 on correct answer
     currentValue.sequence = currentValue.sequence + 1;
 
     //currentscore is entered into scorePoints
-    // scorePoints.textContent = currentScore;
     qSeq.textContent = currentValue.sequence;
-    // scoreBoard.classList.add('correct');
     qSeq.classList.add("correct");
+    console.log(
+      `answer is correct ${currentValue.text} is ${currentValue.sequence}`
+    );
     setTimeout(function () {
       replaceAnswerBtn();
       qSeq.classList.remove("correct");
@@ -132,10 +131,12 @@ const matchAnswer = function (v) {
     currentScore = currentScore - 1;
     // sequence is 0 wrong answer
     currentValue.sequence = 0;
-    //currentscore is entered into scorePoints
-    // scorePoints.textContent = currentScore;
-    // scoreBoard.classList.add('incorrect');
+
+    //currentscore is entered into scorePoints=
     qSeq.classList.add("incorrect");
+    console.log(
+      `answer is false ${currentValue.text} is ${currentValue.sequence}`
+    );
     setTimeout(function () {
       // scoreBoard.classList.remove();
       qSeq.classList.remove("incorrect");
@@ -189,8 +190,6 @@ const generateQuestionLetter = function () {
   currentValue = r[randomLetters];
 
   isInThePast(currentValue);
-
-  console.log(currentValue);
 
   if (currentValue != undefined) {
     if (qCurrent === "img") {
