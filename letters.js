@@ -193,7 +193,7 @@ const callLetter = function (arr, toArr) {
     k = buildAddLetter(k);
     toArr.push(k);
   }
-};
+}; 
 
 callLetter(letterStringArray, letters);
 

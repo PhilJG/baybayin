@@ -31,7 +31,9 @@ function getScore() {
 
 getScore();
 
-// scorePoints.textContent = currentScore;
+
+// Sets the score
+scorePoints.textContent = currentScore;
 
 //Randomly selects from an array
 const randomSelect = function (arr) {
@@ -63,6 +65,7 @@ function shuffle(arr) {
   return arr;
 }
 
+
 //Selects random index from letters array
 let randomLetters = randomSelect(reviewedLetters);
 
@@ -85,14 +88,12 @@ const setReviewDate = function (cv) {
     cv.reviewDate = result;
 
     console.log(
-      `${currentValue.text} sequence is ${currentValue.sequence} and review date is ${currentValue.reviewDate}`
+      `${currentValue.text} sequence is ${seq} and review date is ${currentValue.reviewDate}`
     );
     return (currentValue.reviewDate = rd);
   };
 
-  if ((cv.sequence = 0)) {
-    sequenceCheck(0);
-  } else if ((cv.sequence = 1)) {
+  if ((cv.sequence = 1)) {
     sequenceCheck(1);
   } else if ((cv.sequence = 2)) {
     sequenceCheck(2);
@@ -117,7 +118,7 @@ const matchAnswer = function (v) {
     currentValue.sequence = currentValue.sequence + 1;
 
     //currentscore is entered into scorePoints
-    qSeq.textContent = currentValue.sequence;
+    qSeq.textContent == currentValue.sequence;
     qSeq.classList.add("correct");
     console.log(
       `answer is correct ${currentValue.text} is ${currentValue.sequence}`
@@ -126,6 +127,7 @@ const matchAnswer = function (v) {
       replaceAnswerBtn();
       qSeq.classList.remove("correct");
     }, 1000);
+    setReviewDate(currentValue);
   } else {
     //deducts 1 point to current score if correct
     currentScore = currentScore - 1;
@@ -142,10 +144,9 @@ const matchAnswer = function (v) {
       qSeq.classList.remove("incorrect");
       replaceAnswerBtn();
     }, 1000);
+    setReviewDate(currentValue);
   }
   let stringScore = new String(currentScore);
-
-  setReviewDate(currentValue);
 
   //set currentScore to session storage and turn it into a string
   localStorage.setItem("currentScore", `${stringScore}`);
@@ -203,23 +204,7 @@ const generateQuestionLetter = function () {
     qImg.innerHTML =
       "All the letters have been reviewed for today. Try learning some new ones! ";
   }
-
-  // try {
-  //   console.log('error test begins');
-  //   unicycle;
-
-  //   console.log('End of try runs -- never reached');
-  //   // if(currentValue = undefined) {
-  //   //   throw new Error('All your previous letters have been reviewed for today. Try learning some new letters');
-  //   // } catch(e) {
-  //   //   console.log(e);
-  // } catch (err) {
-  //   console.log('Error has occured: ' + err);
-  // }
-  // post letter sequence
 };
-
-// let shuffledLetters = shuffle(letters.map((shuffle(letters))));
 
 //Generates answer buttons of all the letters
 const generateAnswer = function () {
@@ -233,12 +218,6 @@ const generateAnswer = function () {
   }
 };
 
-// generateQuestionLetter();
-
-// generateAnswer();
-
-// buildAnswerBtn();
-
 const replaceAnswerBtn = function () {
   aArray = [];
   currentValue = reviewedLetters[randomLetters];
@@ -247,7 +226,7 @@ const replaceAnswerBtn = function () {
   while (aList.hasChildNodes()) {
     aList.removeChild(aList.firstChild);
   }
-  // scoreBoard.classList.remove('incorrect', 'correct');
+  scoreBoard.classList.remove("incorrect", "correct");
   generateQuestionLetter();
   generateAnswer();
   shuffle(aArray);
