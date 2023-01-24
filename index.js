@@ -93,13 +93,13 @@ const setReviewDate = function (cv) {
     return (currentValue.reviewDate = rd);
   };
 
-  if ((cv.sequence = 1)) {
+  if ((cv.sequence = 0)) {
     sequenceCheck(1);
-  } else if ((cv.sequence = 2)) {
+  } else if ((cv.sequence = 1)) {
     sequenceCheck(2);
-  } else if ((cv.sequence = 3)) {
+  } else if ((cv.sequence = 2)) {
     sequenceCheck(3);
-  } else if ((cv.sequence = 4)) {
+  } else if ((cv.sequence = 3)) {
     sequenceCheck(4);
   } else {
     console.error("if statement error");
@@ -128,9 +128,9 @@ const matchAnswer = function (v) {
       qSeq.classList.remove("correct");
     }, 1000);
     setReviewDate(currentValue);
-  } else {
+  } else if (currentValue.text != v){
     //deducts 1 point to current score if correct
-    currentScore = currentScore - 1;
+    currentScore = 0;
     // sequence is 0 wrong answer
     currentValue.sequence = 0;
 
