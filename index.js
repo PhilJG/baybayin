@@ -117,9 +117,11 @@ const matchAnswer = function (v) {
     // sequence is increased by 1 on correct answer
     currentValue.sequence = currentValue.sequence + 1;
 
+    qSeq.textContent == `${currentValue.sequence}`;
+
     //currentscore is entered into scorePoints
-    qSeq.textContent == currentValue.sequence;
     qSeq.classList.add("correct");
+    qSeq.textContent = currentValue.sequence
     console.log(
       `answer is correct ${currentValue.text} is ${currentValue.sequence}`
     );
@@ -130,10 +132,11 @@ const matchAnswer = function (v) {
     setReviewDate(currentValue);
   } else if (currentValue.text != v){
     //deducts 1 point to current score if correct
-    currentScore = 0;
+    currentScore == currentScore * 0;
     // sequence is 0 wrong answer
     currentValue.sequence = 0;
 
+    qSeq.textContent == currentValue.sequence
     //currentscore is entered into scorePoints=
     qSeq.classList.add("incorrect");
     console.log(
