@@ -1,3 +1,6 @@
+6 Feb 2023
+New branch v2.0 created 
+
 Nov 8
 Fixed typerror listed previously. Not sure how.
 Now I`m trying to present new popup if all the letters have been reviewed (index.js.182)
