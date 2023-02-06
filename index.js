@@ -87,9 +87,6 @@ const setReviewDate = function (cv) {
 
     cv.reviewDate = result;
 
-    console.log(
-      `${currentValue.text} sequence is ${seq} and review date is ${currentValue.reviewDate}`
-    );
     return (currentValue.reviewDate = rd);
   };
 
@@ -122,9 +119,7 @@ const matchAnswer = function (v) {
     //currentscore is entered into scorePoints
     qSeq.classList.add("correct");
     qSeq.textContent = currentValue.sequence
-    console.log(
-      `answer is correct ${currentValue.text} is ${currentValue.sequence}`
-    );
+   
     setTimeout(function () {
       replaceAnswerBtn();
       qSeq.classList.remove("correct");
