@@ -46,6 +46,12 @@ header {
   padding: 0.5rem 1rem;
 }
 
+//Section 2
+.section-2 {
+  display: flex;
+flex-direction: column;
+}
+
 .answer {
   display: grid;
   grid: auto / auto auto auto auto;

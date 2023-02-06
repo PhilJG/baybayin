@@ -151,6 +151,9 @@ const matchAnswer = function (v) {
   }
   let stringScore = new String(currentScore);
 
+  // Sets the score
+scorePoints.textContent = currentScore;
+
   //set currentScore to session storage and turn it into a string
   localStorage.setItem("currentScore", `${stringScore}`);
   localStorage.setItem("reviewedLetters", JSON.stringify(reviewedLetters));
