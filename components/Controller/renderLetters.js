@@ -13,11 +13,14 @@ class Letter {
 }
 
 
-const buildAddLetter = function (letter) {
+export const buildAddLetter = function (letter) {
   return new Letter(letter);
 };
 
 export const callLetter = function (arr) {
+  if (!Array.isArray(arr)){
+    throw "Not an array idiot you fucking shithead chANGE THE MUSIC BE A MAN"
+  } 
   let l = [];
   for (let i = 0; i < arr.length; i++) {
     let k = arr[i];
