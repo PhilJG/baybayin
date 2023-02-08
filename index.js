@@ -1,5 +1,6 @@
-import { letters } from './components/Controller/renderLetters.js'
-import * as Dom from './components/View/dom.js'
+import { letters } from './components/controller/renderLetters.js'
+
+import { currentValue } from './components/controller/generateCurrentValue.js';
 
 
 // let s = ''
@@ -10,5 +11,7 @@ import * as Dom from './components/View/dom.js'
 // })
 // console.log(s)
 
-console.log(letters);
+
+console.log(currentValue);
+
 

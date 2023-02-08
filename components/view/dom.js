@@ -12,6 +12,9 @@ const toggleBtn = document.querySelector(".switch");
 
 const mBtn = document.querySelector("#myBtn");
 
+const allBtns = [mBtn, aBtn, qBtn];
+
+
  export {qBox,
   qImg,
   qSeq,

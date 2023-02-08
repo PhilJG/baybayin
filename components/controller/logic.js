@@ -4,7 +4,7 @@ const randomSelect = function (arr) {
   };
 
   //Shuffles array
-function shuffle(arr) {
+const shuffle = function(arr) {
     let currentIndex = arr.length,
       randomIndex;
   
@@ -23,5 +23,12 @@ function shuffle(arr) {
     return arr;
   }
   
+  //Add days to current date
+  function addDays(numOfHours, date = new Date()) {
+    date.setUTCDate(date.getDate() + numOfHours);
+    return date;
+  }
+
+
 
   export {shuffle, randomSelect}

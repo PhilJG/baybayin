@@ -1,4 +1,4 @@
-import {letterStringArray} from '../Model/letters.js'
+import {letterStringArray} from '../model/letters.js'
 
 let reviewedLetters;
 let reviewedIndex;
@@ -19,7 +19,7 @@ export const buildAddLetter = function (letter) {
 
 export const callLetter = function (arr) {
   if (!Array.isArray(arr)){
-    throw "Not an array idiot you fucking shithead chANGE THE MUSIC BE A MAN"
+    throw "error did not call a letter"
   } 
   let l = [];
   for (let i = 0; i < arr.length; i++) {
