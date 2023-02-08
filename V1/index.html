@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Babayin | Main Page</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times; </span>
+        <div class="modal-question">
+          <div class="mLetter">Click next to view your next letter</div>
+          <button class="nextBtn">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="contianer__pair" style="display: flex"> -->
+    <div class="container ">
+      <h1 class="baybayin-font">ᜊᜀᜌᜊᜀᜌᜒᜈ</h1>
+      <!-- Trigger/Open The Modal -->
+      <button id="myBtn">Learn New Letters</button>
+
+      <section class="section-1">
+        <div class="score">
+          <h3>Score</h3>
+          <div class="score__points">
+            <div class="score__points--inc"></div>
+            <div class="score__points--tot">/20</div>
+          </div>
+        </div>
+        <div class="question">
+          <div class="question__box">
+            <div class="question__box--img"></div>
+            <h3 style="display: none;">Sequence</h3>
+            <div style="display: none;" class="question__box--sequence"></div>
+          </div>
+        </div>
+      </section>
+      <section class="section-2">
+        <div class="answer"></div>
+        <p></p>
+        <button class="question__btn">New Question</button>
+      </section>
+    </div>
+    <!-- <div class="container">
+        <section class="reviewedLetters__List"></section>
+      </div> -->
+    <!-- </div> -->
+    <script  src="letters.js"></script>
+    <script src="test.js"></script>
+    <script  src="modal.js"></script>
+    <script  src="index.js"></script>
+    <!-- <script src="test.js"></script> -->
+  </body>
+</html>
