@@ -12,22 +12,22 @@ class Letter {
   }
 }
 
-let l = [];
 
 const buildAddLetter = function (letter) {
   return new Letter(letter);
 };
 
-const callLetter = function (arr, toArr) {
+export const callLetter = function (arr) {
+  let l = [];
   for (let i = 0; i < arr.length; i++) {
     let k = arr[i];
     k = buildAddLetter(k);
-    toArr.push(k);
+    l.push(k);
   }
 return l;  
 };
 
 
-export const letters = callLetter(letterStringArray, l);
+export const letters = callLetter(letterStringArray);
 
 
