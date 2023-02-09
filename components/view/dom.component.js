@@ -14,6 +14,8 @@ const mBtn = document.querySelector("#myBtn");
 
 const allBtns = [mBtn, aBtn, qBtn];
 
+let aBtnKey, aBtnHTML, imgNode, currentValue, qImgNodes, currentScore;
+
 
  export {qBox,
   qImg,

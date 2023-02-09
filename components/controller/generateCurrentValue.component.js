@@ -1,13 +1,12 @@
-import { letters } from "./renderLetters.js";
-import { randomSelect } from "./logic.js"
+import { letters } from "./renderLetters.component.js";
+import { randomSelect } from "./logic.component.js"
 
 
-const isInThePast = function (rl) {
+export const isInThePast = function (rl) {
   currentDate = Date();
   if (rl.reviewDate < currentDate) {
     rl.reviewed = false;
     console.log(`${rl} is false`);
-    
   } else if (rl.reviewDate > currentDate) {
     rl.reviewed = true;
     console.log(`${rl} is true`);
@@ -15,7 +14,7 @@ const isInThePast = function (rl) {
 };
 
 //Generates question letter on click
-const generateCurrentValue = function (arr) {
+export const generateCurrentValue = function (arr) {
 
   // arr.forEach(isInThePast);
 

@@ -1,4 +1,4 @@
-import {letterStringArray} from '../model/letters.js'
+import {letterStringArray} from '../model/letters.component.js'
 
 let reviewedLetters;
 let reviewedIndex;

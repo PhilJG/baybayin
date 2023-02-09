@@ -6,3 +6,7 @@ function getScore() {
       currentScore = 0;
     }
   }
+
+   //set currentScore to session storage and turn it into a string
+   localStorage.setItem("currentScore", `${stringScore}`);
+   localStorage.setItem("reviewedLetters", JSON.stringify(reviewedLetters));
