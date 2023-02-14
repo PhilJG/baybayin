@@ -1,10 +1,14 @@
 import { matchAnswer } from "../controller/matchAnswer.component.js";
 import { qCurrent } from "./questionDom.component.js";
 import {generateAnswer} from "../controller/generateAnswer.component.js"
+import { letters } from "../controller/renderLetters.component.js";
+import { aArray } from "./questionDom.component.js";
+import { aList } from "./dom.component.js";
 
 // Adds text content & eventlistner to all 4 answer buttons
 export const buildAnswerBtn = function () {
-  generateAnswer(letters)
+ let aArray = generateAnswer(letters)
+  
     aArray.forEach((i) => {
       var button = document.createElement("button");
       if (qCurrent === "txt") {

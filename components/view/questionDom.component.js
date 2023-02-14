@@ -15,6 +15,7 @@ qSeq.textContent = `${currentValue.sequence}`;
 qSeq.classList.add("correct");
 qSeq.textContent = currentValue.sequence;
 
+export let aArray = []
  export const renderQuestionImg = function () {
   //if current is not undefined
   if (currentValue != undefined) {
