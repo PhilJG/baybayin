@@ -2,6 +2,7 @@
 const randomSelect = function (arr) {
     return Math.round(Math.random() * (arr.length - 1));
   };
+  
 
   //Shuffles array
 const shuffle = function(arr) {
@@ -31,4 +32,4 @@ const shuffle = function(arr) {
 
 
 
-  export {shuffle, randomSelect}
+  export {shuffle, randomSelect, addDays}

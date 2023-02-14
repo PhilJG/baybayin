@@ -1,3 +1,6 @@
+
+let oldReviewedLetters = JSON.parse(localStorage.getItem("reviewedLetters"));
+
 //get sessionStorage of previous current score on refresh and turn it into a number
 function getScore() {
     if (localStorage.length > 0) {

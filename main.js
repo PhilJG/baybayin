@@ -1,9 +1,8 @@
-import { letters } from './components/controller/renderLetters.component.js'
+import { qCurrent, renderQuestionImg } from './components/view/questionDom.component.js'
+import * as eventListener from './components/view/eventListeners.component.js'
 
-import { currentValue } from './components/controller/generateCurrentValue.component.js';
-
-import { setReviewDate } from './components/controller/setReviewDate.component.js'; 
-
+import {qImg, qSeq, mBtn} from './components/view/dom.component.js'
+// import {nBtnEventlistener} from './components/view/eventListeners.component.js'
 
 // let s = ''
 // document.querySelectorAll('[id]').forEach(el => {
@@ -13,11 +12,6 @@ import { setReviewDate } from './components/controller/setReviewDate.component.j
 // })
 // console.log(s)
 
-console.log(currentValue);
-
-setReviewDate(currentValue);
-
-console.log(currentValue);
 
 
 
