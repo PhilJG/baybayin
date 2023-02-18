@@ -1,4 +1,3 @@
-import { currentValue } from "../controller/generateCurrentValue.component.js";
 import { randomSelect } from "../controller/logic.component.js";
 import { qSeq, qImg } from "./dom.component.js";
 
@@ -8,24 +7,24 @@ export const qType = ["txt", "img"];
 let qChoice = randomSelect(qType);
 export let qCurrent = qType[qChoice];
 
-//change sequence number on dom
-qSeq.textContent = `${currentValue.sequence}`;
+// //change sequence number on dom
+// qSeq.textContent = `${currentValue.sequence}`;
 
-//currentscore is entered into scorePoints
-qSeq.classList.add("correct");
-qSeq.textContent = currentValue.sequence;
+// //currentscore is entered into scorePoints
+// qSeq.classList.add("correct");
+// qSeq.textContent = currentValue.sequence;
 
 export let aArray = []
- export const renderQuestionImg = function () {
+ export const renderQuestionImg = function (cv) {
   //if current is not undefined
-  if (currentValue != undefined) {
+  if (cv != undefined) {
     if (qCurrent === "img") {
-      qImg.innerHTML = `<img src="imgs/${currentValue.text}.svg" class="svg" height="100px">`;
+      qImg.innerHTML = `<img src="imgs/${cv.text}.svg" class="svg" height="100px">`;
     } else if (qCurrent === "txt") {
-      qImg.innerHTML = `${currentValue.text}`;
+      qImg.innerHTML = `${cv.text}`;
     }
-    qSeq.innerHTML = currentValue.sequence;
-    aArray.push(currentValue.text);
+    qSeq.innerHTML = cv.sequence;
+    aArray.push(cv.text);
   } else {
     qImg.innerHTML =
       "All the letters have been reviewed for today. Try learning some new ones! ";

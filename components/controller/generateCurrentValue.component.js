@@ -18,15 +18,12 @@ export const generateCurrentValue = function (arr) {
 
   // arr.forEach(isInThePast);
 
-  let r = arr.filter((x) => x.reviewed === false);
+  let r = arr.filter((x) => !x.reviewed);
 
   //Selects a random letter number from the r array
   let randomLetters = randomSelect(r);
 
-  //current value is set to a random letter from letters array
-  let cv = r[randomLetters];
-  
-  return cv
+  return r[randomLetters];
 
 };
 

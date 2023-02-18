@@ -11,10 +11,13 @@ export const newQuestion = function () {
    let currentValue = generateCurrentValue(letters);
    let qChoice = randomSelect(qType);
    let qCurrent = qType[qChoice];
+   console.log(`currentValue ${currentValue.text}`);
+
+   
     while (aList.hasChildNodes()) {
       aList.removeChild(aList.firstChild);
     }
     // scoreBoard.classList.remove("incorrect", "correct");
-    renderQuestionImg();
+    renderQuestionImg(currentValue);
     buildAnswerBtn();
   };
