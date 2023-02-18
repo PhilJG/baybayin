@@ -4,9 +4,11 @@ import { generateAnswer } from "../controller/generateAnswer.component.js";
 import { letters } from "../controller/renderLetters.component.js";
 import { aArray } from "./questionDom.component.js";
 import { aList } from "./dom.component.js";
+import { shuffle } from "../controller/logic.component.js";
+import { currentValue } from "../controller/generateCurrentValue.component.js";
 
 // Adds text content & eventlistner to all 4 answer buttons
-export const buildAnswerBtn = function () {
+export const buildAnswerBtn = function (cv) {
   // Remove all previous answer buttons from the aList element
   while (aList.firstChild) {
     aList.removeChild(aList.firstChild);
@@ -14,6 +16,12 @@ export const buildAnswerBtn = function () {
 
   // Generate a new array of answer options
   const aArray = generateAnswer(letters);
+
+  // currentValue is pushed to the answer array
+  aArray.push(cv);
+
+  //answer array is shuffled
+  shuffle(aArray);
 
   // Create a new button for each answer in the array and append it to the aList element
   aArray.forEach((i) => {

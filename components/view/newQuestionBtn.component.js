@@ -19,5 +19,5 @@ export const newQuestion = function () {
     }
     // scoreBoard.classList.remove("incorrect", "correct");
     renderQuestionImg(currentValue);
-    buildAnswerBtn();
+    buildAnswerBtn(currentValue.text);
   };

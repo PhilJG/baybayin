@@ -9,7 +9,7 @@ export const generateAnswer = function (l) {
 
   // Add current value to array
   aArray.push(currentValue.text);
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 2; i++) {
     let x = l[i].text;
     if (x === currentValue.text) {
       continue;
