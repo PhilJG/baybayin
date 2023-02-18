@@ -32,33 +32,33 @@ export let aArray = []
   }
 };
 
-//Matches question with answer on click
-const matchAnswer = function (v) {
-  if (currentValue.text === v) {
-    qSeq.textContent == `${currentValue.sequence}`;
+// //Matches question with answer on click
+// const matchAnswerDOM = function (v) {
+//   if (currentValue.text === v) {
+//     qSeq.textContent == `${currentValue.sequence}`;
 
-    //currentscore is entered into scorePoints
-    qSeq.classList.add("correct");
-    qSeq.textContent = currentValue.sequence;
+//     //currentscore is entered into scorePoints
+//     qSeq.classList.add("correct");
+//     qSeq.textContent = currentValue.sequence;
 
-    // setTimeout(function () {
-    qSeq.classList.remove("correct");
-    // }, 1000);
-  } else if (currentValue.text != v) {
-    qSeq.textContent == currentValue.sequence;
-    //currentscore is entered into scorePoints=
-    qSeq.classList.add("incorrect");
-    console.log(
-      `answer is false ${currentValue.text} is ${currentValue.sequence}`
-    );
-    // setTimeout(function () {
-    scoreBoard.classList.remove();
-    qSeq.classList.remove("incorrect");
+//     // setTimeout(function () {
+//     qSeq.classList.remove("correct");
+//     // }, 1000);
+//   } else if (currentValue.text != v) {
+//     qSeq.textContent == currentValue.sequence;
+//     //currentscore is entered into scorePoints=
+//     qSeq.classList.add("incorrect");
+//     console.log(
+//       `answer is false ${currentValue.text} is ${currentValue.sequence}`
+//     );
+//     // setTimeout(function () {
+//     scoreBoard.classList.remove();
+//     qSeq.classList.remove("incorrect");
 
-    // }, 1000);
-  }
+//     // }, 1000);
+//   }
 
-  // Sets the score
-  scorePoints.textContent = currentScore;
-};
+//   // Sets the score
+//   scorePoints.textContent = currentScore;
+// };
 
