@@ -7,7 +7,6 @@ export const matchAnswer = function (cv, v) {
   console.log(`matchAnswer cv: ${cv.text}`);
   console.log(`v ${v}`);
 
-
   if (cv.text === v) {
     //adds 1 point to current score if correct
     // currentScore = currentScore + 1;
@@ -15,9 +14,9 @@ export const matchAnswer = function (cv, v) {
     // sequence is increased by 1 on correct answer
     cv.sequence = cv.sequence + 1;
 
-    //   setTimeout(function () {
-    newQuestion();
-    //   }, 1000);
+    setTimeout(function () {
+      newQuestion();
+    }, 1000);
     setReviewDate(cv);
   } else if (cv.text != v) {
     //deducts 1 point to current score if correct
@@ -25,12 +24,10 @@ export const matchAnswer = function (cv, v) {
     // sequence is 0 wrong answer
     cv.sequence = 0;
 
-    console.log(
-      `answer is false ${cv.text} is ${cv.sequence}`
-    );
-    //   setTimeout(function () {
-    newQuestion();
-    //   }, 1000);
+    console.log(`answer is false ${cv.text} is ${cv.sequence}`);
+    setTimeout(function () {
+      newQuestion();
+    }, 1000);
     setReviewDate(cv);
   }
   // let stringScore = new String(currentScore);

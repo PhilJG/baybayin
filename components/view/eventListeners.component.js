@@ -1,8 +1,7 @@
 import {newQuestion} from "./newQuestionBtn.component.js"
 import {qBtn, aBtn, aList} from "./dom.component.js" 
 // import { matchAnswer } from "../controller/matchAnswer.component.js";
-import {matchAnswerDOM } from "./questionDom.component.js"
-import { currentValue } from "../controller/generateCurrentValue.component.js";
+
 // Modal eventlistener
 // span.addEventListener("click", function () {
 //     replaceAnswerBtn();

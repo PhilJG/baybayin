@@ -17,9 +17,9 @@ export let qCurrent = qType[qChoice];
 
 let currentScore = 0;
 
-export let aArray = []
+export let aArray = [];
 
- export const renderQuestionImg = function (cv) {
+export const renderQuestionImg = function (cv) {
   //if current is not undefined
   if (cv != undefined) {
     if (qCurrent === "img") {
@@ -37,8 +37,8 @@ export let aArray = []
 
 //Matches question with answer on click
 export const matchAnswerDOM = function (cv, v) {
-  console.log( `matchAnswerDOM ${cv.text}`);
-  
+  console.log(`matchAnswerDOM ${cv.text}`);
+
   if (cv.text === v) {
     qSeq.textContent == `${cv.sequence}`;
 
@@ -47,28 +47,21 @@ export const matchAnswerDOM = function (cv, v) {
     qSeq.textContent = cv.sequence;
 
     currentScore = currentScore + 1;
-    console.log(
-      `answer is true answer is ${cv.text} `
-    );
-    setTimeout(function () {
+    console.log(`answer is true answer is ${cv.text} `);
     qSeq.classList.remove("correct");
-    }, 1000);
   } else if (cv.text != v) {
     qSeq.textContent == cv.sequence;
     //currentscore is entered into scorePoints
     currentScore = currentScore - 1;
 
     qSeq.classList.add("incorrect");
-    console.log(
-      `answer is false answer is ${cv.text} `
-    );
-    setTimeout(function () {
+    console.log(`answer is false answer is ${cv.text} `);
     scoreBoard.classList.remove();
     qSeq.classList.remove("incorrect");
-    }, 1000);
   }
 
   // Sets the score
   scorePoints.textContent = currentScore;
-};
 
+  
+};

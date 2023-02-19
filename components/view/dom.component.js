@@ -10,11 +10,20 @@ const scoreBoard = document.querySelector("#score__points");
 const scorePoints = document.querySelector("#score__points--inc");
 const toggleBtn = document.querySelector("#switch");
 
+// Get the modal
+const modal = document.querySelector(".modal");
+// Get the button that opens the modal
+const lBtn = document.querySelector("#learnBtn");
+// Get the <span> element that closes the modal
+// const close = document.querySelector("close")[0];
+const closeModal = document.querySelector("close");
+const mLetter = document.querySelector(".mLetter");
+const nBtn = document.querySelector(".nextBtn");
+
 const mBtn = document.querySelector("#myBtn");
 
-const allBtns = [mBtn, aBtn, qBtn];
-
- export {qBox,
+export {
+  qBox,
   qImg,
   qSeq,
   qBtn,
@@ -24,6 +33,11 @@ const allBtns = [mBtn, aBtn, qBtn];
   scoreBoard,
   scorePoints,
   toggleBtn,
-  mBtn}
-
-
+  mBtn,
+  modal,
+  lBtn,
+  closeModal,
+  mLetter,
+  nBtn,
+  //   close,
+};
