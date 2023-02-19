@@ -1,5 +1,6 @@
+import { currentValue } from "../controller/generateCurrentValue.component.js";
 import { randomSelect } from "../controller/logic.component.js";
-import { qSeq, qImg } from "./dom.component.js";
+import { qSeq, qImg, aBtn, scorePoints, scoreBoard } from "./dom.component.js";
 
 //randomly select between either text or image when presenting the question
 export const qType = ["txt", "img"];
@@ -14,7 +15,10 @@ export let qCurrent = qType[qChoice];
 // qSeq.classList.add("correct");
 // qSeq.textContent = currentValue.sequence;
 
+let currentScore = 0;
+
 export let aArray = []
+
  export const renderQuestionImg = function (cv) {
   //if current is not undefined
   if (cv != undefined) {
@@ -23,7 +27,7 @@ export let aArray = []
     } else if (qCurrent === "txt") {
       qImg.innerHTML = `${cv.text}`;
     }
-    qSeq.innerHTML = cv.sequence;
+    qSeq.textContent = cv.sequence;
     aArray.push(cv.text);
   } else {
     qImg.innerHTML =
@@ -31,33 +35,38 @@ export let aArray = []
   }
 };
 
-// //Matches question with answer on click
-// const matchAnswerDOM = function (v) {
-//   if (currentValue.text === v) {
-//     qSeq.textContent == `${currentValue.sequence}`;
+//Matches question with answer on click
+export const matchAnswerDOM = function (v) {
+  console.log(typeof currentValue);
+  
+  if (currentValue.text === v) {
+    qSeq.textContent == `${currentValue.sequence}`;
 
-//     //currentscore is entered into scorePoints
-//     qSeq.classList.add("correct");
-//     qSeq.textContent = currentValue.sequence;
+    //currentscore is entered into scorePoints
+    qSeq.classList.add("correct");
+    qSeq.textContent = currentValue.sequence;
 
-//     // setTimeout(function () {
-//     qSeq.classList.remove("correct");
-//     // }, 1000);
-//   } else if (currentValue.text != v) {
-//     qSeq.textContent == currentValue.sequence;
-//     //currentscore is entered into scorePoints=
-//     qSeq.classList.add("incorrect");
-//     console.log(
-//       `answer is false ${currentValue.text} is ${currentValue.sequence}`
-//     );
-//     // setTimeout(function () {
-//     scoreBoard.classList.remove();
-//     qSeq.classList.remove("incorrect");
+    currentScore = currentScore + 1;
 
-//     // }, 1000);
-//   }
+    setTimeout(function () {
+    qSeq.classList.remove("correct");
+    }, 1000);
+  } else if (currentValue.text != v) {
+    qSeq.textContent == currentValue.sequence;
+    //currentscore is entered into scorePoints
+    currentScore = currentScore - 1;
 
-//   // Sets the score
-//   scorePoints.textContent = currentScore;
-// };
+    qSeq.classList.add("incorrect");
+    console.log(
+      `answer is false ${currentValue.text} is ${currentValue.sequence}`
+    );
+    setTimeout(function () {
+    scoreBoard.classList.remove();
+    qSeq.classList.remove("incorrect");
+    }, 1000);
+  }
+
+  // Sets the score
+  scorePoints.textContent = currentScore;
+};
 

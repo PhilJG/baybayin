@@ -1,6 +1,8 @@
 import {newQuestion} from "./newQuestionBtn.component.js"
-import {mBtn} from "./dom.component.js" 
-
+import {qBtn, aBtn, aList} from "./dom.component.js" 
+// import { matchAnswer } from "../controller/matchAnswer.component.js";
+import {matchAnswerDOM } from "./questionDom.component.js"
+import { currentValue } from "../controller/generateCurrentValue.component.js";
 // Modal eventlistener
 // span.addEventListener("click", function () {
 //     replaceAnswerBtn();
@@ -25,6 +27,12 @@ import {mBtn} from "./dom.component.js"
 //Generate new icon on "new" btn click"
 // qBtn.addEventListener("click", newQuestion);
 
-export default mBtn.addEventListener("click", newQuestion)
+qBtn.addEventListener("click", newQuestion);
+// aList.childNodes.forEach(btn => 
+//   btn.addEventListener("click", matchAnswerDOM(currentValue))
+//   )
+// export aBtn.array.forEach(btn => {
+//   btn.addEventListener("click", matchAnswerDOM())
+// });
 
 // let stringScore = new String(currentScore);

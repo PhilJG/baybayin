@@ -2,7 +2,6 @@
 const randomSelect = function (arr) {
     return Math.round(Math.random() * (arr.length - 1));
   };
-  
 
   //Shuffles array
 const shuffle = function(arr) {
@@ -29,7 +28,5 @@ const shuffle = function(arr) {
     date.setUTCDate(date.getDate() + numOfHours);
     return date;
   }
-
-
 
   export {shuffle, randomSelect, addDays}

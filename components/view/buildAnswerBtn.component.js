@@ -1,14 +1,14 @@
 import { matchAnswer } from "../controller/matchAnswer.component.js";
-import { qCurrent } from "./questionDom.component.js";
+import { matchAnswerDOM, qCurrent } from "./questionDom.component.js";
 import { generateAnswer } from "../controller/generateAnswer.component.js";
 import { letters } from "../controller/renderLetters.component.js";
-import { aArray } from "./questionDom.component.js";
 import { aList } from "./dom.component.js";
 import { shuffle } from "../controller/logic.component.js";
-import { currentValue } from "../controller/generateCurrentValue.component.js";
 
 // Adds text content & eventlistner to all 4 answer buttons
 export const buildAnswerBtn = function (cv) {
+  console.log(cv);
+  
   // Remove all previous answer buttons from the aList element
   while (aList.firstChild) {
     aList.removeChild(aList.firstChild);
@@ -18,7 +18,7 @@ export const buildAnswerBtn = function (cv) {
   const aArray = generateAnswer(letters);
 
   // currentValue is pushed to the answer array
-  aArray.push(cv);
+  aArray.push(cv.text);
 
   //answer array is shuffled
   shuffle(aArray);
@@ -34,6 +34,7 @@ export const buildAnswerBtn = function (cv) {
     button.className = "answer__btn";
     button.addEventListener("click", function () {
       matchAnswer(i);
+      matchAnswerDOM(i)
     });
     aList.appendChild(button);
   });
