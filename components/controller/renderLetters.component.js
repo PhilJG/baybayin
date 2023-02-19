@@ -12,7 +12,6 @@ class Letter {
   }
 }
 
-
 export const buildAddLetter = function (letter) {
   return new Letter(letter);
 };

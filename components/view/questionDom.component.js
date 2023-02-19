@@ -36,29 +36,31 @@ export let aArray = []
 };
 
 //Matches question with answer on click
-export const matchAnswerDOM = function (v) {
-  console.log(typeof currentValue);
+export const matchAnswerDOM = function (cv, v) {
+  console.log( `matchAnswerDOM ${cv.text}`);
   
-  if (currentValue.text === v) {
-    qSeq.textContent == `${currentValue.sequence}`;
+  if (cv.text === v) {
+    qSeq.textContent == `${cv.sequence}`;
 
     //currentscore is entered into scorePoints
     qSeq.classList.add("correct");
-    qSeq.textContent = currentValue.sequence;
+    qSeq.textContent = cv.sequence;
 
     currentScore = currentScore + 1;
-
+    console.log(
+      `answer is true answer is ${cv.text} `
+    );
     setTimeout(function () {
     qSeq.classList.remove("correct");
     }, 1000);
-  } else if (currentValue.text != v) {
-    qSeq.textContent == currentValue.sequence;
+  } else if (cv.text != v) {
+    qSeq.textContent == cv.sequence;
     //currentscore is entered into scorePoints
     currentScore = currentScore - 1;
 
     qSeq.classList.add("incorrect");
     console.log(
-      `answer is false ${currentValue.text} is ${currentValue.sequence}`
+      `answer is false answer is ${cv.text} `
     );
     setTimeout(function () {
     scoreBoard.classList.remove();

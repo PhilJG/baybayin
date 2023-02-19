@@ -15,10 +15,7 @@ export const buildAnswerBtn = function (cv) {
   }
 
   // Generate a new array of answer options
-  const aArray = generateAnswer(letters);
-
-  // currentValue is pushed to the answer array
-  aArray.push(cv.text);
+  const aArray = generateAnswer(letters, cv);
 
   //answer array is shuffled
   shuffle(aArray);
@@ -33,8 +30,8 @@ export const buildAnswerBtn = function (cv) {
     }
     button.className = "answer__btn";
     button.addEventListener("click", function () {
-      matchAnswer(i);
-      matchAnswerDOM(i)
+      matchAnswer(cv, i);
+      matchAnswerDOM(cv, i)
     });
     aList.appendChild(button);
   });
