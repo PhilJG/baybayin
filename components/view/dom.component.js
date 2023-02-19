@@ -16,7 +16,7 @@ const modal = document.querySelector(".modal");
 const lBtn = document.querySelector("#learnBtn");
 // Get the <span> element that closes the modal
 // const close = document.querySelector("close")[0];
-const closeModal = document.querySelector("close");
+const xBtn = document.querySelector(".close");
 const mLetter = document.querySelector(".mLetter");
 const nBtn = document.querySelector(".nextBtn");
 
@@ -36,8 +36,7 @@ export {
   mBtn,
   modal,
   lBtn,
-  closeModal,
+  xBtn,
   mLetter,
-  nBtn,
-  //   close,
+  nBtn
 };

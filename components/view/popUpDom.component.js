@@ -2,41 +2,52 @@ import {
   mBtn,
   modal,
   lBtn,
-  closeModal,
+  xBtn,
   mLetter,
   nBtn,
-} from "../view/dom.component.js"
+} from "../view/dom.component.js";
 
-import {generatedLetter, generateModalLetter} from '../controller/popModalcomponent.js'
+import {
+  generatedLetter,
+  generateModalLetter,
+} from "../controller/popModalcomponent.js";
 
-console.log(modal);
 
+xBtn.style.display = "none";
 
-modal.style.display = "none";
+let reviewedIndex = 0;
 
-export const learnLetterBtn = function() {
+export const learnLetterBtn = function () {
   modal.style.display = "block";
-  let gl = generateModalLetter()
- // produce letter in modal html
- mLetter.innerHTML = `<img src="imgs/${gl.text}.svg" class="svg" height="100px"></img><h2>${generatedLetter.text}</h2>`;
-console.log(gl);
-}
+  let gl = generateModalLetter(reviewedIndex);
+  // produce letter in modal html
+  mLetter.innerHTML = `<img src="imgs/${gl.text}.svg" class="svg" height="100px"></img><h2>${generatedLetter.text}</h2>`;
+  console.log(gl);
+};
 
 // When the user clicks on the learn button, open the modal and present a new letter
-lBtn.addEventListener("click", learnLetterBtn)
+lBtn.addEventListener("click", learnLetterBtn);
 
 // When the user clicks on the learn button, go to a new letter
-nBtn.addEventListener("click", learnLetterBtn)
+nBtn.addEventListener("click", function () {
+  //iterate the reviewLetters up by 1
+  reviewedIndex++;
+  //if the user has not reviewed 4 letters do not allow them to close the popup modal
+  if (reviewedIndex < 4) {
+    xBtn.style.display = "none";
+    learnLetterBtn();
+  } else {
+    // When the user clicks on closeMocal (x), close the modal
+    xBtn.style.display = "block";
+    learnLetterBtn();
+  }
+  // When the user clicks anywhere outside of the modal, close it
+});
 
-// function () {
-//   // if (reviewedIndex > 4){
-//   //   span.style.display = "block";
-//   //   // When the user clicks on <span> (x), close the modal
-//   // }
-//   // When the user clicks anywhere outside of the modal, close it
-//   window.addEventListener("click", function (event) {
-//     if (event.target == modal) {
-//       modal.style.display = "none";
-//     }
-//   });
-// });
+// exit the popUpModal
+const closeModal = function () {
+  modal.style.display = "none";
+};
+
+// window.addEventListener("click", closeModal());
+xBtn.addEventListener("click", closeModal);

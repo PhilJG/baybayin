@@ -1,17 +1,9 @@
-import {
-  mBtn,
-  modal,
-  lBtn,
-  closeModal,
-  mLetter,
-  nBtn,
-} from "../view/dom.component.js";
+
 import { letters } from "./renderLetters.component.js";
 
 export let generatedLetter;
 //Empty array for reviewed letters
 let reviewedLetters = [];
-let reviewedIndex = 0;
 
 // let r;
 
@@ -30,8 +22,8 @@ let reviewedIndex = 0;
 //   getOldLetters();
 
 //Produces letters to be reviewed
-export const generateModalLetter = function () {
-  generatedLetter = letters[reviewedIndex];
+export const generateModalLetter = function (ri) {
+  generatedLetter = letters[ri];
   
   // generatedLetter = buildAddLetter(generatedLetter);
   // //if generated letter has been reviewed and is within the reviewed array..
@@ -48,6 +40,6 @@ export const generateModalLetter = function () {
     
   // }
   // increment i by 1
-  reviewedIndex = reviewedIndex + 1;
+  ri = ri + 1;
   return generatedLetter
 };
