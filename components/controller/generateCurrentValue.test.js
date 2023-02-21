@@ -8,6 +8,11 @@ import {generateCurrentValue} from "./generateCurrentValue.component.js"
 test("Is current value a string", () => {
     assert.instance(generateCurrentValue(letters), String);
   });
+
+  test("Is current value a Object", () => {
+    assert.instance(generateCurrentValue(letters), Object);
+  });
+
   
 //   test("Give back zero for .squence", () => {
 //     assert.is(myLetter.sequence, 0);

@@ -1,4 +1,3 @@
-import { currentValue } from "./generateCurrentValue.component.js";
 import { shuffle } from "./logic.component.js";
 
 //Generates answer buttons of all the letters
@@ -8,7 +7,7 @@ export const generateAnswer = function (l, cv) {
 
   // Add current value to array
   aArray.push(cv.text);
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 3; i++) {
     let x = l[i].text;
     if (x === cv.text) {
       continue;

@@ -1,6 +1,5 @@
-import { letters } from "./renderLetters.component.js";
 import { randomSelect } from "./logic.component.js"
-
+import { reviewedLetters } from "./createReviewLettersl.component.js";
 
 export const isInThePast = function (rl) {
   currentDate = Date();
@@ -28,4 +27,4 @@ export const generateCurrentValue = function (arr) {
 };
 
 //declare currentValue globally
-export let currentValue = generateCurrentValue(letters)
+export let currentValue = generateCurrentValue(reviewedLetters)

@@ -3,6 +3,8 @@ import { currentValue } from "./generateCurrentValue.component.js";
 let currentDate = new Date();
 
 export const setReviewDate = function (cv) {
+  console.log(currentValue.text);
+  
   let rd = new Date();
 
   function addDays(numOfHours, date = new Date()) {

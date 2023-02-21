@@ -1,9 +1,9 @@
 import { matchAnswer } from "../controller/matchAnswer.component.js";
 import { matchAnswerDOM, qCurrent } from "./questionDom.component.js";
 import { generateAnswer } from "../controller/generateAnswer.component.js";
-import { letters } from "../controller/renderLetters.component.js";
 import { aList } from "./dom.component.js";
 import { shuffle } from "../controller/logic.component.js";
+import { reviewedLetters } from "../controller/createReviewLettersl.component.js";
 
 // Adds text content & eventlistner to all 4 answer buttons
 export const buildAnswerBtn = function (cv) {
@@ -15,7 +15,7 @@ export const buildAnswerBtn = function (cv) {
   }
 
   // Generate a new array of answer options
-  const aArray = generateAnswer(letters, cv);
+  const aArray = generateAnswer(reviewedLetters, cv);
 
   //answer array is shuffled
   shuffle(aArray);

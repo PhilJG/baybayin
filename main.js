@@ -2,7 +2,7 @@ import { currentValue } from './components/controller/generateCurrentValue.compo
 import { qCurrent, renderQuestionImg } from './components/view/questionDom.component.js'
 import * as eventListener from './components/view/eventListeners.component.js'
 import * as modal from './components/view/popUpDom.component.js'
-
+import { reviewedLetters } from './components/controller/createReviewLettersl.component.js'
 import {qImg, qSeq, mBtn} from './components/view/dom.component.js'
 
 // import {nBtnEventlistener} from './components/view/eventListeners.component.js'

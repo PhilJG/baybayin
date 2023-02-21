@@ -3,7 +3,7 @@ import { letters } from "./renderLetters.component.js";
 
 export let generatedLetter;
 //Empty array for reviewed letters
-let reviewedLetters = [];
+export let reviewedLetters = [];
 
 // let r;
 
@@ -36,10 +36,11 @@ export const generateModalLetter = function (ri) {
     // mLetter.innerHTML = `<img src="imgs/${generatedLetter.text}.svg" class="svg" height="100px"></img><h2>${generatedLetter.text}</h2>`;
     //then push this letter to reviewedletter array
     reviewedLetters.push(generatedLetter);
-    console.log(`reviewedLetters: ${reviewedLetters}`);
-    
+        
   // }
   // increment i by 1
   ri = ri + 1;
-  return generatedLetter
+    return generatedLetter
 };
+
+

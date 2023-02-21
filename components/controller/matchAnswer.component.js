@@ -4,8 +4,8 @@ import { newQuestion } from "../view/newQuestionBtn.component.js";
 //Matches question with answer on click
 export const matchAnswer = function (cv, v) {
   cv.reviewed = true;
-  console.log(`matchAnswer cv: ${cv.text}`);
-  console.log(`v ${v}`);
+  console.log(cv.text );
+  
 
   if (cv.text === v) {
     //adds 1 point to current score if correct
