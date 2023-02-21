@@ -3,11 +3,10 @@ import { matchAnswerDOM, qCurrent } from "./questionDom.component.js";
 import { generateAnswer } from "../controller/generateAnswer.component.js";
 import { aList } from "./dom.component.js";
 import { shuffle } from "../controller/logic.component.js";
-import { reviewedLetters } from "../controller/createReviewLettersl.component.js";
+import { lettersToReview } from "../controller/createReviewLetters.component.js";
 
 // Adds text content & eventlistner to all 4 answer buttons
 export const buildAnswerBtn = function (cv) {
-  console.log(cv);
   
   // Remove all previous answer buttons from the aList element
   while (aList.firstChild) {
@@ -15,7 +14,7 @@ export const buildAnswerBtn = function (cv) {
   }
 
   // Generate a new array of answer options
-  const aArray = generateAnswer(reviewedLetters, cv);
+  const aArray = generateAnswer(lettersToReview, cv);
 
   //answer array is shuffled
   shuffle(aArray);

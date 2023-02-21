@@ -4,11 +4,11 @@ import { generateCurrentValue } from '../controller/generateCurrentValue.compone
 import {qType} from './questionDom.component.js'
 import { randomSelect } from '../controller/logic.component.js';
 import { aList, scoreBoard } from './dom.component.js';
-import { reviewedLetters } from '../controller/createReviewLettersl.component.js';
+import { lettersToReview } from '../controller/createReviewLetters.component.js';
 
 export const newQuestion = function () {
    let aArray = [];
-   let currentValue = generateCurrentValue(reviewedLetters);
+   let currentValue = generateCurrentValue(lettersToReview);
    let qChoice = randomSelect(qType);
    let qCurrent = qType[qChoice];
   

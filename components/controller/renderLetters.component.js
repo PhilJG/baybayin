@@ -1,7 +1,7 @@
 import {letterStringArray} from '../model/letters.component.js'
 
-let reviewedLetters;
-let reviewedIndex;
+// let reviewedLetters;
+// let reviewedIndex;
 
 class Letter {
   constructor(text) {

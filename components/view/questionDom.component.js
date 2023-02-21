@@ -37,7 +37,6 @@ export const renderQuestionImg = function (cv) {
 
 //Matches question with answer on click
 export const matchAnswerDOM = function (cv, v) {
-  console.log(`matchAnswerDOM ${cv.text}`);
 
   if (cv.text === v) {
     qSeq.textContent == `${cv.sequence}`;
@@ -47,7 +46,6 @@ export const matchAnswerDOM = function (cv, v) {
     qSeq.textContent = cv.sequence;
 
     currentScore = currentScore + 1;
-    console.log(`answer is true answer is ${cv.text} `);
     qSeq.classList.remove("correct");
   } else if (cv.text != v) {
     qSeq.textContent == cv.sequence;

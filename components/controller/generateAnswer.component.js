@@ -14,7 +14,6 @@ export const generateAnswer = function (l, cv) {
     }
     aArray.push(`${x}`);
   }
-  console.log(aArray);
 
   return aArray;
 };

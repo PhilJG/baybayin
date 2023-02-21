@@ -1,9 +1,11 @@
 
 import { letters } from "./renderLetters.component.js";
+// import { oldReviewedLetters } from "../model/storage.component.js";
 
 export let generatedLetter;
-//Empty array for reviewed letters
-export let reviewedLetters = [];
+
+//Empty array for new letters to be reviewed in this session
+export let lettersToReview = [];
 
 // let r;
 
@@ -35,7 +37,7 @@ export const generateModalLetter = function (ri) {
     // // produce letter in modal html
     // mLetter.innerHTML = `<img src="imgs/${generatedLetter.text}.svg" class="svg" height="100px"></img><h2>${generatedLetter.text}</h2>`;
     //then push this letter to reviewedletter array
-    reviewedLetters.push(generatedLetter);
+    lettersToReview.push(generatedLetter);
         
   // }
   // increment i by 1

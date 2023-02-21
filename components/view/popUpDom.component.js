@@ -9,9 +9,8 @@ import {
 
 import {
   generatedLetter,
-  generateModalLetter,
-  reviewedLetters
-} from "../controller/createReviewLettersl.component.js";
+  generateModalLetter
+} from "../controller/createReviewLetters.component.js";
 
 
 xBtn.style.display = "none";
@@ -24,7 +23,6 @@ export const learnLetterBtn = function () {
   let gl = generateModalLetter(reviewedIndex);
   // produce letter in modal html
   mLetter.innerHTML = `<img src="imgs/${gl.text}.svg" class="svg" height="100px"></img><h2>${generatedLetter.text}</h2>`;
-  console.log(gl);
 };
 
 // When the user clicks on the learn button, open the modal and present a new letter
