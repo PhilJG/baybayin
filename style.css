@@ -1,6 +1,17 @@
+@font-face {
+  font-family: 'Baybayin Modern Mono';
+  src:url('./fonts/BaybayinModernMono.woff2') format('woff2'),
+  url('./fonts/BaybayinModernMono.woff') format('woff'), 
+  url('./fonts/BaybayinModernMono.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   background-color: darkslategrey;
 }
+
 
 .correct {
   color: green;
@@ -10,6 +21,11 @@ body {
   color: red;
 }
 
+.title {
+  font-family: 'Baybayin Modern Mono';
+  font-weight: normal;
+  font-style: normal;
+}
 
 .modal {
   display: block; /* Hidden by default */

@@ -1,4 +1,4 @@
-import { randomSelect } from "./logic.component.js"
+import { randomSelect } from "./logic.component.js";
 import { reviewedLetters } from "./matchAnswer.component.js";
 
 export const isInThePast = function (rl) {
@@ -14,7 +14,6 @@ export const isInThePast = function (rl) {
 
 //Generates question letter on click
 export const generateCurrentValue = function (arr) {
-
   // arr.forEach(isInThePast);
 
   let r = arr.filter((x) => !x.reviewed);
@@ -23,8 +22,7 @@ export const generateCurrentValue = function (arr) {
   let randomLetters = randomSelect(r);
 
   return r[randomLetters];
-
 };
 
 //declare currentValue globally
-export let currentValue = generateCurrentValue(reviewedLetters)
+export let currentValue = generateCurrentValue(reviewedLetters);
