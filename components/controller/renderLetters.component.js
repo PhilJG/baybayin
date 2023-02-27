@@ -26,7 +26,6 @@ export const callLetter = function (arr) {
 return l;  
 };
 
-
 export const letters = callLetter(letterStringArray);
 
 

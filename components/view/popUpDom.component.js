@@ -21,6 +21,7 @@ export const learnLetterBtn = function () {
   modal.style.display = "block";
   
   let gl = generateModalLetter(reviewedIndex);
+  
   // produce letter in modal html
   mLetter.innerHTML = `<img src="imgs/${gl.text}.svg" class="svg" height="100px"></img><h2>${generatedLetter.text}</h2>`;
 };
