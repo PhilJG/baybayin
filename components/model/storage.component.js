@@ -14,15 +14,20 @@ export let oldReviewedLetters = JSON.parse(localStorage.getItem("reviewedLetters
 
 export const pushStorage = function(rl){
   
-  console.log(`before ${rl}`);
+  console.log(`before ${oldReviewedLetters}`);
 
-  rl.push(oldReviewedLetters)
+  //check if oldReviewedLetters is null before calling the push method.
+  if (oldReviewedLetters === null) {
+    oldReviewedLetters = [];
+  }
+
+  oldReviewedLetters.push(...rl)
   
-  console.log(`after ${rl}`);
-  
-  return rl
+  localStorage.setItem("reviewedLetters", JSON.stringify(oldReviewedLetters));
+  console.log(`after ${oldReviewedLetters}`);
+  return oldReviewedLetters
 }
 
    //set currentScore to session storage and turn it into a string
   //  localStorage.setItem("currentScore", `${stringScore}`);
-   localStorage.setItem("reviewedLetters", JSON.stringify(reviewedLetters));
+

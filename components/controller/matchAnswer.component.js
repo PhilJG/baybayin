@@ -3,6 +3,7 @@ import { setReviewDate } from "./setReviewDate.component.js";
 import { newQuestion } from "../view/newQuestionBtn.component.js";
 import { aArray } from "../view/questionDom.component.js";
 import { lettersToReview } from "./createReviewLetters.component.js";
+import { oldReviewedLetters, pushStorage } from "../model/storage.component.js";
 
 export let reviewedLetters = [];
 
@@ -10,6 +11,8 @@ export let reviewedLetters = [];
 export const matchAnswer = function (cv, v) {
   cv.reviewed = true;
 
+  console.log(reviewedLetters);
+  
   let sequence = cv.sequence
     if (cv.text === v) {
     //adds 1 point to current score if correct
@@ -34,7 +37,11 @@ export const matchAnswer = function (cv, v) {
     }, 1000);
     setReviewDate(cv, sequence);
   }
+
+pushStorage([cv])
   // let stringScore = new String(currentScore);
-  reviewedLetters.push(cv)
+  
+  console.log(reviewedLetters);
+
   
 };

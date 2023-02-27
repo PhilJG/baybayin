@@ -14,26 +14,26 @@ test("Is current value a string", () => {
   });
 
   
-//   test("Give back zero for .squence", () => {
-//     assert.is(myLetter.sequence, 0);
-//   });
+  test("Give back zero for .squence", () => {
+    assert.is(myLetter.sequence, 0);
+  });
   
-//   test("Give  reviewed false", () => {
-//     assert.is(myLetter.reviewed, false);
-//   });
+  test("Give  reviewed false", () => {
+    assert.is(myLetter.reviewed, false);
+  });
   
-//   test("Is reviewDate a date?", () => {
-//     assert.instance(myLetter.reviewDate, Date);
-//   });
+  test("Is reviewDate a date?", () => {
+    assert.instance(myLetter.reviewDate, Date);
+  });
   
-//   // callLetter
+  // callLetter
   
-//   test("Give empty array", () => {
-//     assert.equal(callLetter([]), []);
-//   });
+  test("Give empty array", () => {
+    assert.equal(callLetter([]), []);
+  });
   
-//   test("Gives an errror when not an array", () => {
-//     assert.throws(() => callLetter("my way"));
-//   });
+  test("Gives an errror when not an array", () => {
+    assert.throws(() => callLetter("my way"));
+  });
 
 test.run();
