@@ -1,5 +1,5 @@
 import { matchAnswer } from "../controller/matchAnswer.component.js";
-import { matchAnswerDOM, qCurrent } from "./questionDom.component.js";
+import { matchAnswerDOM } from "./questionDom.component.js";
 import { generateAnswer } from "../controller/generateAnswer.component.js";
 import { aList } from "./dom.component.js";
 import { shuffle } from "../controller/logic.component.js";
@@ -22,9 +22,9 @@ export const buildAnswerBtn = function (cv) {
   // Create a new button for each answer in the array and append it to the aList element
   aArray.forEach((i) => {
     var button = document.createElement("button");
-    if (qCurrent === "txt") {
+    if (window.qCurrent === "txt") {
       button.innerHTML = `<img src="imgs/${i}.svg" class="svg" ></img>`;
-    } else if (qCurrent === "img") {
+    } else if (window.qCurrent === "img") {
       button.innerText = i;
     }
     button.className = "answer__btn";

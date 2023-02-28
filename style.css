@@ -21,10 +21,14 @@ body {
   color: red;
 }
 
-.title {
+.baybayin-font {
   font-family: 'Baybayin Modern Mono';
   font-weight: normal;
   font-style: normal;
+}
+
+.latin-font {
+  font-family: 'Roboto', sans-serif;
 }
 
 .modal {

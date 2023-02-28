@@ -10,8 +10,6 @@ export let reviewedLetters = [];
 //Matches question with answer on click
 export const matchAnswer = function (cv, v) {
   cv.reviewed = true;
-
-  console.log(reviewedLetters);
   
   let sequence = cv.sequence
     if (cv.text === v) {
@@ -40,8 +38,5 @@ export const matchAnswer = function (cv, v) {
 
 pushStorage([cv])
   // let stringScore = new String(currentScore);
-  
-  console.log(reviewedLetters);
-
   
 };

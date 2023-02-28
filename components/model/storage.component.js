@@ -14,8 +14,6 @@ export let oldReviewedLetters = JSON.parse(localStorage.getItem("reviewedLetters
 
 export const pushStorage = function(rl){
   
-  console.log(`before ${oldReviewedLetters}`);
-
   //check if oldReviewedLetters is null before calling the push method.
   if (oldReviewedLetters === null) {
     oldReviewedLetters = [];
@@ -37,7 +35,6 @@ export const pushStorage = function(rl){
   });
   
   localStorage.setItem("reviewedLetters", JSON.stringify(oldReviewedLetters));
-  console.log(`after ${oldReviewedLetters}`);
   return oldReviewedLetters;
 
 }

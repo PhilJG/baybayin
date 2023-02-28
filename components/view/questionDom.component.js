@@ -5,15 +5,9 @@ import { qSeq, qImg, aBtn, scorePoints, scoreBoard } from "./dom.component.js";
 //randomly select between either text or image when presenting the question
 export const qType = ["txt", "img"];
 
-let qChoice = randomSelect(qType);
-export let qCurrent = qType[qChoice];
-
-// //change sequence number on dom
-// qSeq.textContent = `${currentValue.sequence}`;
-
-// //currentscore is entered into scorePoints
-// qSeq.classList.add("correct");
-// qSeq.textContent = currentValue.sequence;
+// Declare qChoice and qCurrent as global variables
+window.qChoice = randomSelect(qType);
+window.qCurrent = qType[qChoice];
 
 let currentScore = 0;
 
@@ -22,10 +16,16 @@ export let aArray = [];
 export const renderQuestionImg = function (cv) {
   //if current is not undefined
   if (cv != undefined) {
-    if (qCurrent === "img") {
-      qImg.innerHTML = `<img src="imgs/${cv.text}.svg" class="svg" height="100px">`;
-    } else if (qCurrent === "txt") {
-      qImg.innerHTML = `${cv.text}`;
+     // Update qChoice and qCurrent using the window object
+     window.qChoice = randomSelect(qType);
+     window.qCurrent = qType[window.qChoice];
+    if (window.qCurrent === "img") {
+      qImg.textContent = `${cv.text}`
+      qImg.className = 'baybayin-font';
+    } else if (window.qCurrent === "txt") {
+      qImg.textContent = `${cv.text}`;
+      qImg.className = 'latin-font';
+
     }
     qSeq.textContent = cv.sequence;
     aArray.push(cv.text);
@@ -60,6 +60,7 @@ export const matchAnswerDOM = function (cv, v) {
 
   // Sets the score
   scorePoints.textContent = currentScore;
-
-  
 };
+
+// Export qChoice and qCurrent as named exports
+// export { qChoice, qCurrent };
