@@ -19,6 +19,8 @@ export const generateModalLetter = function (ri) {
   
   // increment i by 1
   ri = ri + 1;
+  console.log(generatedLetter);
+  
     return generatedLetter
 };
 

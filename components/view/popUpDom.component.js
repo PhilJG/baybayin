@@ -21,9 +21,10 @@ export const learnLetterBtn = function () {
   modal.style.display = "block";
   
   let gl = generateModalLetter(reviewedIndex);
+  console.log(gl);
   
   // produce letter in modal html
-  mLetter.innerHTML = `<img src="imgs/${gl.text}.svg" class="svg" height="100px"></img><h2>${generatedLetter.text}</h2>`;
+  mLetter.innerHTML = `<h2 class="baybayin-font">${generatedLetter.baybayin}</h2><h2>${generatedLetter.latin}</h2>`;
 };
 
 // When the user clicks on the learn button, open the modal and present a new letter

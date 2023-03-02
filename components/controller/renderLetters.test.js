@@ -37,10 +37,14 @@ test("Gives an errror when not an array", () => {
 
 test('buildAddLetter returns a new Letter object with the correct properties', () => {
   const letter = buildAddLetter('A');
-  expect(letter).toHaveProperty('text', 'A');
+  expect(letter).toHaveProperty('latin', 'A');
+  expect(letter).toHaveProperty('baybayin', String)
   expect(letter).toHaveProperty('sequence', 0);
   expect(letter).toHaveProperty('reviewed', false);
 });
+
+test('buildAddLetter returns a baybayin script')
+
 
 test('callLetter returns an array of Letter objects based on the input array', () => {
   const input = ['A', 'B', 'C'];
