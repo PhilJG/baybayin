@@ -1,12 +1,77 @@
 //http://www.personal.psu.edu/ejp10/symbolcodes/bylanguage/tagalogchart.html
 
 const letterStringObject = {
-"ba":"ᜊ",
-"ga":"ᜄ",
-"ka":"ᜃ",
-"sa":"ᜐ",
-"ha": "ᜑ"
-}
+  ba: "ᜊ",
+  ga: "ᜄ",
+  ka: "ᜃ",
+  sa: "ᜐ",
+  ha: "ᜑ",
+  nga: "ᜅ",
+  sa: "ᜐ",
+  ma: "ᜋ",
+  na: "ᜈ",
+  wa: "ᜏ",
+  ta: "ᜆ",
+  pa: "ᜉ",
+  ya: "ᜌ",
+  bi: "ᜊ",
+  gi: "ᜄᜒ",
+  bu: "ᜊᜓ",
+  i_e: "ᜁ",
+  be: "ᜊᜒ",
+  da_ra: "ᜇ",
+  u_o: "ᜂ",
+  a: "ᜀ",
+  b: "ᜊ᜔",
+  g: "ᜄ᜔",
+  gu: "ᜄᜓ",
+  k: "ᜃ᜔",
+  ku: "ᜃᜓ",
+  ki: "ᜃᜒ",
+  h: "ᜑ᜔",
+  hi: "ᜑᜒ",
+  hu: "ᜑᜓ",
+  m: "ᜋ᜔",
+  mi: "ᜋᜒ",
+  mu: "ᜋᜓ",
+  n: "ᜈ᜔",
+  ni: "ᜈᜒ",
+  nu: "ᜈᜓ",
+  ngi: "ᜅᜒ",
+  ngu: "ᜅᜓ",
+  ng: "ᜈ᜔",
+  p: "ᜉ᜔",
+  pi: "ᜉᜒ",
+  pu: "ᜉᜓ",
+  t: "ᜆ᜔",
+  ti: "ᜆᜒ",
+  tu: "ᜆᜓ",
+  w: "ᜏ᜔",
+  wi: "ᜏᜒ",
+  wu: "ᜏᜓ",
+  y: "ᜌ᜔",
+  yi: "ᜆᜒ",
+  yu: "ᜌᜓ",
+  // ge: "",
+  // mo: "",
+  // yo: "",
+  // go: "",
+  // po: "",
+  // no: "",
+  // ke: "",
+  // ngo: "",
+  // he: "",
+  // to: "",
+  // me: "",
+  // ne: "",
+  // nge: "",
+  // pe: "",
+  // wo: "",
+  // te: "",
+  // we: "",
+  // ye: "",
+  // ho: "",
+};
 // const letterStringArray = [
 //   "ba",
 //   "ga",
@@ -79,11 +144,4 @@ const letterStringObject = {
 //   "a",
 // ];
 
-
-
-console.log(Object.keys(letterStringObject));
-console.log(Object.values(letterStringObject));
-
-
-export {letterStringObject}
-
+export { letterStringObject };

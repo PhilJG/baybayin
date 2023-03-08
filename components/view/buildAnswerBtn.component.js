@@ -12,7 +12,6 @@ export const buildAnswerBtn = function (cv) {
   while (aList.firstChild) {
     aList.removeChild(aList.firstChild);
   }
-
   // Generate a new array of answer options
   const aArray = generateAnswer(lettersToReview, cv);
 
@@ -21,17 +20,18 @@ export const buildAnswerBtn = function (cv) {
 
   // Create a new button for each answer in the array and append it to the aList element
   aArray.forEach((i) => {
-    var button = document.createElement("button");
+    
+    let button = document.createElement("button");
+    aList.append(button)
     if (window.qCurrent === "txt") {
-      button.innerHTML = `<img src="imgs/${i}.svg" class="svg" ></img>`;
+      button.textContent = i.baybayin;
     } else if (window.qCurrent === "img") {
-      button.innerText = i;
+      button.textContent = i.latin;
     }
     button.className = "answer__btn";
     button.addEventListener("click", function () {
       matchAnswer(cv, i);
       matchAnswerDOM(cv, i)
     });
-    aList.appendChild(button);
   });
 };

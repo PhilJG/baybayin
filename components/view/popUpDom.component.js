@@ -9,9 +9,8 @@ import {
 
 import {
   generatedLetter,
-  generateModalLetter
+  generateModalLetter,
 } from "../controller/createReviewLetters.component.js";
-
 
 xBtn.style.display = "none";
 
@@ -19,12 +18,14 @@ let reviewedIndex = 0;
 
 export const learnLetterBtn = function () {
   modal.style.display = "block";
-  
+
   let gl = generateModalLetter(reviewedIndex);
-  console.log(gl);
-  
-  // produce letter in modal html
-  mLetter.innerHTML = `<h2 class="baybayin-font">${generatedLetter.baybayin}</h2><h2>${generatedLetter.latin}</h2>`;
+  if (gl != undefined) {
+    // produce letter in modal html
+    mLetter.innerHTML = `<h2 class="baybayin-font">${generatedLetter.baybayin}</h2><h2>${generatedLetter.latin}</h2>`;
+  } else {
+    mLetter.innerHTML = `<h2>All letters have been reviewed</h2>`;
+  }
 };
 
 // When the user clicks on the learn button, open the modal and present a new letter

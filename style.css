@@ -12,6 +12,13 @@ body {
   background-color: darkslategrey;
 }
 
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
 
 .correct {
   color: green;
@@ -51,4 +58,8 @@ body {
   padding: 20px;
   border: 1px solid #888;
   width: 60%; /* Could be more or less, depending on screen size */
+}
+
+.container__pair .container__pair--app {
+flex-direction: column;
 }

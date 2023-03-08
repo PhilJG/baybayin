@@ -1,4 +1,3 @@
-
 import { letters } from "./renderLetters.component.js";
 // import { oldReviewedLetters } from "../model/storage.component.js";
 
@@ -19,7 +18,6 @@ export const generateModalLetter = function (ri) {
   
   // increment i by 1
   ri = ri + 1;
-  console.log(generatedLetter);
   
     return generatedLetter
 };

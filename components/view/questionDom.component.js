@@ -15,20 +15,17 @@ export let aArray = [];
 
 export const renderQuestionImg = function (cv) {
   //if current is not undefined
-  if (cv != undefined) {
+  if (cv != undefined) { 
      // Update qChoice and qCurrent using the window object
      window.qChoice = randomSelect(qType);
      window.qCurrent = qType[window.qChoice];
     if (window.qCurrent === "img") {
-      qImg.textContent = `${cv.text}`
-      qImg.className = 'baybayin-font';
+      qImg.innerHTML = `<h1>${cv.baybayin}</h1>`
     } else if (window.qCurrent === "txt") {
-      qImg.textContent = `${cv.text}`;
-      qImg.className = 'latin-font';
-
+      qImg.innerHTML = `<h1>${cv.latin}</h1>`;
     }
     qSeq.textContent = cv.sequence;
-    aArray.push(cv.text);
+    aArray.push(cv.latin);
   } else {
     qImg.innerHTML =
       "All the letters have been reviewed for today. Try learning some new ones! ";
@@ -38,8 +35,8 @@ export const renderQuestionImg = function (cv) {
 //Matches question with answer on click
 export const matchAnswerDOM = function (cv, v) {
 
-  if (cv.text === v) {
-    qSeq.textContent == `${cv.sequence}`;
+  if (cv == v) {
+    qSeq.textContent == cv.sequence;
 
     //currentscore is entered into scorePoints
     qSeq.classList.add("correct");
@@ -47,13 +44,13 @@ export const matchAnswerDOM = function (cv, v) {
 
     currentScore = currentScore + 1;
     qSeq.classList.remove("correct");
-  } else if (cv.text != v) {
+  } else if (cv.latin != v) {
     qSeq.textContent == cv.sequence;
     //currentscore is entered into scorePoints
     currentScore = currentScore - 1;
 
     qSeq.classList.add("incorrect");
-    console.log(`answer is false answer is ${cv.text} `);
+    console.log(`answer is false answer is ${cv.latin} `);
     scoreBoard.classList.remove();
     qSeq.classList.remove("incorrect");
   }
