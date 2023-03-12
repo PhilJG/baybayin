@@ -72,35 +72,23 @@ let randomLetters = randomSelect(reviewedLetters);
 let currentDate = new Date();
 // let currentDate = cd.getUTCDate();
 
+function addDays(numOfDays, date) {
+  
+  //current date is set to UTC that date is added by the number of Days specified
+  date.setUTCDate(date.getDate() + numOfDays);
+  return date;
+}
+
 const setReviewDate = function (cv) {
   let rd = new Date();
 
-  function addDays(numOfHours, date = new Date()) {
-    date.setUTCDate(date.getDate() + numOfHours);
-    return date;
-  }
+  // calculate the number of days to add to the current date based on sequence
+  const daysToAdd = cv.sequence
 
-  let result;
+    // set the review date by adding the number of days to the current date
+    cv.reviewDate = addDays(daysToAdd, rd);
 
-  const sequenceCheck = function (seq) {
-    result = addDays(seq, rd);
-
-    cv.reviewDate = result;
-
-    return (currentValue.reviewDate = rd);
-  };
-
-  if ((cv.sequence = 0)) {
-    sequenceCheck(1);
-  } else if ((cv.sequence = 1)) {
-    sequenceCheck(2);
-  } else if ((cv.sequence = 2)) {
-    sequenceCheck(3);
-  } else if ((cv.sequence = 3)) {
-    sequenceCheck(4);
-  } else {
-    console.error("if statement error");
-  }
+  return cv
 };
 
 //Matches question with answer on click
