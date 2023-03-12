@@ -12,11 +12,21 @@ import {
   generateModalLetter,
 } from "../controller/createReviewLetters.component.js";
 
+import { oldReviewedLetters } from "../model/oldReviewedLetters.component.js";
+
 xBtn.style.display = "none";
 
-let reviewedIndex = 0;
+let reviewedIndex;
 
 export const learnLetterBtn = function () {
+  // console.log(oldReviewedLetters.length);
+  
+  if(oldReviewedLetters == null){
+    reviewedIndex = 0;
+  } else {
+    reviewedIndex = oldReviewedLetters.length
+  }
+
   modal.style.display = "block";
 
   let gl = generateModalLetter(reviewedIndex);
@@ -33,6 +43,9 @@ lBtn.addEventListener("click", learnLetterBtn);
 
 // When the user clicks on the learn button, go to a new letter
 nBtn.addEventListener("click", function () {
+  
+
+
   //iterate the reviewLetters up by 1
   reviewedIndex++;
   //if the user has not reviewed 4 letters do not allow them to close the popup modal
@@ -48,7 +61,7 @@ nBtn.addEventListener("click", function () {
 });
 
 // exit the popUpModal
-const closeModal = function () {
+export const closeModal = function () {
   modal.style.display = "none";
 };
 

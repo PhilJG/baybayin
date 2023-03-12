@@ -27,6 +27,7 @@ import {qBtn, aBtn, aList} from "./dom.component.js"
 // qBtn.addEventListener("click", newQuestion);
 
 qBtn.addEventListener("click", newQuestion);
+
 // aList.childNodes.forEach(btn => 
 //   btn.addEventListener("click", matchAnswerDOM(currentValue))
 //   )

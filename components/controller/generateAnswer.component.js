@@ -2,7 +2,6 @@ import { shuffle } from "./logic.component.js";
 
 //Generates answer buttons of all the letters
 export const generateAnswer = function (l, cv) {
-  console.log(cv);
   
 // Create a new array for each call to the function
   let aArray = []; 
@@ -27,8 +26,6 @@ export const generateAnswer = function (l, cv) {
   }
   // Add current value to array
   aArray.push(cv);
-
-  console.log(aArray);
   
 return aArray
 }

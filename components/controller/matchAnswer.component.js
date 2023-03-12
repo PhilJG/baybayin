@@ -1,8 +1,7 @@
 import { setReviewDate } from "./setReviewDate.component.js";
 import { newQuestion } from "../view/newQuestionBtn.component.js";
-import { oldReviewedLetters, pushStorage } from "../model/storage.component.js";
-
-export let reviewedLetters = [];
+import { oldReviewedLetters, pushStorage } from "../model/oldReviewedLetters.component.js";
+import { reviewedLetters } from "./createReviewLetters.component.js";
 
 //Matches question with answer on click
 export const matchAnswer = function (cv, v) {
@@ -11,9 +10,6 @@ export const matchAnswer = function (cv, v) {
   let sequence = cv.sequence;
 
   if (cv.latin == v.latin) {
-    console.log(`cv.latin ${cv.latin}`);
-    console.log(`v ${v.latin}`);
-
     //adds 1 point to current score if correct
     // currentScore = currentScore + 1;
 
@@ -37,6 +33,7 @@ export const matchAnswer = function (cv, v) {
     setReviewDate(cv, sequence);
   }
 
-  pushStorage([cv]);
+  reviewedLetters.push(cv)
+  pushStorage(reviewedLetters);
   // let stringScore = new String(currentScore);
 };

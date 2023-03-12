@@ -1,5 +1,5 @@
 import { randomSelect } from "./logic.component.js";
-import { reviewedLetters } from "./matchAnswer.component.js";
+import { reviewedLetters } from "./createReviewLetters.component.js";
 
 export const isInThePast = function (rl) {
   currentDate = Date();
