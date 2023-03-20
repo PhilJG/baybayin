@@ -38,13 +38,7 @@ export const learnLetterBtn = function () {
   }
 };
 
-// When the user clicks on the learn button, open the modal and present a new letter
-lBtn.addEventListener("click", learnLetterBtn);
-
-// When the user clicks on the learn button, go to a new letter
-nBtn.addEventListener("click", function () {
-  
-
+export const iterateByFour = function () {
 
   //iterate the reviewLetters up by 1
   reviewedIndex++;
@@ -58,7 +52,7 @@ nBtn.addEventListener("click", function () {
     learnLetterBtn();
   }
   // When the user clicks anywhere outside of the modal, close it
-});
+}
 
 // exit the popUpModal
 export const closeModal = function () {

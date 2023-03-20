@@ -10,11 +10,7 @@ export let generatedLetter;
  let reviewedLetters;
 
 //Produces letters to be reviewed
-export const generateModalLetter = function (ri) {
-  console.log(lettersToReview);
-  console.log(ri);
-  console.log(reviewedLetters);
-  
+export const generateModalLetter = function (ri) {  
     
 if (oldReviewedLetters == null){
   lettersToReview = []
