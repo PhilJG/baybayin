@@ -1,13 +1,18 @@
 import { letters } from "./renderLetters.component.js";
 import { oldReviewedLetters } from "../model/oldReviewedLetters.component.js";
+import { reviewedIndex } from "../view/popUpDom.component.js";
 
-export let generatedLetter;
+let generatedLetter;
 
 //Empty array for new letters to be reviewed in this session
  let lettersToReview;
 
 // array for letters already reviewed in modal
  let reviewedLetters;
+
+ const createReviewLettersList = function(ri){
+
+ }
 
 //Produces letters to be reviewed
 export const generateModalLetter = function (ri) {  
@@ -26,8 +31,10 @@ if (oldReviewedLetters == null){
   if ( reviewedLetters == [] || !reviewedLetters.includes(generatedLetter)) {
     // If the letter has NOT been reviewed, add it to the lettersToReview array
     reviewedLetters.push(generatedLetter);
+    console.log(`1 ${reviewedLetters}`);
   } else {
         reviewedLetters.push(generatedLetter);
+        console.log(`2 ${reviewedLetters}`);
   }
 
   // Add the generated letter to the lettersToReview array
@@ -40,5 +47,7 @@ if (oldReviewedLetters == null){
   
   return generatedLetter;
 };
+
+export default generatedLetter = generateModalLetter(reviewedIndex);
 
 export {lettersToReview, reviewedLetters}
