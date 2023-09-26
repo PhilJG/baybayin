@@ -3,7 +3,7 @@ import "./App.css";
 import data from "./assets/data.json";
 
 export default function App() {
-  const [question, setQuestion] = useState(data[0].tiktik);
+  const [question, setQuestion] = useState("");
   const [answerArray, setAnswerArray] = useState([]);
 
   //Randomly selects from an array
@@ -33,22 +33,37 @@ export default function App() {
   return (
     <>
       <h1>Baybayin</h1>
-      <button
-        className="new-letter__btn"
-        onClick={() => handleRandomQuestion()}
-      >
-        Learn New Letters
-      </button>
-      <div className="question-text">{question}</div>
-      <ul className="answer-list">
-        {answerArray.map((a) => (
-          <li className="answer-item">{a.letter}</li>
-        ))}
-      </ul>
+
+      <Button onRandomQuestion={handleRandomQuestion} />
+
+      <Question question={question} />
+
+      <AnswerList answerArray={answerArray} />
     </>
   );
 }
 
+function Button({ onRandomQuestion }) {
+  return (
+    <button className="new-letter__btn" onClick={() => onRandomQuestion()}>
+      Learn New Letters
+    </button>
+  );
+}
+
+function Question({ question }) {
+  return <div className="question-text">{question}</div>;
+}
+
+function AnswerList({ answerArray }) {
+  return (
+    <ul className="answer-list">
+      {answerArray.map((a) => (
+        <button className="answer-item">{a.letter}</button>
+      ))}
+    </ul>
+  );
+}
 // function Letters() {
 //   return (
 //     <>
