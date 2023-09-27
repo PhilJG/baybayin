@@ -5,7 +5,7 @@ import data from "./assets/data.json";
 export default function App() {
   const [question, setQuestion] = useState("");
   const [answerArray, setAnswerArray] = useState([]);
-  const [questionFormat, setQuestionFormat] = useState(true);
+  const [questionFormat, setQuestionFormat] = useState("tiktik");
 
   //Randomly selects from an array
   const randomSelect = function (arr) {
@@ -13,17 +13,17 @@ export default function App() {
   };
 
   //Sets the format format of the questions and ansers from baybayin(tiktik) & english(letter)
-  function handleQuestionFormat() {
-    const formatArray = [true, false];
-    const format = randomSelect(formatArray);
-    setQuestionFormat(formatArray[format]);
-    console.log(questionFormat);
-    return formatArray[format];
-  }
+  // function handleQuestionFormat() {
+  //   const formatArray = ["tiktik", "letter"];
+  //   const format = randomSelect(formatArray);
+  //   setQuestionFormat(formatArray[format]);
+  //   console.log(questionFormat);
+  //   return formatArray[format];
+  // }
 
   function handleAnswerList() {
     const updatedAnswerArray = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
       let index = randomSelect(data);
       const randomAnswer = data[index];
       randomAnswer["id"] = i;
@@ -35,24 +35,36 @@ export default function App() {
   function handleRandomQuestion() {
     let index = randomSelect(data);
     const selectedFormat =
-      questionFormat == true ? data[index].tiktik : data[index].letter;
+      questionFormat == "tiktik" ? data[index].letter : data[index].tiktik;
     setQuestion(selectedFormat);
-    // listItems();
   }
+
+  // Function to toggle the question format
+  const toggleQuestionFormat = () => {
+    setQuestionFormat((prevFormat) =>
+      prevFormat === "tiktik" ? "letter" : "tiktik"
+    );
+  };
 
   return (
     <>
       <h1>Baybayin</h1>
 
+      <div>
+        <h1>{questionFormat}</h1>
+        {/* <AnswerList answerArray={answerArray} questionFormat={questionFormat} />
+        <button onClick={toggleQuestionFormat}>Toggle Format</button> */}
+      </div>
+
       <Button
-        onQuestionFormat={handleQuestionFormat}
+        onQuestionFormat={toggleQuestionFormat}
         onRandomQuestion={handleRandomQuestion}
         onAnswerList={handleAnswerList}
       />
 
       <Question question={question} />
 
-      <AnswerList answerArray={answerArray} format={questionFormat} />
+      <AnswerList answerArray={answerArray} questionFormat={questionFormat} />
     </>
   );
 }
@@ -72,19 +84,19 @@ function Button({ onQuestionFormat, onRandomQuestion, onAnswerList }) {
   );
 }
 
-function Question({ question, format }) {
+function Question({ question }) {
   return <div className="question-text">{question}</div>;
 }
 
-function AnswerList({ answerArray, format }) {
+function AnswerList({ answerArray, questionFormat }) {
   return (
-    <ul className="answer-list">
+    <div className="answer-list">
       {answerArray.map((a) => (
         <button className="answer-item" key={a.letter}>
-          {(format = true ? a.letter : a.tiktik)}
+          {questionFormat === "tiktik" ? a.letter : a.tiktik}
         </button>
       ))}
-    </ul>
+    </div>
   );
 }
 // function Letters() {
