@@ -3,40 +3,62 @@ import "./App.css";
 import data from "./assets/data.json";
 
 export default function App() {
+  const [questionFormat, setQuestionFormat] = useState("tiktik");
   const [question, setQuestion] = useState("");
   const [answerArray, setAnswerArray] = useState([]);
-  const [questionFormat, setQuestionFormat] = useState("tiktik");
 
   //Randomly selects from an array
   const randomSelect = function (arr) {
     return Math.round(Math.random() * (arr.length - 1));
   };
 
-  //Sets the format format of the questions and ansers from baybayin(tiktik) & english(letter)
-  // function handleQuestionFormat() {
-  //   const formatArray = ["tiktik", "letter"];
-  //   const format = randomSelect(formatArray);
-  //   setQuestionFormat(formatArray[format]);
-  //   console.log(questionFormat);
-  //   return formatArray[format];
-  // }
+  function shuffle(array) {
+    var m = array.length,
+      t,
+      i;
 
-  function handleAnswerList() {
+    // While there remain elements to shuffle…
+    while (m) {
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+
+      // And swap it with the current element.
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
+    }
+
+    return array;
+  }
+
+  function handleAnswerList(question) {
     const updatedAnswerArray = [];
     for (let i = 0; i < 3; i++) {
       let index = randomSelect(data);
       const randomAnswer = data[index];
       randomAnswer["id"] = i;
+      if (randomAnswer === question) {
+        continue;
+      }
       updatedAnswerArray.push(randomAnswer);
     }
+    //push correct answer to array
+    updatedAnswerArray.push(question);
+    //Shuffle array
+    shuffle(updatedAnswerArray);
     setAnswerArray(updatedAnswerArray);
+    console.log(`updatedAnswerArray ${updatedAnswerArray}`);
   }
 
   function handleRandomQuestion() {
     let index = randomSelect(data);
-    const selectedFormat =
-      questionFormat == "tiktik" ? data[index].letter : data[index].tiktik;
-    setQuestion(selectedFormat);
+    let q = data[index];
+    setQuestion(q);
+    //delay the execution of handleAnswerList
+    setTimeout(() => {
+      handleAnswerList(q);
+    }, 0);
+    console.log(q);
   }
 
   // Function to toggle the question format
@@ -52,43 +74,66 @@ export default function App() {
 
       <div>
         <h1>{questionFormat}</h1>
-        {/* <AnswerList answerArray={answerArray} questionFormat={questionFormat} />
-        <button onClick={toggleQuestionFormat}>Toggle Format</button> */}
       </div>
 
       <Button
         onQuestionFormat={toggleQuestionFormat}
         onRandomQuestion={handleRandomQuestion}
         onAnswerList={handleAnswerList}
-      />
+        question={question}
+      >
+        Learn New letter
+      </Button>
 
-      <Question question={question} />
+      <Question question={question} questionFormat={questionFormat} />
 
-      <AnswerList answerArray={answerArray} questionFormat={questionFormat} />
+      {/* AnswerList component will only be rendered when the question object is defined. */}
+      {question && (
+        <AnswerList
+          question={question}
+          answerArray={answerArray}
+          questionFormat={questionFormat}
+        />
+      )}
     </>
   );
 }
 
-function Button({ onQuestionFormat, onRandomQuestion, onAnswerList }) {
+function Button({
+  children,
+  onQuestionFormat,
+  onRandomQuestion,
+  onAnswerList,
+  question,
+}) {
   return (
     <button
       className="new-letter__btn"
       onClick={() => {
         onQuestionFormat();
         onRandomQuestion();
-        onAnswerList();
+        onAnswerList(question);
       }}
     >
-      Learn New Letters
+      {children}
     </button>
   );
 }
 
-function Question({ question }) {
-  return <div className="question-text">{question}</div>;
+function Question({ question, questionFormat }) {
+  return (
+    <div className="question-text">
+      {" "}
+      {questionFormat === "tiktik" ? question.tiktik : question.letter}
+    </div>
+  );
 }
 
-function AnswerList({ answerArray, questionFormat }) {
+function AnswerList({ answerArray, questionFormat, question }) {
+  //Check if question has been rendered
+  if (!question || !answerArray) {
+    return null; // or return a loading indicator
+  }
   return (
     <div className="answer-list">
       {answerArray.map((a) => (
