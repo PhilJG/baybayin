@@ -6,6 +6,7 @@ export default function App() {
   const [questionFormat, setQuestionFormat] = useState("tiktik");
   const [question, setQuestion] = useState("");
   const [answerArray, setAnswerArray] = useState([]);
+  const [result, setResult] = useState(null);
 
   //Randomly selects from an array
   const randomSelect = function (arr) {
@@ -47,7 +48,17 @@ export default function App() {
     //Shuffle array
     shuffle(updatedAnswerArray);
     setAnswerArray(updatedAnswerArray);
-    console.log(`updatedAnswerArray ${updatedAnswerArray}`);
+  }
+
+  function handleResult(q, a) {
+    if (q.letter == null) {
+      setResult();
+    } else if (q.letter === a.letter) {
+      setResult(true);
+    } else if (q.letter != a.letter) {
+      setResult(false);
+    }
+    console.log(result);
   }
 
   function handleRandomQuestion() {
@@ -70,7 +81,7 @@ export default function App() {
 
   return (
     <>
-      <h1>Baybayin</h1>
+      {/* <h1>Baybayin</h1> */}
 
       <div>
         <h1>{questionFormat}</h1>
@@ -93,8 +104,11 @@ export default function App() {
           question={question}
           answerArray={answerArray}
           questionFormat={questionFormat}
+          onResult={handleResult}
         />
       )}
+
+      <Result result={result} question={question} />
     </>
   );
 }
@@ -123,13 +137,12 @@ function Button({
 function Question({ question, questionFormat }) {
   return (
     <div className="question-text">
-      {" "}
       {questionFormat === "tiktik" ? question.tiktik : question.letter}
     </div>
   );
 }
 
-function AnswerList({ answerArray, questionFormat, question }) {
+function AnswerList({ answerArray, questionFormat, question, onResult }) {
   //Check if question has been rendered
   if (!question || !answerArray) {
     return null; // or return a loading indicator
@@ -137,10 +150,22 @@ function AnswerList({ answerArray, questionFormat, question }) {
   return (
     <div className="answer-list">
       {answerArray.map((a) => (
-        <button className="answer-item" key={a.letter}>
+        <button
+          className="answer-item"
+          key={a.letter}
+          onClick={() => onResult(question, a)}
+        >
           {questionFormat === "tiktik" ? a.letter : a.tiktik}
         </button>
       ))}
+    </div>
+  );
+}
+
+function Result({ result }) {
+  return (
+    <div className="result">
+      {result == true ? "✅" : result == false ? "❌" : ""}
     </div>
   );
 }
