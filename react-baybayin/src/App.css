@@ -6,7 +6,7 @@
 }
 
 .question-text {
-  font-size: 10rem;
+  font-size: 7rem;
 }
 .card {
   padding: 2em;
@@ -14,4 +14,17 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.answer-list {
+  list-style: none;
+}
+.answer-item {
+  font-size: 2rem;
+  margin: 0.5rem;
+  padding: 1rem 1.5rem;
+}
+
+.result {
+  font-size: 2rem;
 }

@@ -1,6 +1,11 @@
 import { useState } from "react";
-import "./App.css";
-import data from "./assets/data.json";
+import "../App.css";
+import data from "../assets/data.json";
+
+import Button from "./Button";
+import Question from "./Question";
+// import AnswerList from "./AnswerList";
+import Result from "./Result";
 
 export default function App() {
   const [questionFormat, setQuestionFormat] = useState("tiktik");
@@ -52,16 +57,26 @@ export default function App() {
   }
 
   function handleResult(q, a) {
+    function addHours(date, hours) {
+      date.setTime(date.getTime() + hours * 60 * 60 * 1000);
+      console.log(date);
+      return date;
+    }
+
     if (q.letter == null) {
       setResult();
     } else if (q.letter === a.letter) {
       setResult(true);
-      q.sequence++;
+      q.sequence = q.sequence + 1;
+      console.log(q.reviewDate);
+      q.reveiwDate = addHours(new Date(), 24);
     } else if (q.letter != a.letter) {
       setResult(false);
       q.sequence = 0;
+      q.reveiwDate = addHours(new Date(), 0);
     }
     q.reviewed = true;
+
     console.log(q);
 
     setTimeout(() => {
@@ -99,14 +114,7 @@ export default function App() {
       {/* <h1>Baybayin</h1> */}
 
       <h1>{`Sequence:${question.sequence} `}</h1>
-      <Button
-        onNewQuestion={handleNewQuestion}
-        question={question}
-
-        // onQuestionFormat={toggleQuestionFormat}
-        // onRandomQuestion={handleRandomQuestion}
-        // onAnswerList={handleAnswerList}
-      >
+      <Button onNewQuestion={handleNewQuestion} question={question}>
         Learn New letter
       </Button>
 
@@ -124,38 +132,6 @@ export default function App() {
 
       <Result result={result} question={question} />
     </>
-  );
-}
-
-function Button({
-  children,
-  question,
-  onNewQuestion,
-  // onQuestionFormat,
-  // onRandomQuestion,
-  // onAnswerList,
-}) {
-  return (
-    <button
-      className="new-letter__btn"
-      onClick={() => {
-        onNewQuestion(question);
-
-        // onNewQuestionFormat();
-        // onRandomQuestion();
-        // onAnswerList(question);
-      }}
-    >
-      {children}
-    </button>
-  );
-}
-
-function Question({ question, questionFormat }) {
-  return (
-    <div className="question-text">
-      {questionFormat === "tiktik" ? question.tiktik : question.letter}
-    </div>
   );
 }
 
@@ -178,21 +154,3 @@ function AnswerList({ answerArray, questionFormat, question, onResult }) {
     </div>
   );
 }
-
-function Result({ result }) {
-  return (
-    <div className="result">
-      {result == true ? "✅" : result == false ? "❌" : ""}
-    </div>
-  );
-}
-
-// function Letters() {
-//   return (
-//     <>
-//       {letters.map((el) => {
-//         <p>{el}</p>;
-//       })}
-//     </>
-//   );
-// }
