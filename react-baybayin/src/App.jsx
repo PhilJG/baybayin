@@ -7,6 +7,7 @@ export default function App() {
   const [question, setQuestion] = useState("");
   const [answerArray, setAnswerArray] = useState([]);
   const [result, setResult] = useState(null);
+  // const [sequence, setSequence] = useState(question.sequence);
 
   //Randomly selects from an array
   const randomSelect = function (arr) {
@@ -55,10 +56,17 @@ export default function App() {
       setResult();
     } else if (q.letter === a.letter) {
       setResult(true);
+      q.sequence++;
     } else if (q.letter != a.letter) {
       setResult(false);
+      q.sequence = 0;
     }
-    console.log(result);
+    q.reviewed = true;
+    console.log(q);
+
+    setTimeout(() => {
+      handleNewQuestion(question);
+    }, 1000);
   }
 
   function handleRandomQuestion() {
@@ -79,19 +87,25 @@ export default function App() {
     );
   };
 
+  function handleNewQuestion(q) {
+    toggleQuestionFormat();
+    handleRandomQuestion();
+    handleAnswerList(q);
+    setResult(null);
+  }
+
   return (
     <>
       {/* <h1>Baybayin</h1> */}
 
-      <div>
-        <h1>{questionFormat}</h1>
-      </div>
-
+      <h1>{`Sequence:${question.sequence} `}</h1>
       <Button
-        onQuestionFormat={toggleQuestionFormat}
-        onRandomQuestion={handleRandomQuestion}
-        onAnswerList={handleAnswerList}
+        onNewQuestion={handleNewQuestion}
         question={question}
+
+        // onQuestionFormat={toggleQuestionFormat}
+        // onRandomQuestion={handleRandomQuestion}
+        // onAnswerList={handleAnswerList}
       >
         Learn New letter
       </Button>
@@ -115,18 +129,21 @@ export default function App() {
 
 function Button({
   children,
-  onQuestionFormat,
-  onRandomQuestion,
-  onAnswerList,
   question,
+  onNewQuestion,
+  // onQuestionFormat,
+  // onRandomQuestion,
+  // onAnswerList,
 }) {
   return (
     <button
       className="new-letter__btn"
       onClick={() => {
-        onQuestionFormat();
-        onRandomQuestion();
-        onAnswerList(question);
+        onNewQuestion(question);
+
+        // onNewQuestionFormat();
+        // onRandomQuestion();
+        // onAnswerList(question);
       }}
     >
       {children}
@@ -169,6 +186,7 @@ function Result({ result }) {
     </div>
   );
 }
+
 // function Letters() {
 //   return (
 //     <>
