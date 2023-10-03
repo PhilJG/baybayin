@@ -28,3 +28,8 @@
 .result {
   font-size: 2rem;
 }
+
+.review-list {
+  list-style: none;
+  text-align: start;
+}

@@ -12,6 +12,7 @@ export default function App() {
   const [question, setQuestion] = useState("");
   const [answerArray, setAnswerArray] = useState([]);
   const [result, setResult] = useState(null);
+  const [reviewedArray, setReviewedArray] = useState([]);
   // const [sequence, setSequence] = useState(question.sequence);
 
   //Randomly selects from an array
@@ -59,8 +60,9 @@ export default function App() {
   function handleResult(q, a) {
     function addHours(date, hours) {
       date.setTime(date.getTime() + hours * 60 * 60 * 1000);
-      console.log(date);
-      return date;
+      let dateFormat = date.toDateString();
+
+      return dateFormat;
     }
 
     if (q.letter == null) {
@@ -68,16 +70,15 @@ export default function App() {
     } else if (q.letter === a.letter) {
       setResult(true);
       q.sequence = q.sequence + 1;
-      console.log(q.reviewDate);
-      q.reveiwDate = addHours(new Date(), 24);
+      q.reviewDate = addHours(new Date(), 24);
     } else if (q.letter != a.letter) {
       setResult(false);
       q.sequence = 0;
-      q.reveiwDate = addHours(new Date(), 0);
+      q.reviewDate = addHours(new Date(), 0);
     }
     q.reviewed = true;
 
-    console.log(q);
+    setReviewedArray((array) => [...array, q]);
 
     setTimeout(() => {
       handleNewQuestion(question);
@@ -92,7 +93,6 @@ export default function App() {
     setTimeout(() => {
       handleAnswerList(q);
     }, 0);
-    console.log(q);
   }
 
   // Function to toggle the question format
@@ -113,7 +113,17 @@ export default function App() {
     <>
       {/* <h1>Baybayin</h1> */}
 
-      <h1>{`Sequence:${question.sequence} `}</h1>
+      <h1>
+        {question.sequence === undefined
+          ? ""
+          : `Sequence: ${question.sequence}`}
+      </h1>
+      <p>
+        {question.reviewDate === undefined
+          ? ""
+          : `Review again on ${question.reviewDate}`}
+      </p>
+
       <Button onNewQuestion={handleNewQuestion} question={question}>
         Learn New letter
       </Button>
@@ -131,6 +141,14 @@ export default function App() {
       )}
 
       <Result result={result} question={question} />
+
+      <ul className="review-list">
+        {reviewedArray.map((item, index) => (
+          <li
+            key={index}
+          >{`${item.letter}, ${item.tiktik}, Review Date: ${item.reviewDate}`}</li>
+        ))}
+      </ul>
     </>
   );
 }
