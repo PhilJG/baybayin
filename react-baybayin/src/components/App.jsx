@@ -13,6 +13,9 @@ export default function App() {
   const [answerArray, setAnswerArray] = useState([]);
   const [result, setResult] = useState(null);
   const [reviewedArray, setReviewedArray] = useState([]);
+  const [newLetterList, setNewLetterList] = useState([]);
+  const [close, setClose] = useState(false);
+
   // const [sequence, setSequence] = useState(question.sequence);
 
   //Randomly selects from an array
@@ -42,8 +45,8 @@ export default function App() {
   function handleAnswerList(question) {
     const updatedAnswerArray = [];
     for (let i = 0; i < 3; i++) {
-      let index = randomSelect(data);
-      const randomAnswer = data[index];
+      let index = randomSelect(newLetterList);
+      const randomAnswer = newLetterList[index];
       randomAnswer["id"] = i;
       if (randomAnswer === question) {
         continue;
@@ -86,8 +89,8 @@ export default function App() {
   }
 
   function handleRandomQuestion() {
-    let index = randomSelect(data);
-    let q = data[index];
+    let index = randomSelect(newLetterList);
+    let q = newLetterList[index];
     if (q.reviewed === false || q.reveiwDate >= new Date()) {
       setQuestion(q);
     } else {
@@ -117,7 +120,14 @@ export default function App() {
   return (
     <>
       {/* <h1>Baybayin</h1> */}
-      <Modal className="popup-modal" />
+      <Modal
+        className="popup-modal"
+        reviewedArray={reviewedArray}
+        newLetterList={newLetterList}
+        setNewLetterList={setNewLetterList}
+        close={close}
+        setClose={setClose}
+      />
 
       <h1>
         {question.sequence === undefined
@@ -130,8 +140,12 @@ export default function App() {
           : `Review again on ${question.reviewDate}`}
       </p>
 
-      <Button onNewQuestion={handleNewQuestion} question={question}>
+      <button onClick={() => (close == true ? setClose(false) : "")}>
         Learn New letter
+      </button>
+
+      <Button onNewQuestion={handleNewQuestion} question={question}>
+        Review New letter
       </Button>
 
       <Question question={question} questionFormat={questionFormat} />
@@ -159,8 +173,23 @@ export default function App() {
   );
 }
 
-function Modal() {
-  const [close, setClose] = useState(false);
+function Modal({ close, setClose, newLetterList, setNewLetterList }) {
+  const [newLetter, setNewLetter] = useState("");
+
+  function generateNewLetter() {
+    let dataLength = newLetterList.length;
+    setNewLetter(data[dataLength]);
+    newLetterList.push(newLetter);
+
+    console.log(newLetterList);
+    return (
+      <div>
+        <span>newLetter.tiktik</span>
+        <span>newLetter.letter</span>
+      </div>
+    );
+  }
+
   return (
     <>
       {
@@ -173,10 +202,16 @@ function Modal() {
           >
             &times;{" "}
           </span>
-          <div className="modal-question">
-            <div className="mLetter">Click next to view your next letter</div>
-            <button className="nextBtn">Next</button>
-          </div>
+          <div className="modal-question">{`${newLetter.tiktik} ${newLetter.letter}`}</div>
+          <div className="mLetter">Click next to view your next letter</div>
+          <button
+            className="nextBtn"
+            onClick={() => {
+              generateNewLetter();
+            }}
+          >
+            Next
+          </button>
         </div>
       }
     </>
