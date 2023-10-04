@@ -88,7 +88,12 @@ export default function App() {
   function handleRandomQuestion() {
     let index = randomSelect(data);
     let q = data[index];
-    setQuestion(q);
+    if (q.reviewed === false || q.reveiwDate >= new Date()) {
+      setQuestion(q);
+    } else {
+      console.log(q);
+      handleRandomQuestion();
+    }
     //delay the execution of handleAnswerList
     setTimeout(() => {
       handleAnswerList(q);
@@ -112,6 +117,7 @@ export default function App() {
   return (
     <>
       {/* <h1>Baybayin</h1> */}
+      <Modal className="popup-modal" />
 
       <h1>
         {question.sequence === undefined
@@ -146,9 +152,33 @@ export default function App() {
         {reviewedArray.map((item, index) => (
           <li
             key={index}
-          >{`${item.letter}, ${item.tiktik}, Review Date: ${item.reviewDate}`}</li>
+          >{`| ${item.tiktik} | ${item.letter} | ${item.reviewDate} |`}</li>
         ))}
       </ul>
+    </>
+  );
+}
+
+function Modal() {
+  const [close, setClose] = useState(false);
+  return (
+    <>
+      {
+        <div className={!close ? "modal-content" : "none"}>
+          <span
+            className="close"
+            onClick={() => {
+              setClose(true);
+            }}
+          >
+            &times;{" "}
+          </span>
+          <div className="modal-question">
+            <div className="mLetter">Click next to view your next letter</div>
+            <button className="nextBtn">Next</button>
+          </div>
+        </div>
+      }
     </>
   );
 }
@@ -160,10 +190,10 @@ function AnswerList({ answerArray, questionFormat, question, onResult }) {
   }
   return (
     <div className="answer-list">
-      {answerArray.map((a) => (
+      {answerArray.map((a, i) => (
         <button
           className="answer-item"
-          key={a.letter}
+          key={i}
           onClick={() => onResult(question, a)}
         >
           {questionFormat === "tiktik" ? a.letter : a.tiktik}
