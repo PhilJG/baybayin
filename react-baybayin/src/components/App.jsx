@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "../App.css";
-import data from "../assets/data.json";
 
 import Button from "./Button";
 import Question from "./Question";
 // import AnswerList from "./AnswerList";
 import Result from "./Result";
+import Modal from "./Modal";
 
 export default function App() {
   const [questionFormat, setQuestionFormat] = useState("tiktik");
@@ -128,92 +128,47 @@ export default function App() {
         close={close}
         setClose={setClose}
       />
+      <div className="quiz-box">
+        <h1>
+          {question.sequence === undefined
+            ? " "
+            : `Sequence: ${question.sequence}`}
+        </h1>
+        <p>
+          {question.reviewDate == undefined
+            ? " "
+            : `Review again on ${question.reviewDate}`}
+        </p>
 
-      <h1>
-        {question.sequence === undefined
-          ? ""
-          : `Sequence: ${question.sequence}`}
-      </h1>
-      <p>
-        {question.reviewDate === undefined
-          ? ""
-          : `Review again on ${question.reviewDate}`}
-      </p>
+        <Button onNewQuestion={handleNewQuestion} question={question}>
+          Review New letter
+        </Button>
 
-      <button onClick={() => (close == true ? setClose(false) : "")}>
-        Learn New letter
-      </button>
+        <Question question={question} questionFormat={questionFormat} />
 
-      <Button onNewQuestion={handleNewQuestion} question={question}>
-        Review New letter
-      </Button>
+        {/* AnswerList component will only be rendered when the question object is defined. */}
+        {question && (
+          <AnswerList
+            question={question}
+            answerArray={answerArray}
+            questionFormat={questionFormat}
+            onResult={handleResult}
+          />
+        )}
+        <button onClick={() => (close == true ? setClose(false) : "")}>
+          Learn New letter
+        </button>
 
-      <Question question={question} questionFormat={questionFormat} />
+        <Result result={result} question={question} />
 
-      {/* AnswerList component will only be rendered when the question object is defined. */}
-      {question && (
-        <AnswerList
-          question={question}
-          answerArray={answerArray}
-          questionFormat={questionFormat}
-          onResult={handleResult}
-        />
-      )}
-
-      <Result result={result} question={question} />
-
-      <ul className="review-list">
-        {reviewedArray.map((item, index) => (
-          <li
-            key={index}
-          >{`| ${item.tiktik} | ${item.letter} | ${item.reviewDate} |`}</li>
-        ))}
-      </ul>
-    </>
-  );
-}
-
-function Modal({ close, setClose, newLetterList, setNewLetterList }) {
-  const [newLetter, setNewLetter] = useState("");
-
-  function generateNewLetter() {
-    let dataLength = newLetterList.length;
-    setNewLetter(data[dataLength]);
-    newLetterList.push(newLetter);
-
-    console.log(newLetterList);
-    return (
-      <div>
-        <span>newLetter.tiktik</span>
-        <span>newLetter.letter</span>
+        <ul className="review-list">
+          {reviewedArray.map((item, index) => (
+            <li
+              key={index}
+            >{`| ${item.tiktik} | ${item.letter} | ${item.reviewDate} |`}</li>
+          ))}
+        </ul>
       </div>
-    );
-  }
-
-  return (
-    <>
-      {
-        <div className={!close ? "modal-content" : "none"}>
-          <span
-            className="close"
-            onClick={() => {
-              setClose(true);
-            }}
-          >
-            &times;{" "}
-          </span>
-          <div className="modal-question">{`${newLetter.tiktik} ${newLetter.letter}`}</div>
-          <div className="mLetter">Click next to view your next letter</div>
-          <button
-            className="nextBtn"
-            onClick={() => {
-              generateNewLetter();
-            }}
-          >
-            Next
-          </button>
-        </div>
-      }
     </>
   );
 }
