@@ -91,6 +91,17 @@ export default function App() {
   function handleRandomQuestion() {
     let index = randomSelect(newLetterList);
     let q = newLetterList[index];
+
+    // Check if all items have been reviewed or their review date is less than current date
+    const allReviewed = newLetterList.every(
+      (item) => item.reviewed === true || item.reviewDate < new Date()
+    );
+
+    if (allReviewed) {
+      alert("No more items to review!");
+      return;
+    }
+
     if (q.reviewed === false || q.reveiwDate >= new Date()) {
       setQuestion(q);
     } else {
