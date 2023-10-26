@@ -1,0 +1,10 @@
+{
+    "collectCoverage": true,
+    "coverageThreshold": {
+        "gobal": {
+            "branches": 95,
+            "functions": 100,
+            "lines": 100
+        }
+    }
+}
