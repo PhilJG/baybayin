@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .quiz-box {
   position: relative;
   background-color: transparent;
@@ -87,3 +91,4 @@
   list-style: none;
   text-align: start;
 }
+

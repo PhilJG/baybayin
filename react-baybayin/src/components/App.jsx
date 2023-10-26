@@ -7,6 +7,7 @@ import Question from "./Question";
 import Result from "./Result";
 import Modal from "./Modal";
 
+
 export default function App() {
   const [questionFormat, setQuestionFormat] = useState("tiktik");
   const [question, setQuestion] = useState("");
@@ -179,7 +180,9 @@ export default function App() {
             >{`| ${item.tiktik} | ${item.letter} | ${item.reviewDate} |`}</li>
           ))}
         </ul>
+        
       </div>
+      <div className="ipa">{`&#952`}</div>
     </>
   );
 }
