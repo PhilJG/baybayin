@@ -1,0 +1,485 @@
+[
+  {
+    "letter": "b",
+    "tiktik": "ᜊ᜔",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ba",
+    "tiktik": "ᜊ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ga",
+    "tiktik": "ᜄ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ka",
+    "tiktik": "ᜃ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "sa",
+    "tiktik": "ᜐ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ha",
+    "tiktik": "ᜑ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "nga",
+    "tiktik": "ᜅ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "sa",
+    "tiktik": "ᜐ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ma",
+    "tiktik": "ᜋ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "na",
+    "tiktik": "ᜈ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "wa",
+    "tiktik": "ᜏ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ta",
+    "tiktik": "ᜆ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "pa",
+    "tiktik": "ᜉ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ya",
+    "tiktik": "ᜌ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "bi",
+    "tiktik": "ᜊᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "gi",
+    "tiktik": "ᜄᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "bu",
+    "tiktik": "ᜊᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "i_e",
+    "tiktik": "ᜁ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "be",
+    "tiktik": "ᜊᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "da_ra",
+    "tiktik": "ᜇ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "u_o",
+    "tiktik": "ᜂ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "a",
+    "tiktik": "ᜀ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "g",
+    "tiktik": "ᜄ᜔",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "gu",
+    "tiktik": "ᜄᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "k",
+    "tiktik": "ᜃ᜔",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ku",
+    "tiktik": "ᜃᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ki",
+    "tiktik": "ᜃᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "h",
+    "tiktik": "ᜑ᜔",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "hi",
+    "tiktik": "ᜑᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "hu",
+    "tiktik": "ᜑᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "m",
+    "tiktik": "ᜋ᜔",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "mi",
+    "tiktik": "ᜋᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "mu",
+    "tiktik": "ᜋᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "n",
+    "tiktik": "ᜈ᜔",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ni",
+    "tiktik": "ᜈᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "nu",
+    "tiktik": "ᜈᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ngi",
+    "tiktik": "ᜅᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ngu",
+    "tiktik": "ᜅᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ng",
+    "tiktik": "ᜈ᜔",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "p",
+    "tiktik": "ᜉ᜔",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "pi",
+    "tiktik": "ᜉᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "pu",
+    "tiktik": "ᜉᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "t",
+    "tiktik": "ᜆ᜔",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ti",
+    "tiktik": "ᜆᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "tu",
+    "tiktik": "ᜆᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "w",
+    "tiktik": "ᜏ᜔",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "wi",
+    "tiktik": "ᜏᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "wu",
+    "tiktik": "ᜏᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "y",
+    "tiktik": "ᜌ᜔",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "yi",
+    "tiktik": "ᜆᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "yu",
+    "tiktik": "ᜌᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ge",
+    "tiktik": "ᜄᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "mo",
+    "tiktik": "ᜋᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "yo",
+    "tiktik": "ᜌᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "po",
+    "tiktik": "ᜉᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "no",
+    "tiktik": "ᜈᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ke",
+    "tiktik": "ᜃᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ngo",
+    "tiktik": "ᜅᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "he",
+    "tiktik": "ᜑᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "to",
+    "tiktik": "ᜆᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "me",
+    "tiktik": "ᜋᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ne",
+    "tiktik": "ᜈᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "nge",
+    "tiktik": "ᜅᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "pe",
+    "tiktik": "ᜉᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "wo",
+    "tiktik": "ᜏᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "te",
+    "tiktik": "ᜆᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "we",
+    "tiktik": "ᜏᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ye",
+    "tiktik": "ᜌᜒ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  },
+  {
+    "letter": "ho",
+    "tiktik": "ᜑᜓ",
+    "sequence": 0,
+    "reviewed": false,
+    "reveiwDate": null
+  }
+]

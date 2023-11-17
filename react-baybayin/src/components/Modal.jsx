@@ -1,6 +1,8 @@
 import { useState } from "react";
 import data from "../assets/data.json";
 
+import { ReactSVG } from "react-svg";
+
 export default function Modal({ close, setClose, newLetterList }) {
   const [newLetter, setNewLetter] = useState("");
 
@@ -25,7 +27,9 @@ export default function Modal({ close, setClose, newLetterList }) {
             </span>
             <div className="modal-question">
               <span className="modal-question--tiktik">
-                {newLetter.tiktik === undefined ? " " : newLetter.tiktik}
+                <ReactSVG
+                  src={newLetter.tiktik === undefined ? " " : newLetter.tiktik}
+                />
               </span>
               <br />
               <span className="modal-question--letter">

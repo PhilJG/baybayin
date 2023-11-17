@@ -1,12 +1,14 @@
 import { useState } from "react";
 import "../App.css";
+import data from "../assets/data.json";
+
+import { ReactSVG } from "react-svg";
 
 import Button from "./Button";
 import Question from "./Question";
-// import AnswerList from "./AnswerList";
+import AnswerList from "./AnswerList";
 import Result from "./Result";
 import Modal from "./Modal";
-
 
 export default function App() {
   const [questionFormat, setQuestionFormat] = useState("tiktik");
@@ -45,11 +47,16 @@ export default function App() {
 
   function handleAnswerList(question) {
     const updatedAnswerArray = [];
+    console.log(`question ${question.letter}`);
     for (let i = 0; i < 3; i++) {
       let index = randomSelect(newLetterList);
       const randomAnswer = newLetterList[index];
+      console.log(`random answer ${randomAnswer.letter}`);
       randomAnswer["id"] = i;
-      if (randomAnswer === question) {
+      if (
+        randomAnswer === question ||
+        updatedAnswerArray.includes(randomAnswer)
+      ) {
         continue;
       }
       updatedAnswerArray.push(randomAnswer);
@@ -153,7 +160,7 @@ export default function App() {
         </p>
 
         <Button onNewQuestion={handleNewQuestion} question={question}>
-          Review New letter
+          Review
         </Button>
 
         <Question question={question} questionFormat={questionFormat} />
@@ -177,32 +184,41 @@ export default function App() {
           {reviewedArray.map((item, index) => (
             <li
               key={index}
-            >{`| ${item.tiktik} | ${item.letter} | ${item.reviewDate} |`}</li>
+            >{` ${item.id} | ${item.tiktik} | ${item.letter} | ${item.reviewDate} |`}</li>
           ))}
         </ul>
-        
       </div>
-      <div className="ipa">{`&#952`}</div>
+      <SvgComponent />
     </>
   );
 }
 
-function AnswerList({ answerArray, questionFormat, question, onResult }) {
-  //Check if question has been rendered
-  if (!question || !answerArray) {
-    return null; // or return a loading indicator
-  }
+const SvgComponent = () => {
   return (
-    <div className="answer-list">
-      {answerArray.map((a, i) => (
-        <button
-          className="answer-item"
-          key={i}
-          onClick={() => onResult(question, a)}
-        >
-          {questionFormat === "tiktik" ? a.letter : a.tiktik}
-        </button>
+    <div>
+      {data.map((item, index) => (
+        <ReactSVG key={index} src={`${item.tiktik}`} alt={item.letter} />
       ))}
     </div>
   );
-}
+};
+
+// function AnswerList({ answerArray, questionFormat, question, onResult }) {
+//   //Check if question has been rendered
+//   if (!question || !answerArray) {
+//     return null; // or return a loading indicator
+//   }
+//   return (
+//     <div className="answer-list">
+//       {answerArray.map((a, i) => (
+//         <button
+//           className="answer-item"
+//           key={i}
+//           onClick={() => onResult(question, a)}
+//         >
+//           {questionFormat === "tiktik" ? a.letter : a.tiktik}
+//         </button>
+//       ))}
+//     </div>
+//   );
+// }
