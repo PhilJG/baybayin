@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Babayin | Main Page</title>
-    <link rel="stylesheet" href="css/style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baybayin 2.0 </title>
+    <link rel="stylesheet" href="style.css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+    <script defer type="module" src="main.js"></script>
+
   </head>
-
-  <body>
-
-    <div id="myModal" class="modal">
+<body >
+      <div  class="modal">
       <div class="modal-content">
-        <span class="close">&times; </span>
+        <button class="close">&times; </button>
         <div class="modal-question">
           <div class="mLetter">Click next to view your next letter</div>
           <button class="nextBtn">Next</button>
@@ -20,18 +23,18 @@
       </div>
     </div>
 
-    <!-- <div class="contianer__pair" style="display: flex"> -->
-    <div class="container ">
-      <h1 class="baybayin-font">ᜊᜀᜌᜊᜀᜌᜒᜈ</h1>
+    <div class="container__pair flex">
+    <div class="container__pair--app flex">
+      <h1 class='baybayin-font'>Bybyin</h1>
       <!-- Trigger/Open The Modal -->
-      <button id="myBtn">Learn New Letters</button>
+      <button id="learnBtn">Learn New Letters</button>
 
-      <section class="section-1">
-        <div class="score">
+      <section id="section-1">
+        <div id="score">
           <h3>Score</h3>
-          <div class="score__points">
-            <div class="score__points--inc"></div>
-            <div class="score__points--tot">/20</div>
+          <div id="score__points">
+            <div id="score__points--inc"></div>
+            <div id="score__points--tot">/20</div>
           </div>
         </div>
         <div class="question">
@@ -42,20 +45,36 @@
           </div>
         </div>
       </section>
-      <section class="section-2">
-        <div class="answer"></div>
+      <section id="section-2">
+        <div id="answer"></div>
         <p></p>
-        <button class="question__btn">New Question</button>
+        <button id="question__btn">New Question</button>
       </section>
     </div>
-    <!-- <div class="container">
-        <section class="reviewedLetters__List"></section>
-      </div> -->
-    <!-- </div> -->
-    <script  src="letters.js"></script>
-    <script src="test.js"></script>
-    <script  src="modal.js"></script>
-    <script  src="index.js"></script>
-    <script src="test.js"></script>
+    <div class="container__pair--table">
+      <div class="localStorage_grid grid">
+        <!-- <span>
+          <strong>#</strong>
+        </span>
+        <span>
+          <strong>Reviewed</strong>
+        </span>
+        <span>
+          <strong>Latin</strong>
+        </span>
+        <span>
+          <strong>Baybayin</strong>
+        </span>
+        <span>
+          <strong>Review Date</strong>
+        </span>
+        <span>
+          <strong>Sequence</strong>
+        </span> -->
+      </div>
+    </div>
+</div>
+ 
   </body>
+</body>
 </html>

@@ -1,0 +1,40 @@
+<svg
+    width="340px"
+   height="120px"
+   shape-rendering="geometricPrecision"
+   text-rendering="geometricPrecision"
+   image-rendering="optimizeQuality"
+   fill-rule="evenodd"
+   clip-rule="evenodd"
+   viewBox="125 10 190 120"  
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"> 
+     <style>
+   .path {
+  stroke-dasharray: 85 85 ;
+  stroke-dashoffset: 100;
+  animation: dash 1s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset:0;
+  }
+}
+
+#path2 {
+  animation-delay: 1.5s;
+}
+</style>
+<path
+   class="m path"
+     d="m 291.95302,23.876217 c 0,0 2.5634,-3.429757 4.5172,-0.864121 0.39882,4.080187 -4.46795,16.386817 -0.49875,18.171119 4.22681,1.900107 7.306,-0.451288 7.306,-0.451288 5.71043,-4.956183 8.80357,-12.077323 13.20224,-18.118562 0,0 5.11146,-5.110624 8.99656,0.721913"
+ fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="none" stroke-linecap="round"
+      />
+      <script>
+
+
+      </script>
+</svg>
+

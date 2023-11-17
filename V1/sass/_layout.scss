@@ -1,0 +1,94 @@
+// header, footer, navigation, grid system etc
+
+#container {
+  width: $myWidth;
+}
+
+.modal-content {
+  border-radius: 10px;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Section 1 */
+
+.section-1 {
+  @include flex-column;
+}
+
+.score {
+  @include flex-column;
+}
+
+.score__points {
+  display: flex;
+}
+
+.question {
+  @include flex-column;
+}
+
+.question__box {
+  @include flex-column;
+}
+
+.question__box--img {
+  padding: 1rem;
+  // font-size: 4rem;
+}
+
+.question__box--btn {
+  padding: 0.5rem 1rem;
+}
+
+//Section 2
+.section-2 {
+  display: flex;
+flex-direction: column;
+}
+
+.answer {
+  display: grid;
+  grid: auto / auto auto auto auto;
+  /* display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem; */
+}
+
+button {
+  margin: 1rem;
+  padding: 0 0.5rem;
+  border: 2px solid black;
+  background-color: transparent;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+
+.answer__btn {
+  border-color: $black;
+  color: $black;
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .answer {
+    grid: auto / auto auto;
+  }
+}

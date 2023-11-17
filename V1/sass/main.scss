@@ -1,0 +1,6 @@
+//Run with: sass --watch sass/main.scss:css/style.css
+
+@import 'mixins';
+@import 'base';
+@import 'components';
+@import 'layout';
