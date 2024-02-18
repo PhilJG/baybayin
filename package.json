@@ -1,15 +1,26 @@
 {
-  "type": "module",
-  "devDependencies": {
-    "jest": "^29.4.3",
-    "prettier": "2.8.4",
-    "uvu": "^0.5.6"
-  },
+  "name": "babayin",
+  "version": "1.0.0",
+  "description": "//APP FLOW Question Letter randomly generated from an array of letter objects",
+  "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhilJG/babayin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhilJG/babayin/issues"
+  },
+  "homepage": "https://github.com/PhilJG/babayin#readme",
   "dependencies": {
-    "@babel/preset-env": "^7.20.2",
-    "babel-jest": "^29.4.3"
+    "mermaid": "^8.4.3",
+    "yarn": "^1.22.19"
+  },
+  "devDependencies": {
+    "prettier": "2.7.1"
   }
 }
